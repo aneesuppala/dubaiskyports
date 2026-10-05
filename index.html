@@ -3,203 +3,214 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dubai Skyports | UAE Transit & Commuter Intelligence</title>
+  <title>Dubai Skyports | UAE Multimodal Mobility & Transit Portal</title>
   <style>
-    :root {
-      --bg: #090d16;
-      --card: #111827;
-      --border: #1e293b;
-      --text: #ffffff;
-      --muted: #94a3b8;
-      --cyan: #38bdf8;
-      --green: #34d399;
-      --amber: #fbbf24;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      background: var(--bg);
-      color: var(--text);
+      background-color: #040814;
+      background-image: radial-gradient(circle at 50% 20%, #0d1b3e 0%, #040814 70%);
+      color: #ffffff;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 2.5rem 1.5rem;
+      align-items: center;
+      padding: 3rem 1.5rem 1.5rem;
+      text-align: center;
     }
-    header { text-align: center; max-width: 800px; margin: 0 auto 1.5rem; }
-    .tag {
-      display: inline-block;
-      color: var(--cyan);
+    .top-bar {
+      width: 100%;
+      max-width: 1100px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #38bdf8;
+      margin-bottom: 3rem;
+    }
+    .status-badge {
       background: rgba(56, 189, 248, 0.1);
       border: 1px solid rgba(56, 189, 248, 0.25);
-      font-size: 0.75rem;
-      font-weight: 600;
-      padding: 0.25rem 0.75rem;
+      padding: 0.35rem 0.85rem;
       border-radius: 999px;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 0.75rem;
+      font-size: 0.75rem;
+      color: #38bdf8;
     }
-    h1 {
-      font-size: 2.35rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      margin-bottom: 0.5rem;
-    }
-    header p {
-      color: var(--muted);
-      font-size: 1.05rem;
-      line-height: 1.5;
-    }
-    .cards-row {
-      max-width: 1080px;
-      margin: 1.5rem auto 2.5rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-      gap: 1.5rem;
-      width: 100%;
-    }
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    .card-header {
-      font-size: 0.8rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 0.6rem;
-      display: flex;
+    .hero-pill {
+      display: inline-flex;
       align-items: center;
       gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 0.35rem 1rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      color: #94a3b8;
+      margin-bottom: 1.5rem;
     }
-    .dot-road { color: var(--amber); }
-    .dot-air { color: var(--cyan); }
-    .dot-rail { color: var(--green); }
-    .card h3 { font-size: 1.25rem; margin-bottom: 0.5rem; color: #fff; }
-    .card p { font-size: 0.9rem; color: var(--muted); line-height: 1.55; }
-    .card-footer-tags {
-      margin-top: 1.25rem;
-      padding-top: 0.75rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
+    .hero-pill span {
+      width: 6px;
+      height: 6px;
+      background: #38bdf8;
+      border-radius: 50%;
+      display: inline-block;
     }
-    .pill {
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid var(--border);
-      color: #cbd5e1;
-      font-size: 0.75rem;
-      padding: 0.2rem 0.55rem;
-      border-radius: 6px;
+    h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      max-width: 900px;
+      margin: 0 auto 1.25rem;
     }
-    .email-container {
+    h1 .accent-text {
+      background: linear-gradient(to right, #60a5fa, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .subtitle {
+      color: #94a3b8;
+      font-size: 1.1rem;
+      max-width: 650px;
+      line-height: 1.6;
+      margin: 0 auto 2.5rem;
+    }
+    .cards-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+      width: 100%;
+      max-width: 860px;
+      margin: 0 auto 2.5rem;
+    }
+    .hub-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 1.1rem 1rem;
+      text-align: center;
+      transition: border-color 0.2s ease;
+    }
+    .hub-card:hover {
+      border-color: rgba(56, 189, 248, 0.4);
+    }
+    .hub-card .label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #64748b;
+      margin-bottom: 0.35rem;
+    }
+    .hub-card .name {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #ffffff;
+    }
+    .form-container {
+      width: 100%;
       max-width: 520px;
       margin: 0 auto;
-      text-align: center;
-      width: 100%;
     }
-    .email-form {
+    .input-group {
       display: flex;
       gap: 0.5rem;
-      margin-top: 0.75rem;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      padding: 0.4rem;
     }
-    .email-form input {
+    .input-group input {
       flex: 1;
-      padding: 0.8rem 1rem;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      color: white;
-      outline: none;
-      font-size: 0.9rem;
-    }
-    .email-form button {
-      padding: 0.8rem 1.6rem;
-      background: var(--cyan);
-      color: #090d16;
+      background: transparent;
       border: none;
+      padding: 0.8rem 1rem;
+      color: #fff;
+      font-size: 0.95rem;
+      outline: none;
+    }
+    .input-group input::placeholder {
+      color: #64748b;
+    }
+    .input-group button {
+      background: #38bdf8;
+      color: #040814;
+      border: none;
+      padding: 0.8rem 1.6rem;
       border-radius: 8px;
       font-weight: 700;
+      font-size: 0.95rem;
       cursor: pointer;
-      font-size: 0.9rem;
+      transition: background 0.2s ease;
     }
-    footer {
-      text-align: center;
+    .input-group button:hover {
+      background: #7dd3fc;
+    }
+    .notice {
       color: #475569;
       font-size: 0.75rem;
-      margin-top: 2rem;
+      margin-top: 0.75rem;
+    }
+    footer {
+      font-size: 0.75rem;
+      color: #334155;
+      margin-top: 3rem;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <span class="tag">UAE Mobility Intelligence</span>
-    <h1>Unified UAE Commuter Network</h1>
-    <p>Comprehensive guides covering city & inter-emirate road travel, aerial commute developments, and national passenger rail.</p>
-  </header>
-
-  <div class="cards-row">
-    <!-- CATEGORY 1: ROAD & INTERCITY -->
-    <div class="card">
-      <div>
-        <div class="card-header dot-road">● Road & Intercity Transit</div>
-        <h3>City & Inter-Emirate Travel</h3>
-        <p>Complete guides for Dubai RTA services (Metro, Tram, public buses, and taxi fleets), key highway corridors (E11, E311, E611), Salik gates, and intercity buses connecting Dubai, Abu Dhabi, Sharjah, and the northern emirates.</p>
-      </div>
-      <div class="card-footer-tags">
-        <span class="pill">RTA Metro & Tram</span>
-        <span class="pill">Intercity Buses</span>
-        <span class="pill">Highways & Salik</span>
-      </div>
-    </div>
-
-    <!-- CATEGORY 2: AERIAL & AVIATION -->
-    <div class="card">
-      <div>
-        <div class="card-header dot-air">● Aerial Commute & Aviation</div>
-        <h3>Air Mobility & Airports</h3>
-        <p>Tracking next-generation aerial commute developments, eVTOL air taxi rollouts, commercial vertiports in the UAE and worldwide, alongside major airport expansions and airline connectivity updates.</p>
-      </div>
-      <div class="card-footer-tags">
-        <span class="pill">eVTOL & Air Taxis</span>
-        <span class="pill">Skyport Vertiports</span>
-        <span class="pill">Aviation & Airports</span>
-      </div>
-    </div>
-
-    <!-- CATEGORY 3: ETIHAD RAIL -->
-    <div class="card">
-      <div>
-        <div class="card-header dot-rail">● National Passenger Rail</div>
-        <h3>Etihad Rail Network</h3>
-        <p>Operational updates, passenger station locations, journey timetables, and multimodal interchange links connecting all seven emirates from Abu Dhabi to Fujairah.</p>
-      </div>
-      <div class="card-footer-tags">
-        <span class="pill">Passenger Stations</span>
-        <span class="pill">Inter-Emirate Routes</span>
-        <span class="pill">Timetables</span>
-      </div>
-    </div>
+  <div class="top-bar">
+    <div>Dubai Skyports Intelligence</div>
+    <div class="status-badge">Launch Status: In Development</div>
   </div>
 
-  <div class="email-container">
-    <p style="color: var(--muted); font-size: 0.85rem;">Subscribe for route guides, launch dates, and transit updates:</p>
-    <form class="email-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-      <input type="email" name="email" placeholder="Enter your email address" required>
-      <button type="submit">Notify Me</button>
-    </form>
-  </div>
+  <main style="width: 100%; max-width: 1100px;">
+    <div class="hero-pill">
+      <span></span> UAE Multimodal Transit Intelligence
+    </div>
+
+    <h1>The Future of UAE Commute <span class="accent-text">Is Arriving.</span></h1>
+    
+    <p class="subtitle">
+      Tracking commercial vertiports, RTA bus and intercity corridors, and the national Etihad Rail passenger network.
+    </p>
+
+    <!-- THE 3 CORE CATEGORIES AS SLEEK TILES -->
+    <div class="cards-row">
+      <div class="hub-card">
+        <div class="label">Transit 01</div>
+        <div class="name">RTA & Intercity Buses</div>
+      </div>
+      <div class="hub-card">
+        <div class="label">Transit 02</div>
+        <div class="name">Aerial Commute & Vertiports</div>
+      </div>
+      <div class="hub-card">
+        <div class="label">Transit 03</div>
+        <div class="name">Etihad Rail Network</div>
+      </div>
+    </div>
+
+    <div class="form-container">
+      <form class="input-group" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <input type="email" name="email" placeholder="Enter your email for launch updates" required>
+        <button type="submit">Notify Me</button>
+      </form>
+      <div class="notice">Zero spam. Only official launch and route availability notices.</div>
+    </div>
+  </main>
 
   <footer>
-    © 2026 DubaiSkyports.com · Independent transit intelligence · Not affiliated with RTA, Etihad Rail, or Skyports Infrastructure.
+    © 2026 DubaiSkyports. All rights reserved. Independent transit intelligence.
   </footer>
 
 </body>
