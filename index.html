@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dubai Skyports | UAE Transit Intelligence</title>
+  <style>
+    :root {
+      --bg: #090d16;
+      --card: #111827;
+      --border: #1e293b;
+      --text: #ffffff;
+      --muted: #94a3b8;
+      --cyan: #38bdf8;
+      --green: #34d399;
+      --amber: #fbbf24;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 2rem 1.5rem;
+    }
+    header { text-align: center; margin-top: 1rem; }
+    .tag {
+      display: inline-block;
+      color: var(--cyan);
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+    }
+    h1 {
+      font-size: 2.25rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      color: var(--muted);
+      font-size: 1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .cards-row {
+      max-width: 900px;
+      margin: 2rem auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+      width: 100%;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem;
+    }
+    .card-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .dot-air { color: var(--cyan); }
+    .dot-rail { color: var(--green); }
+    .dot-road { color: var(--amber); }
+    .card h3 { font-size: 1.1rem; margin-bottom: 0.35rem; }
+    .card p { font-size: 0.85rem; color: var(--muted); line-height: 1.4; }
+    .email-container {
+      max-width: 500px;
+      margin: 0 auto;
+      text-align: center;
+      width: 100%;
+    }
+    .email-form {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+    .email-form input {
+      flex: 1;
+      padding: 0.75rem 1rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: white;
+      outline: none;
+    }
+    .email-form button {
+      padding: 0.75rem 1.5rem;
+      background: var(--cyan);
+      color: #090d16;
+      border: none;
+      border-radius: 8px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    footer {
+      text-align: center;
+      color: #475569;
+      font-size: 0.75rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <span class="tag">UAE Mobility Intelligence</span>
+    <h1>The UAE Commuter Network</h1>
+    <p>Real-time guides for aerial vertiports, national passenger rail, and intercity transit corridors.</p>
+  </header>
+
+  <div class="cards-row">
+    <div class="card">
+      <div class="card-title dot-air">● Aerial Commute</div>
+      <h3>Vertiports & eVTOL</h3>
+      <p>Joby & Skyports 10-minute air taxi connections across DXB, Dubai Marina, Downtown, and Palm Jumeirah.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-title dot-rail">● Passenger Rail</div>
+      <h3>Etihad Rail Network</h3>
+      <p>Direct intercity rail connecting Jumeirah Golf Estates, Abu Dhabi MBZ City, and Fujairah.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-title dot-road">● Road Corridors</div>
+      <h3>Highways & RTA Buses</h3>
+      <p>Express transit, Salik gateways, and inter-emirate bus routes across E11, E311, and E611.</p>
+    </div>
+  </div>
+
+  <div class="email-container">
+    <form class="email-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <input type="email" name="email" placeholder="Enter your email for route alerts" required>
+      <button type="submit">Notify Me</button>
+    </form>
+  </div>
+
+  <footer>
+    © 2026 DubaiSkyports.com · Independent transit guide · Not affiliated with RTA, Skyports, or Etihad Rail.
+  </footer>
+
+</body>
+</html>
