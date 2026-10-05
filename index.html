@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dubai Skyports | UAE Transit Intelligence</title>
+  <title>Dubai Skyports | UAE Transit & Commuter Intelligence</title>
   <style>
     :root {
       --bg: #090d16;
@@ -24,9 +24,9 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 2rem 1.5rem;
+      padding: 2.5rem 1.5rem;
     }
-    header { text-align: center; margin-top: 1rem; }
+    header { text-align: center; max-width: 800px; margin: 0 auto 1.5rem; }
     .tag {
       display: inline-block;
       color: var(--cyan);
@@ -41,48 +41,66 @@
       margin-bottom: 0.75rem;
     }
     h1 {
-      font-size: 2.25rem;
+      font-size: 2.35rem;
       font-weight: 800;
       letter-spacing: -0.02em;
       margin-bottom: 0.5rem;
     }
     header p {
       color: var(--muted);
-      font-size: 1rem;
-      max-width: 600px;
-      margin: 0 auto;
+      font-size: 1.05rem;
+      line-height: 1.5;
     }
     .cards-row {
-      max-width: 900px;
-      margin: 2rem auto;
+      max-width: 1080px;
+      margin: 1.5rem auto 2.5rem;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.25rem;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 1.5rem;
       width: 100%;
     }
     .card {
       background: var(--card);
       border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1.25rem;
+      border-radius: 14px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
-    .card-title {
-      font-size: 0.85rem;
+    .card-header {
+      font-size: 0.8rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.05em;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.6rem;
       display: flex;
       align-items: center;
       gap: 0.5rem;
     }
+    .dot-road { color: var(--amber); }
     .dot-air { color: var(--cyan); }
     .dot-rail { color: var(--green); }
-    .dot-road { color: var(--amber); }
-    .card h3 { font-size: 1.1rem; margin-bottom: 0.35rem; }
-    .card p { font-size: 0.85rem; color: var(--muted); line-height: 1.4; }
+    .card h3 { font-size: 1.25rem; margin-bottom: 0.5rem; color: #fff; }
+    .card p { font-size: 0.9rem; color: var(--muted); line-height: 1.55; }
+    .card-footer-tags {
+      margin-top: 1.25rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+    .pill {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border);
+      color: #cbd5e1;
+      font-size: 0.75rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 6px;
+    }
     .email-container {
-      max-width: 500px;
+      max-width: 520px;
       margin: 0 auto;
       text-align: center;
       width: 100%;
@@ -94,21 +112,23 @@
     }
     .email-form input {
       flex: 1;
-      padding: 0.75rem 1rem;
+      padding: 0.8rem 1rem;
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: 8px;
       color: white;
       outline: none;
+      font-size: 0.9rem;
     }
     .email-form button {
-      padding: 0.75rem 1.5rem;
+      padding: 0.8rem 1.6rem;
       background: var(--cyan);
       color: #090d16;
       border: none;
       border-radius: 8px;
       font-weight: 700;
       cursor: pointer;
+      font-size: 0.9rem;
     }
     footer {
       text-align: center;
@@ -122,39 +142,64 @@
 
   <header>
     <span class="tag">UAE Mobility Intelligence</span>
-    <h1>The UAE Commuter Network</h1>
-    <p>Essential guides for highway commutes, intercity road corridors, passenger rail, and aerial vertiports.</p>
+    <h1>Unified UAE Commuter Network</h1>
+    <p>Comprehensive guides covering city & inter-emirate road travel, aerial commute developments, and national passenger rail.</p>
   </header>
 
   <div class="cards-row">
+    <!-- CATEGORY 1: ROAD & INTERCITY -->
     <div class="card">
-      <div class="card-title dot-air">● Aerial Commute</div>
-      <h3>Vertiports & eVTOL</h3>
-      <p>Joby & Skyports 10-minute air taxi connections across DXB, Dubai Marina, Downtown, and Palm Jumeirah.</p>
+      <div>
+        <div class="card-header dot-road">● Road & Intercity Transit</div>
+        <h3>City & Inter-Emirate Travel</h3>
+        <p>Complete guides for Dubai RTA services (Metro, Tram, public buses, and taxi fleets), key highway corridors (E11, E311, E611), Salik gates, and intercity buses connecting Dubai, Abu Dhabi, Sharjah, and the northern emirates.</p>
+      </div>
+      <div class="card-footer-tags">
+        <span class="pill">RTA Metro & Tram</span>
+        <span class="pill">Intercity Buses</span>
+        <span class="pill">Highways & Salik</span>
+      </div>
     </div>
 
+    <!-- CATEGORY 2: AERIAL & AVIATION -->
     <div class="card">
-      <div class="card-title dot-rail">● Passenger Rail</div>
-      <h3>Etihad Rail Network</h3>
-      <p>Direct intercity rail connecting Jumeirah Golf Estates, Abu Dhabi MBZ City, and Fujairah.</p>
+      <div>
+        <div class="card-header dot-air">● Aerial Commute & Aviation</div>
+        <h3>Air Mobility & Airports</h3>
+        <p>Tracking next-generation aerial commute developments, eVTOL air taxi rollouts, commercial vertiports in the UAE and worldwide, alongside major airport expansions and airline connectivity updates.</p>
+      </div>
+      <div class="card-footer-tags">
+        <span class="pill">eVTOL & Air Taxis</span>
+        <span class="pill">Skyport Vertiports</span>
+        <span class="pill">Aviation & Airports</span>
+      </div>
     </div>
 
+    <!-- CATEGORY 3: ETIHAD RAIL -->
     <div class="card">
-      <div class="card-title dot-road">● Road Corridors</div>
-      <h3>Highways & RTA Buses</h3>
-      <p>Express transit, Salik gateways, and inter-emirate bus routes across E11, E311, and E611.</p>
+      <div>
+        <div class="card-header dot-rail">● National Passenger Rail</div>
+        <h3>Etihad Rail Network</h3>
+        <p>Operational updates, passenger station locations, journey timetables, and multimodal interchange links connecting all seven emirates from Abu Dhabi to Fujairah.</p>
+      </div>
+      <div class="card-footer-tags">
+        <span class="pill">Passenger Stations</span>
+        <span class="pill">Inter-Emirate Routes</span>
+        <span class="pill">Timetables</span>
+      </div>
     </div>
   </div>
 
   <div class="email-container">
+    <p style="color: var(--muted); font-size: 0.85rem;">Subscribe for route guides, launch dates, and transit updates:</p>
     <form class="email-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-      <input type="email" name="email" placeholder="Enter your email for route alerts" required>
+      <input type="email" name="email" placeholder="Enter your email address" required>
       <button type="submit">Notify Me</button>
     </form>
   </div>
 
   <footer>
-    © 2026 DubaiSkyports.com · Independent transit guide · Not affiliated with RTA, Skyports, or Etihad Rail.
+    © 2026 DubaiSkyports.com · Independent transit intelligence · Not affiliated with RTA, Etihad Rail, or Skyports Infrastructure.
   </footer>
 
 </body>
