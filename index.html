@@ -79,7 +79,7 @@
     .subtitle {
       color: #94a3b8;
       font-size: 1.1rem;
-      max-width: 650px;
+      max-width: 700px;
       line-height: 1.6;
       margin: 0 auto 2.5rem;
     }
@@ -95,25 +95,23 @@
       background: rgba(255, 255, 255, 0.03);
       border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 12px;
-      padding: 1.1rem 1rem;
+      padding: 1.4rem 1.2rem;
       text-align: center;
-      transition: border-color 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 72px;
+      transition: border-color 0.2s ease, transform 0.2s ease;
     }
     .hub-card:hover {
       border-color: rgba(56, 189, 248, 0.4);
-    }
-    .hub-card .label {
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #64748b;
-      margin-bottom: 0.35rem;
+      transform: translateY(-2px);
     }
     .hub-card .name {
-      font-size: 1rem;
+      font-size: 0.95rem;
       font-weight: 600;
       color: #ffffff;
+      line-height: 1.4;
     }
     .form-container {
       width: 100%;
@@ -181,21 +179,18 @@
     <h1>The Future of UAE Commute <span class="accent-text">Is Arriving.</span></h1>
     
     <p class="subtitle">
-      Tracking commercial vertiports, RTA bus and intercity corridors, and the national Etihad Rail passenger network.
+      Tracking vertiports, RTA bus metro and intercity corridors informations, and the national Etihad Rail passenger network.
     </p>
 
-    <!-- THE 3 CORE CATEGORIES AS SLEEK TILES -->
+    <!-- THE 3 CORE TILES WITHOUT TRANSIT LABELS -->
     <div class="cards-row">
       <div class="hub-card">
-        <div class="label">Transit 01</div>
-        <div class="name">RTA & Intercity Buses</div>
+        <div class="name">RTA bus metro and Intercity Buses</div>
       </div>
       <div class="hub-card">
-        <div class="label">Transit 02</div>
-        <div class="name">Aerial Commute & Vertiports</div>
+        <div class="name">Aerial Commute & Vertiport</div>
       </div>
       <div class="hub-card">
-        <div class="label">Transit 03</div>
         <div class="name">Etihad Rail Network</div>
       </div>
     </div>
