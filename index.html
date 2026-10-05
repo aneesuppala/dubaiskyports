@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dubai Skyports | UAE Multimodal Mobility & Transit Portal</title>
+  <meta name="description" content="Complete guide to UAE commuting: Dubai vertiport aerial taxis, Etihad Rail passenger hubs, and inter-emirate highway & bus corridors.">
+  <style>
+    :root {
+      --bg: #090d16;
+      --card-bg: #111827;
+      --border: #1f293d;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-glow: rgba(56, 189, 248, 0.15);
+      --tag-aerial: #38bdf8;
+      --tag-rail: #34d399;
+      --tag-road: #fbbf24;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+    header {
+      padding: 4rem 1.5rem 3rem;
+      text-align: center;
+      background: radial-gradient(circle at 50% 0%, #1e293b 0%, var(--bg) 75%);
+      border-bottom: 1px solid var(--border);
+    }
+    .badge {
+      display: inline-block;
+      background: var(--accent-glow);
+      color: var(--accent);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+    header h1 {
+      font-size: 2.75rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+      background: linear-gradient(to right, #ffffff, #94a3b8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    header p {
+      color: var(--text-muted);
+      font-size: 1.15rem;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+    }
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .section-desc {
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 3.5rem;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .card:hover {
+      border-color: #334155;
+      transform: translateY(-2px);
+    }
+    .card-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      display: inline-block;
+      margin-bottom: 0.5rem;
+    }
+    .tag-aerial { color: var(--tag-aerial); }
+    .tag-rail { color: var(--tag-rail); }
+    .tag-road { color: var(--tag-road); }
+    .card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+    .stats-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--card-bg);
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      margin-bottom: 3.5rem;
+      font-size: 0.95rem;
+    }
+    .stats-table th, .stats-table td {
+      padding: 1rem 1.25rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    .stats-table th {
+      background: #162032;
+      color: var(--text-main);
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .stats-table td { color: var(--text-muted); }
+    .stats-table strong { color: var(--text-main); }
+    .notify-box {
+      background: #111827;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .notify-box input {
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: #090d16;
+      color: white;
+      width: 60%;
+      max-width: 320px;
+      margin-right: 0.5rem;
+    }
+    .notify-box button {
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      border: none;
+      background: var(--accent);
+      color: #090d16;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <span class="badge">UAE Multimodal Transit Intelligence</span>
+    <h1>The Unified UAE Commuter Network</h1>
+    <p>Connecting aerial vertiports, national passenger rail corridors, and key inter-emirate highways into a single commute intelligence hub.</p>
+  </header>
+
+  <main>
+    <!-- SECTION 1: AERIAL COMMUTE -->
+    <h2 class="section-title"><span class="tag-aerial">●</span> Urban Air Mobility (eVTOL & Vertiports)</h2>
+    <p class="section-desc">Commercial aerial taxi network powered by Joby Aviation and Archer Aviation across Dubai and Abu Dhabi.</p>
+    
+    <div class="grid">
+      <div class="card">
+        <span class="card-tag tag-aerial">Dubai Air Corridors</span>
+        <h3>4 Core Skyport Vertiports</h3>
+        <p>Connecting DXB Airport, Dubai Marina, Downtown (Burj Khalifa), and Palm Jumeirah with 10-minute electric flights.</p>
+      </div>
+      <div class="card">
+        <span class="card-tag tag-aerial">Abu Dhabi Expansion</span>
+        <h3>Capital Flight Corridor</h3>
+        <p>Archer Aviation's network integrating Zayed International Airport, Yas Island, and the Abu Dhabi Corniche.</p>
+      </div>
+      <div class="card">
+        <span class="card-tag tag-aerial">Multimodal Integration</span>
+        <h3>DXV & Metro Pedestrian Links</h3>
+        <p>Direct covered air-conditioned pedestrian links between the DXB vertiport hub and Emirates Metro Station (Red Line).</p>
+      </div>
+    </div>
+
+    <!-- SECTION 2: ETIHAD RAIL -->
+    <h2 class="section-title"><span class="tag-rail">●</span> Etihad Rail Passenger Network</h2>
+    <p class="section-desc">The UAE national railway linking 11 major regions across the emirates from Ghuweifat to Fujairah.</p>
+
+    <div class="grid">
+      <div class="card">
+        <span class="card-tag tag-rail">Dubai Passenger Hub</span>
+        <h3>Jumeirah Golf Estates</h3>
+        <p>Direct connectivity to Dubai Metro Route 2020, serving passenger connections to Abu Dhabi and the northern emirates.</p>
+      </div>
+      <div class="card">
+        <span class="card-tag tag-rail">Abu Dhabi Mainline</span>
+        <h3>Mohamed Bin Zayed City</h3>
+        <p>The central passenger terminal in Abu Dhabi providing express rail transit across the capital and inter-emirate links.</p>
+      </div>
+      <div class="card">
+        <span class="card-tag tag-rail">Eastern Corridor</span>
+        <h3>Fujairah (Al Hilal) & Al Dhaid</h3>
+        <p>Connecting the Gulf of Oman coastline and Sharjah’s central agricultural region to the national rail network in under 1 hour.</p>
+      </div>
+    </div>
+
+    <!-- SECTION 3: ROAD COMMUTING & BUSES -->
+    <h2 class="section-title"><span class="tag-road">●</span> Road & Intercity Highway Corridors</h2>
+    <p class="section-desc">Core inter-emirate highway arteries, Salik toll gateways, and RTA intercity bus connections.</p>
+
+    <table class="stats-table">
+      <thead>
+        <tr>
+          <th>Travel Corridor</th>
+          <th>Highway / Route</th>
+          <th>Public Bus Option</th>
+          <th>Est. Transit Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Dubai ⇄ Abu Dhabi</strong></td>
+          <td>Sheikh Zayed Rd (E11)</td>
+          <td>Route E101 (Ibn Battuta) / E102 (Al Jafiliya)</td>
+          <td>80 – 105 mins</td>
+        </tr>
+        <tr>
+          <td><strong>Dubai ⇄ Sharjah</strong></td>
+          <td>Al Ittihad (E11) / Sheikh MBZ (E311)</td>
+          <td>Route E307 (Deira City Centre)</td>
+          <td>35 – 70 mins (peak dependent)</td>
+        </tr>
+        <tr>
+          <td><strong>Dubai ⇄ Fujairah</strong></td>
+          <td>Sharjah-Kalba Rd (E102)</td>
+          <td>Route E700 (Union Square Bus Stn)</td>
+          <td>110 – 130 mins</td>
+        </tr>
+        <tr>
+          <td><strong>Dubai ⇄ Ras Al Khaimah</strong></td>
+          <td>Emirates Rd (E611)</td>
+          <td>Al Hamra Express (Union / Airport T2)</td>
+          <td>75 – 90 mins</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- EMAIL CAPTURE -->
+    <div class="notify-box">
+      <h3 style="margin-bottom: 0.5rem;">Stay Updated on Launch Timelines</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.25rem;">Get instant email alerts when commercial vertiport routes and new Etihad Rail passenger stations open.</p>
+      <input type="email" placeholder="Enter your email address">
+      <button type="button">Subscribe</button>
+    </div>
+  </main>
+
+  <footer>
+    <p><strong>DubaiSkyports.com</strong> is an independent commuter guide and mobility directory.</p>
+    <p style="margin-top: 0.5rem;">Not affiliated with or endorsed by the Roads and Transport Authority (RTA), Skyports Infrastructure Limited, Etihad Rail, or Joby Aviation.</p>
+    <p style="margin-top: 0.5rem;">© 2026 DubaiSkyports.com. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
