@@ -3,312 +3,323 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dubai Skyports | UAE Transit Intelligence</title>
+  <title>Dubai Skyports - UAE Multimodal Transit Intelligence</title>
   <style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
+
     body {
-      background-color: #040814;
+      background-color: #030712;
       background-image: 
-        radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.12) 0%, transparent 55%),
-        radial-gradient(circle at 50% 40%, rgba(99, 102, 241, 0.08) 0%, transparent 60%);
-      color: #ffffff;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        radial-gradient(circle at 50% 15%, rgba(30, 58, 138, 0.35), transparent 50%),
+        radial-gradient(circle at 50% 85%, rgba(15, 23, 42, 0.8), transparent 50%);
+      color: #f8fafc;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      align-items: center;
-      padding: 2.5rem 1.5rem 1.5rem;
-      text-align: center;
+      padding: 24px 20px;
     }
-    .top-bar {
-      width: 100%;
-      max-width: 980px;
+
+    /* Top Navigation */
+    header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 3.5rem;
+      max-width: 1100px;
+      width: 100%;
+      margin: 0 auto;
     }
+
     .brand {
-      color: #f8fafc;
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: #ffffff;
+      text-transform: uppercase;
     }
+
     .brand-dot {
       width: 8px;
       height: 8px;
+      background-color: #38bdf8;
       border-radius: 50%;
-      background: #38bdf8;
-      box-shadow: 0 0 12px #38bdf8;
-    }
-    .status-badge {
-      background: rgba(56, 189, 248, 0.08);
-      border: 1px solid rgba(56, 189, 248, 0.25);
-      padding: 0.35rem 0.85rem;
-      border-radius: 999px;
-      font-size: 0.75rem;
-      color: #38bdf8;
-      font-weight: 600;
-    }
-    .hero-container {
-      width: 100%;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 0.4rem 1.1rem;
-      border-radius: 999px;
-      font-size: 0.8rem;
-      color: #94a3b8;
-      font-weight: 600;
-      margin-bottom: 1.5rem;
-    }
-    .hero-badge .pulse {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: #38bdf8;
       box-shadow: 0 0 8px #38bdf8;
     }
-    h1 {
-      font-size: clamp(2.4rem, 6vw, 4.2rem);
-      font-weight: 900;
-      letter-spacing: -0.04em;
-      line-height: 1.1;
-      margin-bottom: 1.25rem;
+
+    .badge-btn {
+      background: rgba(30, 41, 59, 0.7);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      color: #38bdf8;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      text-decoration: none;
     }
-    h1 .glow {
-      background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .subtitle {
-      color: #94a3b8;
-      font-size: clamp(1rem, 2.5vw, 1.2rem);
-      line-height: 1.6;
-      max-width: 680px;
-      margin: 0 auto 3rem;
-      font-weight: 400;
-    }
-    .cards-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.25rem;
+
+    /* Main Container */
+    main {
+      max-width: 1000px;
       width: 100%;
-      max-width: 940px;
-      margin: 0 auto 3rem;
+      margin: 40px auto;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
-    @media (max-width: 768px) {
-      .cards-grid {
-        grid-template-columns: 1fr;
-        gap: 0.85rem;
-      }
+
+    .pill-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid #1e293b;
+      padding: 5px 12px;
+      border-radius: 9999px;
+      font-size: 12px;
+      color: #94a3b8;
+      margin-bottom: 24px;
     }
+
+    .pill-tag span {
+      width: 6px;
+      height: 6px;
+      background-color: #38bdf8;
+      border-radius: 50%;
+    }
+
+    h1 {
+      font-size: clamp(34px, 5vw, 54px);
+      line-height: 1.15;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 12px;
+    }
+
+    h1 span {
+      display: block;
+      color: #c084fc;
+    }
+
+    .subtitle {
+      font-size: clamp(14px, 2vw, 16px);
+      color: #94a3b8;
+      max-width: 650px;
+      line-height: 1.6;
+      margin-bottom: 40px;
+    }
+
+    /* 3-Column Feature Cards */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+      width: 100%;
+      margin-bottom: 40px;
+    }
+
     .card {
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.015) 100%);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 16px;
-      padding: 1.75rem 1.25rem;
-      position: relative;
-      overflow: hidden;
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-      backdrop-filter: blur(12px);
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      padding: 24px;
+      border-radius: 12px;
       text-align: left;
+      backdrop-filter: blur(8px);
     }
-    .card::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.4), transparent);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-    .card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(56, 189, 248, 0.3);
-      box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.6), 0 0 24px -4px rgba(56, 189, 248, 0.12);
-    }
-    .card:hover::before {
-      opacity: 1;
-    }
+
     .card-icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 10px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: rgba(56, 189, 248, 0.1);
+      color: #38bdf8;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 1.25rem;
-      color: #38bdf8;
-    }
-    .card-title {
-      font-size: 1.15rem;
+      font-size: 14px;
       font-weight: 700;
-      color: #ffffff;
-      line-height: 1.35;
-      margin-bottom: 0.5rem;
-      letter-spacing: -0.01em;
+      margin-bottom: 16px;
     }
-    .card-desc {
-      font-size: 0.85rem;
-      color: #94a3b8;
+
+    .card h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: #f1f5f9;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      font-size: 13px;
       line-height: 1.5;
+      color: #64748b;
     }
-    .form-wrap {
+
+    /* Newsletter / Alert Form */
+    .form-wrapper {
+      max-width: 440px;
       width: 100%;
-      max-width: 480px;
-      margin: 0 auto;
+      margin-bottom: 14px;
     }
+
     .form-box {
       display: flex;
-      gap: 0.5rem;
-      background: rgba(17, 24, 39, 0.8);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 14px;
-      padding: 0.4rem;
-      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid #1e293b;
+      padding: 5px;
+      border-radius: 8px;
     }
+
     .form-box input {
       flex: 1;
       background: transparent;
       border: none;
-      padding: 0.85rem 1rem;
-      color: #ffffff;
-      font-size: 0.95rem;
       outline: none;
+      padding: 10px 14px;
+      color: #ffffff;
+      font-size: 13px;
     }
+
     .form-box input::placeholder {
       color: #475569;
     }
+
     .form-box button {
       background: #38bdf8;
-      color: #040814;
+      color: #040914;
       border: none;
-      padding: 0.85rem 1.6rem;
-      border-radius: 10px;
-      font-weight: 800;
-      font-size: 0.9rem;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 700;
       cursor: pointer;
-      letter-spacing: 0.01em;
-      transition: all 0.2s ease;
-      white-space: nowrap;
+      transition: background 0.2s;
     }
+
     .form-box button:hover {
       background: #7dd3fc;
-      box-shadow: 0 0 18px rgba(56, 189, 248, 0.4);
     }
-    .privacy-notice {
-      color: #64748b;
-      font-size: 0.75rem;
-      margin-top: 0.85rem;
+
+    .disclaimer-small {
+      font-size: 11px;
+      color: #475569;
     }
+
+    /* Cleaned Footer */
     footer {
-      width: 100%;
       max-width: 900px;
-      margin-top: 4rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      font-size: 0.8rem;
-      color: #94a3b8;
-      line-height: 1.6;
+      width: 100%;
+      margin: 20px auto 0;
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      padding-top: 20px;
     }
-    .disclaimer {
-      color: #64748b;
-      font-size: 0.75rem;
-      margin-top: 0.35rem;
+
+    .contact-link {
+      font-size: 13px;
+      color: #94a3b8;
+      margin-bottom: 10px;
+    }
+
+    .contact-link a {
+      color: #38bdf8;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact-link a:hover {
+      text-decoration: underline;
+    }
+
+    .copyright {
+      font-size: 11px;
+      color: #475569;
+      margin-bottom: 6px;
+    }
+
+    .legal-notice {
+      font-size: 10px;
+      color: #334155;
+      line-height: 1.5;
     }
   </style>
 </head>
 <body>
 
-  <div class="top-bar">
+  <!-- Top Navigation -->
+  <header>
     <div class="brand">
-      <span class="brand-dot"></span>
-      <span>Dubai Skyports</span>
+      <div class="brand-dot"></div>
+      DUBAI SKYPORTS
     </div>
-    <div class="status-badge">Live Commute Index</div>
-  </div>
+    <a href="#" class="badge-btn">Live Commute Index</a>
+  </header>
 
-  <main class="hero-container">
-    <div class="hero-badge">
-      <span class="pulse"></span> UAE Multimodal Transit Intelligence
+  <!-- Hero Content -->
+  <main>
+    <div class="pill-tag">
+      <span></span> UAE Multimodal Transit Intelligence
     </div>
 
-    <h1>The Future of UAE Commute <span class="glow">Is Arriving.</span></h1>
+    <h1>
+      The Future of UAE Commute
+      <span>Is Arriving.</span>
+    </h1>
 
     <p class="subtitle">
       Tracking vertiports, RTA bus metro and intercity corridors informations, and the national Etihad Rail passenger network.
     </p>
 
-    <!-- 3 DISTINCT CATEGORY TILES -->
-    <div class="cards-grid">
+    <!-- Cards Section -->
+    <div class="card-grid">
       <div class="card">
-        <div class="card-icon">
-          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 17h8M8 17a2 2 0 11-4 0 2 2 0 014 0zm8 0a2 2 0 104 0 2 2 0 00-4 0zM4 11l2-6h12l2 6M4 11h16m-16 0v6m16-6v6"></path></svg>
-        </div>
-        <div class="card-title">RTA bus metro and Intercity Buses</div>
-        <div class="card-desc">City corridors, metro feeder routes, and inter-emirate highway transit.</div>
+        <div class="card-icon">日</div>
+        <h3>RTA bus metro and Intercity Buses</h3>
+        <p>City corridors, metro feeder routes, and inter-emirate highway transit.</p>
       </div>
 
       <div class="card">
-        <div class="card-icon">
-          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
-        </div>
-        <div class="card-title">Aerial Commute & Vertiport</div>
-        <div class="card-desc">eVTOL infrastructure, skyport hubs, and urban flight routes.</div>
+        <div class="card-icon">A</div>
+        <h3>Aerial Commute & Vertiport</h3>
+        <p>eVTOL infrastructure, skyport hubs, and urban flight routes.</p>
       </div>
 
       <div class="card">
-        <div class="card-icon">
-          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M3 14h18m-9-4v8m-7 4h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-        </div>
-        <div class="card-title">Etihad Rail Network</div>
-        <div class="card-desc">Intercity passenger rail connections linking all seven emirates.</div>
+        <div class="card-icon">田</div>
+        <h3>Etihad Rail Network</h3>
+        <p>Intercity passenger rail connections linking all seven emirates.</p>
       </div>
     </div>
 
-    <!-- EMAIL SUBSCRIPTION -->
-    <div class="form-wrap">
-      <form class="form-box" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-        <input type="email" name="email" placeholder="Enter your email for route alerts" required>
+    <!-- Alert / Signup Form -->
+    <div class="form-wrapper">
+      <form class="form-box" onsubmit="event.preventDefault(); alert('Subscribed!');">
+        <input type="email" placeholder="Enter your email for route alerts" required>
         <button type="submit">Notify Me</button>
       </form>
-      <div class="privacy-notice">Zero spam. Only official launch and route availability notices.</div>
     </div>
+    <p class="disclaimer-small">Zero spam. Only official launch and route availability notices.</p>
   </main>
 
+  <!-- Footer with info@ email & singular disclaimer -->
   <footer>
-    <p>© 2026 DubaiSkyports.com</p>
-    <p class="disclaimer">
+    <div class="contact-link">
+      Inquiries & Partnerships: <a href="mailto:info@dubaiskyports.com">info@dubaiskyports.com</a>
+    </div>
+    <p class="copyright">© 2026 Dubaiskyports.com</p>
+    <p class="legal-notice">
       This platform is an independent informational guide and not affiliated with, endorsed by, or connected to RTA, Skyports Infrastructure, or Etihad Rail.
     </p>
   </footer>
-<!-- ADD THIS CONTACT LINE -->
-<div style="margin-bottom: 12px; font-size: 13px; color: #94a3b8;">
-  Inquiries: 
-  <a href="mailto:info@dubaiskyports.com" style="color: #38bdf8; text-decoration: none;">
-    info@dubaiskyports.com
-  </a>
-</div>
 
-<p>© 2026 Dubaiskyports.com</p>
-<p>This platform is an independent informational guide...</p>
+</body>
+</html>
