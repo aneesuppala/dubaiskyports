@@ -209,12 +209,31 @@
       background: #7dd3fc;
     }
 
+    .form-box button:disabled {
+      background: #64748b;
+      cursor: not-allowed;
+    }
+
+    .form-msg {
+      font-size: 13px;
+      margin-top: 10px;
+      display: none;
+    }
+
+    .form-msg.success {
+      color: #38bdf8;
+    }
+
+    .form-msg.error {
+      color: #f87171;
+    }
+
     .disclaimer-small {
       font-size: 11px;
       color: #475569;
     }
 
-    /* Cleaned Footer */
+    /* Footer */
     footer {
       max-width: 900px;
       width: 100%;
@@ -300,17 +319,18 @@
       </div>
     </div>
 
-    <!-- Alert / Signup Form -->
+    <!-- Alert / Signup Form Connected to Formspree -->
     <div class="form-wrapper">
-      <form class="form-box" onsubmit="event.preventDefault(); alert('Subscribed!');">
-        <input type="email" placeholder="Enter your email for route alerts" required>
-        <button type="submit">Notify Me</button>
+      <form class="form-box" id="alert-form" action="https://formspree.io/f/xqpeqnno" method="POST">
+        <input type="email" name="email" id="alert-email" placeholder="Enter your email for route alerts" required>
+        <button type="submit" id="alert-btn">Notify Me</button>
       </form>
+      <p id="form-msg" class="form-msg"></p>
     </div>
     <p class="disclaimer-small">Zero spam. Only official launch and route availability notices.</p>
   </main>
 
-  <!-- Footer with info@ email & singular disclaimer -->
+  <!-- Cleaned Footer -->
   <footer>
     <div class="contact-link">
       For Inquiries: <a href="mailto:info@dubaiskyports.com">info@dubaiskyports.com</a>
@@ -320,6 +340,44 @@
       This platform is an independent informational guide and not affiliated with, endorsed by, or connected to RTA, Skyports Infrastructure, or Etihad Rail.
     </p>
   </footer>
+
+  <!-- Submission Script -->
+  <script>
+    const form = document.getElementById('alert-form');
+    const btn = document.getElementById('alert-btn');
+    const msg = document.getElementById('form-msg');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      btn.disabled = true;
+      btn.textContent = 'Saving...';
+
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          form.style.display = 'none';
+          msg.className = 'form-msg success';
+          msg.textContent = '✓ Thank you! You will be notified of new route launches.';
+          msg.style.display = 'block';
+        } else {
+          throw new Error('Submission failed');
+        }
+      } catch (err) {
+        btn.disabled = false;
+        btn.textContent = 'Notify Me';
+        msg.className = 'form-msg error';
+        msg.textContent = 'Unable to subscribe right now. Please try again later.';
+        msg.style.display = 'block';
+      }
+    });
+  </script>
 
 </body>
 </html>
