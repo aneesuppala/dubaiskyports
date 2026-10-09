@@ -444,23 +444,297 @@
 
     </section>
 
-    <!-- VIEW: RTA -->
-    <section id="view-rta" class="page-view hidden space-y-10">
-      <div class="border-b border-slate-800 pb-6">
-        <div class="text-xs font-mono text-indigo-400 uppercase tracking-widest mb-1">Public Transit Reference</div>
-        <h2 class="text-3xl font-extrabold text-white">Intercity Buses & Metro Zones</h2>
+  <!-- ========================================================= -->
+    <!-- VIEW: RTA BUS & METRO (Comprehensive Public Transit Guide) -->
+    <!-- ========================================================= -->
+    <section id="view-rta" class="page-view hidden space-y-12">
+      
+      <!-- Section Header -->
+      <div class="border-b border-slate-800 pb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-400/30 text-[11px] font-mono text-indigo-400 mb-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-ping"></span>
+            DUBAI PUBLIC MOBILITY & TARIFF DIRECTORY
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white">RTA Metro, Tram & Bus Network</h2>
+          <p class="text-slate-400 text-sm mt-2 max-w-2xl leading-relaxed">
+            Independent reference guide for Dubai's high-capacity rail lines, standard Nol smart-card zone pricing, operating timetables, and intercity express coaches across the UAE.
+          </p>
+        </div>
+        <div class="flex items-center gap-2 bg-slate-900/90 border border-slate-800 p-3 rounded-xl text-xs font-mono text-slate-300">
+          <div><span class="text-slate-500 block text-[10px]">INTEGRATED TARIFF</span> RTA 7-Zone Nol Model</div>
+        </div>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div class="glass-card p-5 rounded-2xl">
-          <span class="text-xs font-mono text-indigo-300 font-bold">ROUTE E100</span>
-          <h4 class="text-white font-bold mt-1">Al Ghubaiba ⇄ Abu Dhabi Central</h4>
-          <p class="text-xs text-slate-400 mt-2">Departs every 15 mins. Standard Tariff: AED 25 (Silver Nol). ~120 mins duration.</p>
+
+      <!-- Nol Card Fare Matrix Table -->
+      <div class="glass-card rounded-2xl p-6 sm:p-8 space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-4">
+          <div>
+            <h3 class="text-lg font-bold text-white flex items-center gap-2">
+              <i class="ph ph-credit-card text-indigo-400"></i> Standard Nol Card Fare Matrix
+            </h3>
+            <p class="text-xs text-slate-400 mt-1">Calculated by zone boundaries crossed per continuous single journey.</p>
+          </div>
+          <span class="text-xs font-mono text-brand-cyan bg-sky-500/10 border border-sky-500/20 px-3 py-1 rounded-lg">30-Min Transfer Window Active</span>
         </div>
-        <div class="glass-card p-5 rounded-2xl">
-          <span class="text-xs font-mono text-indigo-300 font-bold">ROUTE E101</span>
-          <h4 class="text-white font-bold mt-1">Ibn Battuta ⇄ Abu Dhabi Central</h4>
-          <p class="text-xs text-slate-400 mt-2">Departs every 20 mins. Standard Tariff: AED 25 (Silver Nol). ~95 mins duration.</p>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs text-slate-300 border-collapse">
+            <thead>
+              <tr class="border-b border-slate-800 text-[11px] font-mono text-slate-400 uppercase">
+                <th class="py-3 px-4">Journey Scope</th>
+                <th class="py-3 px-4">Silver Nol Card</th>
+                <th class="py-3 px-4">Red Ticket (Paper)</th>
+                <th class="py-3 px-4">Gold Class Card</th>
+                <th class="py-3 px-4">Concessions (Students / Seniors)</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800/60 font-mono">
+              <tr class="hover:bg-slate-800/30 transition-colors">
+                <td class="py-3.5 px-4 font-sans font-bold text-white">Tier 1: Within 1 Zone (or &le; 3 km)</td>
+                <td class="py-3.5 px-4 text-brand-cyan font-bold">AED 3.00</td>
+                <td class="py-3.5 px-4 text-slate-300">AED 4.00</td>
+                <td class="py-3.5 px-4 text-amber-400 font-bold">AED 6.00</td>
+                <td class="py-3.5 px-4 text-emerald-400">50% Off / Senior Citizens Free</td>
+              </tr>
+              <tr class="hover:bg-slate-800/30 transition-colors">
+                <td class="py-3.5 px-4 font-sans font-bold text-white">Tier 2: 2 Adjacent Zones</td>
+                <td class="py-3.5 px-4 text-brand-cyan font-bold">AED 5.00</td>
+                <td class="py-3.5 px-4 text-slate-300">AED 6.00</td>
+                <td class="py-3.5 px-4 text-amber-400 font-bold">AED 10.00</td>
+                <td class="py-3.5 px-4 text-emerald-400">50% Off / Senior Citizens Free</td>
+              </tr>
+              <tr class="hover:bg-slate-800/30 transition-colors">
+                <td class="py-3.5 px-4 font-sans font-bold text-white">Tier 3: 3 or More Zones</td>
+                <td class="py-3.5 px-4 text-brand-cyan font-bold">AED 7.50</td>
+                <td class="py-3.5 px-4 text-slate-300">AED 8.50</td>
+                <td class="py-3.5 px-4 text-amber-400 font-bold">AED 15.00</td>
+                <td class="py-3.5 px-4 text-emerald-400">50% Off / Senior Citizens Free</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
+        
+        <div class="text-[11px] text-slate-400 bg-slate-900/60 p-3 rounded-xl border border-slate-800 space-y-1">
+          <p><strong>Transfer Rule:</strong> Switching between Metro, Tram, and Feeder Buses within 30 minutes counts as a single journey (up to 3 transfers total).</p>
+          <p><strong>Minimum Balance:</strong> A minimum balance of AED 7.50 is required on standard Silver Nol cards prior to tapping in.</p>
+        </div>
+      </div>
+
+      <!-- Dubai Metro Lines -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        
+        <!-- Red Line -->
+        <div class="glass-card p-6 rounded-2xl border-l-4 border-l-red-500 space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-mono font-bold text-red-400">DUBAI METRO</span>
+            <span class="px-2 py-0.5 rounded bg-red-500/10 border border-red-500/30 text-red-300 text-[10px] font-mono">Primary Arterial</span>
+          </div>
+          <h3 class="text-lg font-bold text-white">Red Line (Centrepoint ⇄ Expo 2020 / UAE Exchange)</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Spanning along the Sheikh Zayed Road (E11) corridor, connecting Dubai International Airport (DXB Terminals 1 & 3), Downtown Dubai, DIFC, Dubai Marina, and Expo City.
+          </p>
+          <div class="space-y-2 text-xs font-mono bg-slate-900/70 p-3.5 rounded-xl border border-slate-800 text-slate-300">
+            <div class="flex justify-between"><span>Key Interchanges:</span> <strong class="text-white">Union & BurJuman (Green Line)</strong></div>
+            <div class="flex justify-between"><span>Tram Interchanges:</span> <strong class="text-white">Sobha Realty & DMCC</strong></div>
+            <div class="flex justify-between"><span>Peak Frequency:</span> <strong class="text-brand-cyan">Every 2.5 – 3.5 minutes</strong></div>
+          </div>
+        </div>
+
+        <!-- Green Line -->
+        <div class="glass-card p-6 rounded-2xl border-l-4 border-l-emerald-500 space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-mono font-bold text-emerald-400">DUBAI METRO</span>
+            <span class="px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-[10px] font-mono">Historic & Cultural</span>
+          </div>
+          <h3 class="text-lg font-bold text-white">Green Line (Etisalat by e& ⇄ Creek)</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Servicing traditional trade sectors, governmental departments, and heritage districts across Deira, Bur Dubai, Al Ras, Gold Souk, and Healthcare City through Al Jaddaf.
+          </p>
+          <div class="space-y-2 text-xs font-mono bg-slate-900/70 p-3.5 rounded-xl border border-slate-800 text-slate-300">
+            <div class="flex justify-between"><span>Key Interchanges:</span> <strong class="text-white">Union & BurJuman (Red Line)</strong></div>
+            <div class="flex justify-between"><span>Bus Hub Links:</span> <strong class="text-white">Al Ghubaiba Intercity Bus Terminal</strong></div>
+            <div class="flex justify-between"><span>Off-Peak Frequency:</span> <strong class="text-brand-cyan">Every 5 – 7 minutes</strong></div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Weekly Operating Schedule -->
+      <div class="glass-card rounded-2xl p-6 sm:p-7 space-y-4">
+        <h3 class="text-base font-bold text-white flex items-center gap-2">
+          <i class="ph ph-clock text-indigo-400"></i> Standard Dubai Metro Network Hours
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-4 gap-3 text-xs font-mono text-center">
+          <div class="bg-slate-900/80 p-3.5 rounded-xl border border-slate-800">
+            <span class="text-[10px] text-slate-400 block mb-1">Monday – Thursday</span>
+            <span class="text-sm font-bold text-white block">05:00 AM – 12:00 AM</span>
+            <span class="text-[10px] text-slate-500">Midnight Close</span>
+          </div>
+          <div class="bg-slate-900/80 p-3.5 rounded-xl border border-slate-800">
+            <span class="text-[10px] text-slate-400 block mb-1">Friday (Weekend Start)</span>
+            <span class="text-sm font-bold text-white block">05:00 AM – 01:00 AM</span>
+            <span class="text-[10px] text-brand-cyan">Extended Late Night</span>
+          </div>
+          <div class="bg-slate-900/80 p-3.5 rounded-xl border border-slate-800">
+            <span class="text-[10px] text-slate-400 block mb-1">Saturday</span>
+            <span class="text-sm font-bold text-white block">05:00 AM – 12:00 AM</span>
+            <span class="text-[10px] text-slate-500">Midnight Close</span>
+          </div>
+          <div class="bg-slate-900/80 p-3.5 rounded-xl border border-slate-800">
+            <span class="text-[10px] text-slate-400 block mb-1">Sunday</span>
+            <span class="text-sm font-bold text-amber-400 block">08:00 AM – 12:00 AM</span>
+            <span class="text-[10px] text-slate-500">Later Morning Opening</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Major RTA Intercity Express Bus Routes -->
+      <div class="space-y-4">
+        <div class="flex items-center justify-between">
+          <h3 class="text-lg font-bold text-white flex items-center gap-2">
+            <i class="ph ph-bus text-indigo-400"></i> Key Intercity Express Bus Corridors
+          </h3>
+          <span class="text-xs font-mono text-slate-400">Direct Interstate Connections</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          
+          <!-- E100 -->
+          <div class="glass-card p-5 rounded-2xl border-t-2 border-t-indigo-400 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono font-bold text-indigo-300">ROUTE E100</span>
+              <span class="text-xs font-mono font-bold text-white">AED 25 (Nol)</span>
+            </div>
+            <h4 class="text-base font-bold text-white">Al Ghubaiba ⇄ Abu Dhabi Central</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Express air-conditioned coach connecting historic Dubai with the capital via Sheikh Zayed Road (E11). Departures every 15 minutes.
+            </p>
+            <div class="text-[11px] font-mono text-slate-300 pt-2 border-t border-slate-800">
+              Duration: <strong class="text-white">~120 Mins</strong> • Boarding: Al Ghubaiba Bus Station
+            </div>
+          </div>
+
+          <!-- E101 -->
+          <div class="glass-card p-5 rounded-2xl border-t-2 border-t-indigo-400 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono font-bold text-indigo-300">ROUTE E101</span>
+              <span class="text-xs font-mono font-bold text-white">AED 25 (Nol)</span>
+            </div>
+            <h4 class="text-base font-bold text-white">Ibn Battuta ⇄ Abu Dhabi Central</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Fastest bus route to Abu Dhabi, originating at the southern metro terminus (Ibn Battuta). Departures every 20 minutes.
+            </p>
+            <div class="text-[11px] font-mono text-slate-300 pt-2 border-t border-slate-800">
+              Duration: <strong class="text-white">~95 Mins</strong> • Boarding: Ibn Battuta Metro Station
+            </div>
+          </div>
+
+          <!-- E201 -->
+          <div class="glass-card p-5 rounded-2xl border-t-2 border-t-indigo-400 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono font-bold text-indigo-300">ROUTE E201</span>
+              <span class="text-xs font-mono font-bold text-white">AED 25 (Nol)</span>
+            </div>
+            <h4 class="text-base font-bold text-white">Al Ghubaiba ⇄ Al Ain Central</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Direct inland link connecting central Dubai to the Garden City of Al Ain via Dubai-Al Ain Road (E66). Departures every 30 minutes.
+            </p>
+            <div class="text-[11px] font-mono text-slate-300 pt-2 border-t border-slate-800">
+              Duration: <strong class="text-white">~120 Mins</strong> • Boarding: Al Ghubaiba Bus Station
+            </div>
+          </div>
+
+          <!-- E307 -->
+          <div class="glass-card p-5 rounded-2xl border-t-2 border-t-sky-400 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono font-bold text-sky-300">ROUTE E307 / E307A</span>
+              <span class="text-xs font-mono font-bold text-white">AED 10 (Nol)</span>
+            </div>
+            <h4 class="text-base font-bold text-white">Deira City Centre ⇄ Sharjah Al Jubail</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Crucial inter-emirate commuter link connecting eastern Dubai directly into Sharjah’s central Al Jubail bus terminal.
+            </p>
+            <div class="text-[11px] font-mono text-slate-300 pt-2 border-t border-slate-800">
+              Duration: <strong class="text-white">~45–75 Mins (Traffic Dependent)</strong> • Boarding: Deira / Union
+            </div>
+          </div>
+
+          <!-- E700 -->
+          <div class="glass-card p-5 rounded-2xl border-t-2 border-t-purple-400 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono font-bold text-purple-300">ROUTE E700</span>
+              <span class="text-xs font-mono font-bold text-white">AED 30 (Nol)</span>
+            </div>
+            <h4 class="text-base font-bold text-white">Union Square ⇄ Fujairah Central</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              East-coast mountain highway express linking Deira to Fujairah Choithrams and City Centre via Maleha and Masafi.
+            </p>
+            <div class="text-[11px] font-mono text-slate-300 pt-2 border-t border-slate-800">
+              Duration: <strong class="text-white">~135 Mins</strong> • Boarding: Union Bus Station
+            </div>
+          </div>
+
+          <!-- Intercity Bus Features -->
+          <div class="bg-slate-900/80 p-5 rounded-2xl border border-slate-800 flex flex-col justify-between space-y-2">
+            <div>
+              <span class="text-xs font-mono text-brand-cyan">PASSENGER AMENITIES</span>
+              <h4 class="text-base font-bold text-white mt-1">Intercity Coach Standards</h4>
+              <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                All RTA intercity buses feature contactless Nol card tap gates, climate-controlled cabins, luggage compartments, and free onboard Wi-Fi.
+              </p>
+            </div>
+            <div class="text-[11px] font-mono text-slate-500 pt-2 border-t border-slate-800">
+              No paper cash accepted onboard.
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Future Metro Expansion: Blue Line 2029 Showcase -->
+      <div class="glass-card rounded-2xl p-6 sm:p-8 space-y-6">
+        <div>
+          <span class="text-xs font-mono text-sky-400 uppercase tracking-widest block mb-1">Network Expansion Project</span>
+          <h3 class="text-xl font-bold text-white">Dubai Metro Blue Line (Opening September 2029)</h3>
+          <p class="text-xs text-slate-400 mt-1 max-w-2xl leading-relaxed">
+            The AED 20.5 billion strategic expansion spanning 30 km (15.5 km underground, 14.5 km elevated) and adding 14 stations across key high-density districts.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 text-xs">
+          
+          <div class="bg-slate-900/80 p-5 rounded-xl border border-slate-800 space-y-2">
+            <div class="font-bold text-white flex items-center gap-1.5">
+              <i class="ph ph-git-branch text-brand-cyan text-base"></i> Dual Branch Y-Junction
+            </div>
+            <p class="text-slate-400 leading-relaxed">
+              Branch A runs 21 km from <strong>Creek Interchange (Green Line)</strong> to Academic City. Branch B runs 9 km from <strong>Centrepoint (Red Line)</strong>, meeting at International City 1.
+            </p>
+          </div>
+
+          <div class="bg-slate-900/80 p-5 rounded-xl border border-slate-800 space-y-2">
+            <div class="font-bold text-white flex items-center gap-1.5">
+              <i class="ph ph-buildings text-emerald-400 text-base"></i> Key Connected Communities
+            </div>
+            <p class="text-slate-400 leading-relaxed">
+              Provides direct rail access to <strong>Dubai Creek Harbour</strong> (featuring a landmark 74m tall station), <strong>Dubai Silicon Oasis</strong>, <strong>International City</strong>, and <strong>Academic City</strong>.
+            </p>
+          </div>
+
+          <div class="bg-slate-900/80 p-5 rounded-xl border border-slate-800 space-y-2">
+            <div class="font-bold text-white flex items-center gap-1.5">
+              <i class="ph ph-bridge text-indigo-400 text-base"></i> Creek Crossing Landmark
+            </div>
+            <p class="text-slate-400 leading-relaxed">
+              Features the Dubai Metro’s first bridge crossing directly over Dubai Creek via a 1.3 km architectural viaduct, cutting travel from Creek to Academic City to ~25 minutes.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
       </div>
     </section>
 
