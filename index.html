@@ -110,13 +110,69 @@
 
   <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
 
+    <!-- VIEW: HOME (Overview) -->
+    <section id="view-home" class="page-view space-y-12">
+      <div class="text-center max-w-3xl mx-auto space-y-6 pt-4">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-xs text-slate-400">
+          <span class="w-2 h-2 rounded-full bg-brand-cyan"></span>
+          UAE Multimodal Transit Intelligence Platform
+        </div>
+        <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight gradient-hero-title">
+          The Future of UAE Commute <span class="block">Is Arriving.</span>
+        </h1>
+        <p class="text-slate-400 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
+          Tracking Dubai's eVTOL skyport infrastructure, multimodal RTA bus and metro networks, and the high-speed Etihad Rail national corridors.
+        </p>
+        <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
+          <button onclick="navigate('planner')" class="px-5 py-3 rounded-xl bg-brand-cyan text-brand-dark font-bold text-xs uppercase tracking-wider hover:bg-sky-300 transition-all flex items-center gap-2 shadow-lg shadow-sky-500/20">
+            <i class="ph ph-navigation-arrow text-base"></i> Launch Route Calculator
+          </button>
+          <button onclick="navigate('aerial')" class="px-5 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs uppercase tracking-wider transition-all border border-slate-700 flex items-center gap-2">
+            <i class="ph ph-airplane-takeoff text-base"></i> Explore Vertiports
+          </button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
+        <div onclick="navigate('aerial')" class="glass-card p-6 rounded-2xl transition-all cursor-pointer group hover:-translate-y-1">
+          <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/20 text-brand-cyan flex items-center justify-center text-2xl mb-5 group-hover:scale-110 transition-transform">
+            <i class="ph ph-airplane-tilt"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white group-hover:text-brand-cyan transition-colors mb-2">Aerial Vertiports</h3>
+          <p class="text-xs text-slate-400 leading-relaxed mb-4">
+            Zero-emission eVTOL air taxi hubs (DXB, Palm Jumeirah, Dubai Marina, Downtown) under active deployment.
+          </p>
+        </div>
+
+        <div onclick="navigate('rta')" class="glass-card p-6 rounded-2xl transition-all cursor-pointer group hover:-translate-y-1">
+          <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center text-2xl mb-5 group-hover:scale-110 transition-transform">
+            <i class="ph ph-bus"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white group-hover:text-indigo-400 transition-colors mb-2">RTA Bus & Metro</h3>
+          <p class="text-xs text-slate-400 leading-relaxed mb-4">
+            Independent guides for Metro Red/Green lines and Intercity bus routes (E100, E101, E201, E700).
+          </p>
+        </div>
+
+        <div onclick="navigate('etihad')" class="glass-card p-6 rounded-2xl transition-all cursor-pointer group hover:-translate-y-1">
+          <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center text-2xl mb-5 group-hover:scale-110 transition-transform">
+            <i class="ph ph-train"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white group-hover:text-purple-400 transition-colors mb-2">Etihad Rail Passenger</h3>
+          <p class="text-xs text-slate-400 leading-relaxed mb-4">
+            High-speed 200 km/h passenger rail linking Dubai Central to Abu Dhabi and the northern emirates.
+          </p>
+        </div>
+      </div>
+    </section>
+
     <!-- VIEW: PLANNER -->
-    <section id="view-planner" class="page-view space-y-10">
+    <section id="view-planner" class="page-view hidden space-y-10">
       
       <div class="border-b border-slate-800 pb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
           <div class="text-xs font-mono text-brand-cyan uppercase tracking-widest mb-1">Dubai & UAE Live Network Engine</div>
-          <h1 class="text-3xl sm:text-4xl font-extrabold text-white">Multimodal Route & Fare Estimator</h1>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Multimodal Route & Fare Estimator</h2>
           <p class="text-slate-400 text-sm mt-2 max-w-3xl">
             Compare verified RTA Metro rail runs, RTA Bus corridors, road taxi meters, and upcoming commercial eVTOL vertiport flight corridors.
           </p>
@@ -219,90 +275,194 @@
 
     </section>
 
-    <!-- VIEW: HOME -->
-    <section id="view-home" class="page-view hidden space-y-12">
-      <div class="text-center max-w-3xl mx-auto space-y-6 pt-4">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-xs text-slate-400">
-          <span class="w-2 h-2 rounded-full bg-brand-cyan"></span>
-          UAE Multimodal Transit Intelligence Platform
-        </div>
-        <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight gradient-hero-title">
-          The Future of UAE Commute <span class="block">Is Arriving.</span>
-        </h1>
-        <p class="text-slate-400 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
-          Tracking Dubai's eVTOL skyport infrastructure, multimodal RTA bus and metro networks, and the high-speed Etihad Rail national corridors.
-        </p>
-        <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
-          <button onclick="navigate('planner')" class="px-5 py-3 rounded-xl bg-brand-cyan text-brand-dark font-bold text-xs uppercase tracking-wider hover:bg-sky-300 transition-all flex items-center gap-2 shadow-lg shadow-sky-500/20">
-            <i class="ph ph-navigation-arrow text-base"></i> Launch Route Calculator
-          </button>
-          <button onclick="navigate('aerial')" class="px-5 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs uppercase tracking-wider transition-all border border-slate-700 flex items-center gap-2">
-            <i class="ph ph-airplane-takeoff text-base"></i> Explore Vertiports
-          </button>
-        </div>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
-        <div onclick="navigate('aerial')" class="glass-card p-6 rounded-2xl transition-all cursor-pointer group hover:-translate-y-1">
-          <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/20 text-brand-cyan flex items-center justify-center text-2xl mb-5 group-hover:scale-110 transition-transform">
-            <i class="ph ph-airplane-tilt"></i>
-          </div>
-          <h3 class="text-lg font-bold text-white group-hover:text-brand-cyan transition-colors mb-2">Aerial Vertiports</h3>
-          <p class="text-xs text-slate-400 leading-relaxed mb-4">
-            Zero-emission eVTOL air taxi hubs (DXB, Palm Jumeirah, Dubai Marina, Downtown) under development.
-          </p>
-        </div>
-
-        <div onclick="navigate('rta')" class="glass-card p-6 rounded-2xl transition-all cursor-pointer group hover:-translate-y-1">
-          <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center text-2xl mb-5 group-hover:scale-110 transition-transform">
-            <i class="ph ph-bus"></i>
-          </div>
-          <h3 class="text-lg font-bold text-white group-hover:text-indigo-400 transition-colors mb-2">RTA Bus & Metro</h3>
-          <p class="text-xs text-slate-400 leading-relaxed mb-4">
-            Independent guides for Metro Red/Green lines and Intercity bus routes (E100, E101, E201, E700).
-          </p>
-        </div>
-
-        <div onclick="navigate('etihad')" class="glass-card p-6 rounded-2xl transition-all cursor-pointer group hover:-translate-y-1">
-          <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center text-2xl mb-5 group-hover:scale-110 transition-transform">
-            <i class="ph ph-train"></i>
-          </div>
-          <h3 class="text-lg font-bold text-white group-hover:text-purple-400 transition-colors mb-2">Etihad Rail Passenger</h3>
-          <p class="text-xs text-slate-400 leading-relaxed mb-4">
-            High-speed 200 km/h passenger rail linking Dubai Central to Abu Dhabi and the northern emirates.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- VIEW: AERIAL -->
+    <!-- VIEW: AERIAL (World-First Advanced Air Mobility Showcase) -->
     <section id="view-aerial" class="page-view hidden space-y-10">
-      <div class="border-b border-slate-800 pb-6">
-        <div class="text-xs font-mono text-brand-cyan uppercase tracking-widest mb-1">AAM Infrastructure</div>
-        <h2 class="text-3xl font-extrabold text-white">Designated Vertiport Network</h2>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-5">
-        <div class="glass-card p-5 rounded-2xl border border-slate-800">
-          <span class="text-xs font-mono text-brand-cyan">HUB #01</span>
-          <h4 class="text-base font-bold text-white mt-1">DXB Airport Terminal 3</h4>
-          <p class="text-xs text-slate-400 mt-2">Elevated skyport direct to airside concourses.</p>
+      
+      <!-- Section Header with World-First Badge -->
+      <div class="border-b border-slate-800 pb-6 flex flex-col lg:flex-row lg:items-end justify-between gap-4">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/10 border border-sky-400/30 text-[11px] font-mono text-brand-cyan mb-3">
+            <span class="w-1.5 h-1.5 rounded-full bg-brand-cyan animate-ping"></span>
+            GLOBAL MILESTONE • WORLD FIRST
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white">The World’s First Commercial Vertiport Network</h2>
+          <p class="text-slate-400 text-sm mt-2 max-w-2xl">
+            Dubai is set to become the first global metropolis operating a fully integrated, zero-emission urban aerial taxi ecosystem—connecting international aviation gates with prime coastal and downtown districts.
+          </p>
         </div>
-        <div class="glass-card p-5 rounded-2xl border border-slate-800">
-          <span class="text-xs font-mono text-brand-cyan">HUB #02</span>
-          <h4 class="text-base font-bold text-white mt-1">Palm Jumeirah (Atlantis)</h4>
-          <p class="text-xs text-slate-400 mt-2">Coastal over-water landing pad adjacent to Atlantis The Royal.</p>
-        </div>
-        <div class="glass-card p-5 rounded-2xl border border-slate-800">
-          <span class="text-xs font-mono text-brand-cyan">HUB #03</span>
-          <h4 class="text-base font-bold text-white mt-1">Dubai Marina (AUD)</h4>
-          <p class="text-xs text-slate-400 mt-2">Direct skybridge connection to Dubai Tram and Sobha Realty Metro Station.</p>
-        </div>
-        <div class="glass-card p-5 rounded-2xl border border-slate-800">
-          <span class="text-xs font-mono text-brand-cyan">HUB #04</span>
-          <h4 class="text-base font-bold text-white mt-1">Downtown Burj Khalifa</h4>
-          <p class="text-xs text-slate-400 mt-2">Commercial corridor serving DIFC executives and Dubai Mall visitors.</p>
+        <div class="flex items-center gap-2 text-xs font-mono text-slate-400 bg-slate-900/80 p-3 rounded-xl border border-slate-800">
+          <div><span class="text-slate-500 block text-[10px]">ALLIANCE</span> RTA × Skyports × Joby</div>
         </div>
       </div>
+
+      <!-- Hero Aircraft & Ecosystem Highlight -->
+      <div class="glass-card rounded-2xl p-6 sm:p-8 border border-sky-500/20 bg-gradient-to-r from-slate-900/90 via-sky-950/20 to-slate-900/90 space-y-6">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
+          
+          <div class="lg:col-span-2 space-y-3">
+            <div class="text-xs font-mono text-brand-cyan uppercase tracking-wider">Certified eVTOL Architecture</div>
+            <h3 class="text-2xl font-bold text-white">Joby S4 Commercial Electric Aircraft</h3>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Equipped with six tilting electric propellers, this aircraft takes off vertically like a helicopter, transitions to forward winged flight like an airplane, and flies silently above coastal corridors without generating direct carbon emissions.
+            </p>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
+              <div class="bg-slate-950/70 p-3 rounded-xl border border-slate-800/80">
+                <span class="text-[10px] text-slate-400 uppercase font-mono block">Top Speed</span>
+                <span class="text-lg font-bold text-white font-mono">320 km/h</span>
+              </div>
+              <div class="bg-slate-950/70 p-3 rounded-xl border border-slate-800/80">
+                <span class="text-[10px] text-slate-400 uppercase font-mono block">Range</span>
+                <span class="text-lg font-bold text-white font-mono">160+ km</span>
+              </div>
+              <div class="bg-slate-950/70 p-3 rounded-xl border border-slate-800/80">
+                <span class="text-[10px] text-slate-400 uppercase font-mono block">Capacity</span>
+                <span class="text-lg font-bold text-white font-mono">4 Pax + Pilot</span>
+              </div>
+              <div class="bg-slate-950/70 p-3 rounded-xl border border-slate-800/80">
+                <span class="text-[10px] text-slate-400 uppercase font-mono block">Acoustics</span>
+                <span class="text-lg font-bold text-brand-success font-mono">&lt; 45 dBA</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fast Highlights Box -->
+          <div class="bg-slate-900/80 p-5 rounded-xl border border-slate-800 space-y-3 text-xs">
+            <div class="font-bold text-white flex items-center gap-1.5 text-xs">
+              <i class="ph ph-shield-check text-brand-cyan text-base"></i> Operational Standards
+            </div>
+            <div class="space-y-2 text-slate-300">
+              <div class="flex justify-between border-b border-slate-800 pb-1.5">
+                <span>Infrastructure:</span> <strong class="text-white">Skyports Infrastructure</strong>
+              </div>
+              <div class="flex justify-between border-b border-slate-800 pb-1.5">
+                <span>Operator:</span> <strong class="text-white">Joby Aviation</strong>
+              </div>
+              <div class="flex justify-between border-b border-slate-800 pb-1.5">
+                <span>Regulator:</span> <strong class="text-white">UAE GCAA & RTA</strong>
+              </div>
+              <div class="flex justify-between">
+                <span>Noise Impact:</span> <strong class="text-emerald-400">Silent at Cruise</strong>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- The 4 Vertiport Hub Cards -->
+      <div>
+        <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+          <i class="ph ph-buildings text-brand-cyan"></i> The 4 Designated Vertiport Gateways
+        </h3>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+          
+          <!-- Hub 1: DXB -->
+          <div class="glass-card p-5 rounded-2xl border border-slate-800 hover:border-sky-500/40 transition-all flex flex-col justify-between group">
+            <div>
+              <div class="flex items-center justify-between text-xs font-mono text-brand-cyan mb-2">
+                <span>HUB #01</span>
+                <span class="px-2 py-0.5 rounded bg-sky-500/10 border border-sky-500/20 text-[10px]">Airport Gateway</span>
+              </div>
+              <h4 class="text-base font-bold text-white group-hover:text-brand-cyan transition-colors">DXB Airport Terminal 3</h4>
+              <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                Elevated multilevel terminal directly adjacent to airside concourses. Clears inbound international arrivals to Palm Jumeirah in under 12 minutes.
+              </p>
+            </div>
+            <div class="pt-4 mt-4 border-t border-slate-800/80 text-[11px] font-mono text-slate-400 flex justify-between">
+              <span>Status:</span> <strong class="text-brand-cyan">Under Construction</strong>
+            </div>
+          </div>
+
+          <!-- Hub 2: Palm Jumeirah -->
+          <div class="glass-card p-5 rounded-2xl border border-slate-800 hover:border-sky-500/40 transition-all flex flex-col justify-between group">
+            <div>
+              <div class="flex items-center justify-between text-xs font-mono text-brand-cyan mb-2">
+                <span>HUB #02</span>
+                <span class="px-2 py-0.5 rounded bg-sky-500/10 border border-sky-500/20 text-[10px]">Luxury Coastal</span>
+              </div>
+              <h4 class="text-base font-bold text-white group-hover:text-brand-cyan transition-colors">Palm Jumeirah (Atlantis)</h4>
+              <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                Over-water departure pad positioned between Atlantis The Palm and Atlantis The Royal, utilizing water approach paths to ensure zero residential noise.
+              </p>
+            </div>
+            <div class="pt-4 mt-4 border-t border-slate-800/80 text-[11px] font-mono text-slate-400 flex justify-between">
+              <span>Status:</span> <strong class="text-brand-cyan">Site Designated</strong>
+            </div>
+          </div>
+
+          <!-- Hub 3: Dubai Marina -->
+          <div class="glass-card p-5 rounded-2xl border border-slate-800 hover:border-sky-500/40 transition-all flex flex-col justify-between group">
+            <div>
+              <div class="flex items-center justify-between text-xs font-mono text-brand-cyan mb-2">
+                <span>HUB #03</span>
+                <span class="px-2 py-0.5 rounded bg-sky-500/10 border border-sky-500/20 text-[10px]">Multimodal Interchange</span>
+              </div>
+              <h4 class="text-base font-bold text-white group-hover:text-brand-cyan transition-colors">Dubai Marina (AUD)</h4>
+              <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                Directly connected to Dubai Tram and Sobha Realty Metro Station, integrating high-density urban residential hubs with regional flight routes.
+              </p>
+            </div>
+            <div class="pt-4 mt-4 border-t border-slate-800/80 text-[11px] font-mono text-slate-400 flex justify-between">
+              <span>Status:</span> <strong class="text-brand-cyan">Terminal Planning</strong>
+            </div>
+          </div>
+
+          <!-- Hub 4: Downtown -->
+          <div class="glass-card p-5 rounded-2xl border border-slate-800 hover:border-sky-500/40 transition-all flex flex-col justify-between group">
+            <div>
+              <div class="flex items-center justify-between text-xs font-mono text-brand-cyan mb-2">
+                <span>HUB #04</span>
+                <span class="px-2 py-0.5 rounded bg-sky-500/10 border border-sky-500/20 text-[10px]">Financial Epicenter</span>
+              </div>
+              <h4 class="text-base font-bold text-white group-hover:text-brand-cyan transition-colors">Downtown Burj Khalifa</h4>
+              <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                Rooftop pad serving DIFC executive shuttles, Dubai Mall, and Business Bay—linking Downtown to DXB in roughly 6 minutes.
+              </p>
+            </div>
+            <div class="pt-4 mt-4 border-t border-slate-800/80 text-[11px] font-mono text-slate-400 flex justify-between">
+              <span>Status:</span> <strong class="text-brand-cyan">Air Corridor Clearance</strong>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Key Corridors Flight Comparison Strip -->
+      <div class="glass-card rounded-2xl p-6 border border-slate-800">
+        <h3 class="text-sm font-bold text-white uppercase tracking-wider font-mono mb-4 flex items-center gap-2">
+          <i class="ph ph-lightning text-brand-cyan"></i> Target Flight Corridors vs Road Commute
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+          <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800">
+            <span class="text-xs text-slate-400 block mb-1">DXB Airport ⇄ Palm Jumeirah</span>
+            <span class="text-2xl font-bold text-brand-cyan font-mono">10 - 12 Mins</span>
+            <span class="text-[11px] text-rose-400 block mt-1">vs 45 - 60 mins on E11 Road</span>
+          </div>
+          <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800">
+            <span class="text-xs text-slate-400 block mb-1">Downtown ⇄ DXB Airport</span>
+            <span class="text-2xl font-bold text-brand-cyan font-mono">6 Mins</span>
+            <span class="text-[11px] text-rose-400 block mt-1">vs 25 - 35 mins on Road</span>
+          </div>
+          <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800">
+            <span class="text-xs text-slate-400 block mb-1">Dubai Marina ⇄ Downtown</span>
+            <span class="text-2xl font-bold text-brand-cyan font-mono">8 Mins</span>
+            <span class="text-[11px] text-rose-400 block mt-1">vs 35 - 50 mins in Peak Traffic</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Launch Dispatch CTA Banner -->
+      <div class="p-6 rounded-2xl bg-gradient-to-r from-sky-950/40 to-slate-900 border border-sky-500/30 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div>
+          <h4 class="text-base font-bold text-white">Be First in Line When Bookings Open</h4>
+          <p class="text-xs text-slate-400 mt-1">We track operational clearance dates, public ticket announcements, and first flight invitations.</p>
+        </div>
+        <button onclick="navigate('alerts')" class="px-5 py-2.5 rounded-xl bg-brand-cyan hover:bg-sky-300 text-brand-dark font-extrabold text-xs uppercase tracking-wider shrink-0 transition-all flex items-center gap-1.5">
+          <i class="ph ph-bell"></i> Get Official Launch Alerts
+        </button>
+      </div>
+
     </section>
 
     <!-- VIEW: RTA -->
@@ -498,7 +658,7 @@
       let railTime = hasEtihad ? (destKey === 'auh' || origKey === 'auh' ? "57 Mins" : "105 Mins") : "--";
       let railFare = hasEtihad ? "AED 45 - 65" : "Intercity Only";
 
-      // 5. eVTOL STATUS (PENDING COMMERCIAL LAUNCH)
+      // 5. eVTOL STATUS
       let evtolHubInfo = (orig.hasVertiport && dest.hasVertiport)
         ? `Designated Hubs: ${orig.vertiportName} ⇄ ${dest.vertiportName}`
         : `Corridor in development for this sector`;
@@ -599,7 +759,6 @@
 
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs text-slate-300">
             
-            <!-- Metro Breakdown -->
             <div class="space-y-3 bg-slate-900/70 p-4 rounded-xl border border-slate-800">
               <div class="font-bold text-red-400 flex items-center gap-1.5">
                 <i class="ph ph-train text-base"></i> RTA Metro Details:
@@ -612,7 +771,6 @@
               </ul>
             </div>
 
-            <!-- Bus Breakdown -->
             <div class="space-y-3 bg-slate-900/70 p-4 rounded-xl border border-slate-800">
               <div class="font-bold text-indigo-400 flex items-center gap-1.5">
                 <i class="ph ph-bus text-base"></i> RTA Bus Details:
@@ -624,7 +782,6 @@
               </ul>
             </div>
 
-            <!-- Aerial Vertiport Status -->
             <div class="space-y-3 bg-slate-900/70 p-4 rounded-xl border border-slate-800">
               <div class="font-bold text-brand-cyan flex items-center gap-1.5">
                 <i class="ph ph-airplane-tilt text-base"></i> Vertiport Readiness Status:
@@ -670,8 +827,8 @@
       });
 
       const crumbs = document.getElementById('breadcrumbs');
-      let title = "TRIP & FARE ENGINE";
-      if (viewId === 'home') title = "OVERVIEW";
+      let title = "OVERVIEW";
+      if (viewId === 'planner') title = "TRIP & FARE ENGINE";
       if (viewId === 'aerial') title = "VERTIPORTS";
       if (viewId === 'rta') title = "RTA METRO & BUS";
       if (viewId === 'etihad') title = "ETIHAD RAIL";
