@@ -445,7 +445,7 @@
     </section>
 
   <!-- ========================================================= -->
-    <!-- VIEW: RTA BUS & METRO (Comprehensive Public Transit Guide) -->
+    <!-- VIEW: RTA BUS, METRO & REGIONAL MOBILITY DIRECTORY       -->
     <!-- ========================================================= -->
     <section id="view-rta" class="page-view hidden space-y-12">
       
@@ -454,25 +454,362 @@
         <div>
           <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-400/30 text-[11px] font-mono text-indigo-400 mb-2">
             <span class="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-ping"></span>
-            DUBAI PUBLIC MOBILITY & TARIFF DIRECTORY
+            UAE REGIONAL TRANSIT & ZONE ATLAS
           </div>
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-white">RTA Metro, Tram & Bus Network</h2>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Public Mobility, Zones & Regional Corridors</h2>
           <p class="text-slate-400 text-sm mt-2 max-w-2xl leading-relaxed">
-            Independent reference guide for Dubai's high-capacity rail lines, standard Nol smart-card zone pricing, operating timetables, and intercity express coaches across the UAE.
+            Independent commuter reference detailing Dubai's 7 official Nol tariff zones, metropolitan metro lines, and inter-emirate transit routes connecting all 7 UAE Emirates.
           </p>
         </div>
         <div class="flex items-center gap-2 bg-slate-900/90 border border-slate-800 p-3 rounded-xl text-xs font-mono text-slate-300">
-          <div><span class="text-slate-500 block text-[10px]">INTEGRATED TARIFF</span> RTA 7-Zone Nol Model</div>
+          <div><span class="text-slate-500 block text-[10px]">COVERAGE</span> 7 Emirates • 7 Nol Zones</div>
         </div>
       </div>
 
-      <!-- Nol Card Fare Matrix Table -->
+      <!-- Quick Nol Fare Matrix Summary -->
       <div class="glass-card rounded-2xl p-6 sm:p-8 space-y-6">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-4">
           <div>
             <h3 class="text-lg font-bold text-white flex items-center gap-2">
-              <i class="ph ph-credit-card text-indigo-400"></i> Standard Nol Card Fare Matrix
+              <i class="ph ph-credit-card text-indigo-400"></i> Standard Nol Card Fare Model
             </h3>
+            <p class="text-xs text-slate-400 mt-1">Fares are deducted based on the number of zone borders crossed in a single continuous journey.</p>
+          </div>
+          <span class="text-xs font-mono text-brand-cyan bg-sky-500/10 border border-sky-500/20 px-3 py-1 rounded-lg">30-Min Transfer Window Active</span>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs text-slate-300 border-collapse">
+            <thead>
+              <tr class="border-b border-slate-800 text-[11px] font-mono text-slate-400 uppercase">
+                <th class="py-3 px-4">Journey Scope</th>
+                <th class="py-3 px-4">Silver Nol Card</th>
+                <th class="py-3 px-4">Red Ticket (Paper)</th>
+                <th class="py-3 px-4">Gold Class Card</th>
+                <th class="py-3 px-4">Concessions (Students / Seniors)</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800/60 font-mono">
+              <tr class="hover:bg-slate-800/30 transition-colors">
+                <td class="py-3.5 px-4 font-sans font-bold text-white">Tier 1: Within 1 Zone (or &le; 3 km)</td>
+                <td class="py-3.5 px-4 text-brand-cyan font-bold">AED 3.00</td>
+                <td class="py-3.5 px-4 text-slate-300">AED 4.00</td>
+                <td class="py-3.5 px-4 text-amber-400 font-bold">AED 6.00</td>
+                <td class="py-3.5 px-4 text-emerald-400">50% Off / Senior Citizens Free</td>
+              </tr>
+              <tr class="hover:bg-slate-800/30 transition-colors">
+                <td class="py-3.5 px-4 font-sans font-bold text-white">Tier 2: 2 Adjacent Zones</td>
+                <td class="py-3.5 px-4 text-brand-cyan font-bold">AED 5.00</td>
+                <td class="py-3.5 px-4 text-slate-300">AED 6.00</td>
+                <td class="py-3.5 px-4 text-amber-400 font-bold">AED 10.00</td>
+                <td class="py-3.5 px-4 text-emerald-400">50% Off / Senior Citizens Free</td>
+              </tr>
+              <tr class="hover:bg-slate-800/30 transition-colors">
+                <td class="py-3.5 px-4 font-sans font-bold text-white">Tier 3: 3 or More Zones</td>
+                <td class="py-3.5 px-4 text-brand-cyan font-bold">AED 7.50</td>
+                <td class="py-3.5 px-4 text-slate-300">AED 8.50</td>
+                <td class="py-3.5 px-4 text-amber-400 font-bold">AED 15.00</td>
+                <td class="py-3.5 px-4 text-emerald-400">50% Off / Senior Citizens Free</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <div class="text-[11px] text-slate-400 bg-slate-900/60 p-3 rounded-xl border border-slate-800 space-y-1">
+          <p><strong>Transfer Rule:</strong> Transfers across Metro, Tram, and RTA Feeder Buses within 30 minutes count as a single trip (up to 3 legs).</p>
+          <p><strong>Minimum Balance:</strong> A minimum credit of AED 7.50 is mandatory on standard Silver cards before entering fare gates.</p>
+        </div>
+      </div>
+
+      <!-- RTA Dubai 7 Nol Zones Detailed Geographic Breakdown -->
+      <div class="space-y-4">
+        <div class="flex items-center justify-between">
+          <h3 class="text-lg font-bold text-white flex items-center gap-2">
+            <i class="ph ph-map-trifold text-indigo-400"></i> Dubai Nol Zone Geographic Directory
+          </h3>
+          <span class="text-xs font-mono text-slate-400">7 Official RTA Fare Zones</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 text-xs">
+          
+          <!-- Zone 1 -->
+          <div class="glass-card p-5 rounded-2xl border-l-4 border-l-emerald-500 space-y-2.5">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono font-bold text-emerald-300">NOL ZONE 1</span>
+              <span class="px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-[10px] font-mono">South Hub</span>
+            </div>
+            <h4 class="text-base font-bold text-white">Jebel Ali & Expo District</h4>
+            <p class="text-slate-400 leading-relaxed">
+              Southern commercial, logistics, and residential corridor bordering Abu Dhabi.
+            </p>
+            <div class="space-y-1 pt-2 border-t border-slate-800 text-slate-300 font-mono text-[11px]">
+              <div><strong>Key Communities:</strong> JAFZA, Expo City Dubai, Dubai South, Al Furjan, Discovery Gardens, JVC, JVT, Dubai Investment Park (DIP).</div>
+              <div class="text-slate-400"><strong>Metro Stations:</strong> Expo 2020, UAE Exchange, Danube, Energy, Ibn Battuta, Discovery Gardens, Al Furjan.</div>
+            </div>
+          </div>
+
+          <!-- Zone 2 -->
+          <div class="glass-card p-5 rounded-2xl border-l-4 border-l-cyan-500 space-y-2.5">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono font-bold text-cyan-300">NOL ZONE 2</span>
+              <span class="px-2 py-0.5 rounded bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-[10px] font-mono">Coastal & Marina</span>
+            </div>
+            <h4 class="text-base font-bold text-white">Marina, Palm & Barsha</h4>
+            <p class="text-slate-400 leading-relaxed">
+              Prime coastal, hospitality, and residential waterfront stretch of southwestern Dubai.
+            </p>
+            <div class="space-y-1 pt-2 border-t border-slate-800 text-slate-300 font-mono text-[11px]">
+              <div><strong>Key Communities:</strong> Dubai Marina, JBR, Palm Jumeirah, Jumeirah Lake Towers (JLT), Al Barsha, Al Sufouh, Dubai Internet City, Media City, Emirates Hills.</div>
+              <div class="text-slate-400"><strong>Metro & Tram:</strong> DMCC, Sobha Realty, Al Khail, Dubai Internet City, Mashreq, Mall of the Emirates, Dubai Tram Network.</div>
+            </div>
+          </div>
+
+          <!-- Zone 3 -->
+          <div class="glass-card p-5 rounded-2xl border-l-4 border-l-blue-500 space-y-2.5">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono font-bold text-blue-300">NOL ZONE 3</span>
+              <span class="px-2 py-0.5 rounded bg-blue-500/10 border border-blue-500/30 text-blue-400 text-[10px] font-mono">Central Core</span>
+            </div>
+            <h4 class="text-base font-bold text-white">Downtown, DIFC & Al Quoz</h4>
+            <p class="text-slate-400 leading-relaxed">
+              Metropolitan financial core, high-density residential towers, and central design districts.
+            </p>
+            <div class="space-y-1 pt-2 border-t border-slate-800 text-slate-300 font-mono text-[11px]">
+              <div><strong>Key Communities:</strong> Downtown Dubai, DIFC, Business Bay, Al Quoz Industrial, Al Safa, Jumeirah 1-3, Al Wasl, Satwa.</div>
+              <div class="text-slate-400"><strong>Metro Stations:</strong> Equiti, Onpassive (Al Safa), Business Bay, Burj Khalifa / Dubai Mall, Financial Centre, Emirates Towers, World Trade Centre.</div>
+            </div>
+          </div>
+
+          <!-- Zone 4 -->
+          <div class="glass-card p-5 rounded-2xl border-l-4 border-l-purple-500 space-y-2.5">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono font-bold text-purple-300">NOL ZONE 4</span>
+              <span class="px-2 py-0.5 rounded bg-purple-500/10 border border-purple-500/30 text-purple-400 text-[10px] font-mono">Inland Suburbs</span>
+            </div>
+            <h4 class="text-base font-bold text-white">Silicon Oasis, Academic City & Dubailand</h4>
+            <p class="text-slate-400 leading-relaxed">
+              Eastern inland suburban communities, university clusters, and technology parks.
+            </p>
+            <div class="space-y-1 pt-2 border-t border-slate-800 text-slate-300 font-mono text-[11px]">
+              <div><strong>Key Communities:</strong> Dubai Silicon Oasis (DSO), Dubai Academic City, International City, Nad Al Sheba, Meydan, Arabian Ranches, Motor City, Dubai Hills Estate.</div>
+              <div class="text-slate-400"><strong>Transit:</strong> RTA Dedicated Feeder Bus Networks (Upcoming Metro Blue Line connection by 2029).</div>
+            </div>
+          </div>
+
+          <!-- Zone 5 -->
+          <div class="glass-card p-5 rounded-2xl border-l-4 border-l-amber-500 space-y-2.5">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono font-bold text-amber-300">NOL ZONE 5</span>
+              <span class="px-2 py-0.5 rounded bg-amber-500/10 border border-amber-500/30 text-amber-400 text-[10px] font-mono">Historic Creek</span>
+            </div>
+            <h4 class="text-base font-bold text-white">Deira, Bur Dubai & DXB Airport</h4>
+            <p class="text-slate-400 leading-relaxed">
+              Historic trade settlements, souks, governmental headquarters, and international airport terminals.
+            </p>
+            <div class="space-y-1 pt-2 border-t border-slate-800 text-slate-300 font-mono text-[11px]">
+              <div><strong>Key Communities:</strong> Bur Dubai, Deira, Karama, Al Mankhool, Al Garhoud, Al Jaddaf, Dubai Creek Harbour, Al Rigga, Al Ras.</div>
+              <div class="text-slate-400"><strong>Metro Stations:</strong> Union, BurJuman, ADCB, Max (Al Jafiliya), Airport Terminal 1 & 3, Deira City Centre, Al Rigga, Al Ghubaiba.</div>
+            </div>
+          </div>
+
+          <!-- Zone 6 & 7 -->
+          <div class="glass-card p-5 rounded-2xl border-l-4 border-l-rose-500 space-y-2.5">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono font-bold text-rose-300">NOL ZONES 6 & 7</span>
+              <span class="px-2 py-0.5 rounded bg-rose-500/10 border border-rose-500/30 text-rose-400 text-[10px] font-mono">Northern & Mountain</span>
+            </div>
+            <h4 class="text-base font-bold text-white">Al Qusais, Muhaisnah & Hatta Enclave</h4>
+            <p class="text-slate-400 leading-relaxed">
+              Northern border districts leading into Sharjah, plus the southeastern Hatta mountain territory.
+            </p>
+            <div class="space-y-1 pt-2 border-t border-slate-800 text-slate-300 font-mono text-[11px]">
+              <div><strong>Zone 6 Communities:</strong> Al Qusais, Muhaisnah, Al Twar, Al Nahda (Dubai side), Al Khawaneej, Mirdif, Al Warqa'a.</div>
+              <div><strong>Zone 7 (Mountain):</strong> Hatta Exclave, Hatta Heritage Village, Hatta Dam (Hatta Express Bus H02 / H04).</div>
+              <div class="text-slate-400"><strong>Metro Stations:</strong> Centrepoint, Rashidiya, Etisalat by e&, Al Qusais, Dubai Airport Free Zone (DAFZA).</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Regional UAE Directory: 7 Emirates Transit Guide -->
+      <div class="space-y-4">
+        <div class="flex items-center justify-between">
+          <h3 class="text-lg font-bold text-white flex items-center gap-2">
+            <i class="ph ph-buildings text-indigo-400"></i> UAE Regional Transit Guide (All 7 Emirates)
+          </h3>
+          <span class="text-xs font-mono text-slate-400">Interstate Public Transport Map</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 text-xs">
+          
+          <!-- Abu Dhabi -->
+          <div class="glass-card p-5 rounded-2xl border border-slate-800 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono font-bold text-purple-300">EMIRATE 1</span>
+              <span class="text-xs font-mono text-slate-400">ITC / Hafilat System</span>
+            </div>
+            <h4 class="text-base font-bold text-white">Abu Dhabi (Capital)</h4>
+            <p class="text-slate-400 leading-relaxed">
+              Primary intercity links run via Sheikh Zayed Road (E11) and the upcoming Etihad Rail passenger terminal in MBZ City.
+            </p>
+            <div class="space-y-1.5 pt-2 border-t border-slate-800 text-slate-300 font-mono text-[11px]">
+              <div><strong>Major Corridors:</strong> Abu Dhabi Island, Mussafah, Khalifa City, Yas Island, Al Ain, Al Dhafra.</div>
+              <div><strong>Dubai Express Buses:</strong> 
+                <span class="text-white">Route E100</span> (Al Ghubaiba ⇄ AD Central), 
+                <span class="text-white">Route E101</span> (Ibn Battuta ⇄ AD Central), 
+                <span class="text-white">Route E102</span> (Ibn Battuta ⇄ Mussafah).
+              </div>
+              <div class="text-slate-400"><strong>Local Fare Media:</strong> Hafilat Smart Card (Standard local trips AED 2).</div>
+            </div>
+          </div>
+
+          <!-- Dubai -->
+          <div class="glass-card p-5 rounded-2xl border border-slate-800 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono font-bold text-indigo-300">EMIRATE 2</span>
+              <span class="text-xs font-mono text-slate-400">RTA / Nol System</span>
+            </div>
+            <h4 class="text-base font-bold text-white">Dubai</h4>
+            <p class="text-slate-400 leading-relaxed">
+              Multi-modal urban transit core featuring automated metro lines, street trams, marine abras, electric buses, and upcoming commercial vertiports.
+            </p>
+            <div class="space-y-1.5 pt-2 border-t border-slate-800 text-slate-300 font-mono text-[11px]">
+              <div><strong>Major Corridors:</strong> SZR, Deira, Bur Dubai, Business Bay, Marina, JAFZA, Creek Harbour, Dubai South.</div>
+              <div><strong>Core Transit:</strong> Red & Green Metro Lines, 1,500+ city buses, Dubai Water Taxi, Etihad Rail Al Yalayis station.</div>
+              <div class="text-slate-400"><strong>Local Fare Media:</strong> Unified Nol Card (Silver, Gold, Blue, Red).</div>
+            </div>
+          </div>
+
+          <!-- Sharjah -->
+          <div class="glass-card p-5 rounded-2xl border border-slate-800 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono font-bold text-sky-300">EMIRATE 3</span>
+              <span class="text-xs font-mono text-slate-400">SRTA / Sayer System</span>
+            </div>
+            <h4 class="text-base font-bold text-white">Sharjah</h4>
+            <p class="text-slate-400 leading-relaxed">
+              High-volume interstate commuter artery with extensive coach connections operating out of Al Jubail Bus Station.
+            </p>
+            <div class="space-y-1.5 pt-2 border-t border-slate-800 text-slate-300 font-mono text-[11px]">
+              <div><strong>Major Corridors:</strong> Al Majaz, Al Qasimia, Muwaileh, University City, Al Dhaid, Khorfakkan, Kalba.</div>
+              <div><strong>Dubai Express Buses:</strong> 
+                <span class="text-white">Route E303</span> (Union ⇄ Al Jubail), 
+                <span class="text-white">Route E306</span> (Al Ghubaiba ⇄ Al Jubail), 
+                <span class="text-white">Route E307</span> (Deira City Centre ⇄ Al Jubail).
+              </div>
+              <div class="text-slate-400"><strong>Local Fare Media:</strong> Sayer Smart Card & Nol compatibility on interstate buses.</div>
+            </div>
+          </div>
+
+          <!-- Ajman -->
+          <div class="glass-card p-5 rounded-2xl border border-slate-800 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono font-bold text-teal-300">EMIRATE 4</span>
+              <span class="text-xs font-mono text-slate-400">Ajman Transport / Masaar</span>
+            </div>
+            <h4 class="text-base font-bold text-white">Ajman</h4>
+            <p class="text-slate-400 leading-relaxed">
+              Direct highway coach services linking Al Musalla Bus Station with central Dubai and northern coastal emirates.
+            </p>
+            <div class="space-y-1.5 pt-2 border-t border-slate-800 text-slate-300 font-mono text-[11px]">
+              <div><strong>Major Corridors:</strong> Ajman Corniche, Al Rashidiya, Al Nuaimiya, Jurf Industrial, Masfout enclave.</div>
+              <div><strong>Dubai Express Buses:</strong> 
+                <span class="text-white">Route E400</span> (Union Square ⇄ Ajman Al Musalla, ~AED 12 via Nol),
+                <span class="text-white">Route E411</span> (Etisalat Metro ⇄ Ajman).
+              </div>
+              <div class="text-slate-400"><strong>Local Fare Media:</strong> Masaar Card (Ajman local network).</div>
+            </div>
+          </div>
+
+          <!-- Ras Al Khaimah -->
+          <div class="glass-card p-5 rounded-2xl border border-slate-800 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono font-bold text-amber-300">EMIRATE 5</span>
+              <span class="text-xs font-mono text-slate-400">RAKTA / Saqr Card</span>
+            </div>
+            <h4 class="text-base font-bold text-white">Ras Al Khaimah</h4>
+            <p class="text-slate-400 leading-relaxed">
+              Northern mountain and coastline emirate connected via Mohammed bin Zayed Road (E311) and Emirates Road (E611).
+            </p>
+            <div class="space-y-1.5 pt-2 border-t border-slate-800 text-slate-300 font-mono text-[11px]">
+              <div><strong>Major Corridors:</strong> Al Nakheel, Al Hamra Village, Marjan Island, Jebel Jais.</div>
+              <div><strong>Dubai Express Buses:</strong> RAKTA Intercity Express connects directly from Al Hamra Bus Station to Union Metro Station (AED 25-30).</div>
+              <div class="text-slate-400"><strong>Local Fare Media:</strong> Saqr Card (RAK Transport Authority).</div>
+            </div>
+          </div>
+
+          <!-- Fujairah & Umm Al Quwain -->
+          <div class="glass-card p-5 rounded-2xl border border-slate-800 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono font-bold text-rose-300">EMIRATES 6 & 7</span>
+              <span class="text-xs font-mono text-slate-400">East Coast & North Coast</span>
+            </div>
+            <h4 class="text-base font-bold text-white">Fujairah & Umm Al Quwain</h4>
+            <p class="text-slate-400 leading-relaxed">
+              East coast Gulf of Oman hub (Fujairah) and tranquil northern coastal hub (Umm Al Quwain).
+            </p>
+            <div class="space-y-1.5 pt-2 border-t border-slate-800 text-slate-300 font-mono text-[11px]">
+              <div><strong>Fujairah Transit:</strong> <span class="text-white">Route E700</span> (Union Metro ⇄ Fujairah Central, AED 30 Nol). Future Etihad Rail passenger hub at Al Hilal City.</div>
+              <div><strong>Umm Al Quwain Transit:</strong> Intercity express coaches connecting King Faisal Road / UAQ Bus Stop to Dubai Union Station.</div>
+              <div class="text-slate-400"><strong>Transit Access:</strong> Nol card accepted on RTA-operated intercity bus corridors.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Metro Operating Hours & Blue Line Masterplan -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        
+        <!-- Operating Hours Schedule -->
+        <div class="glass-card rounded-2xl p-6 space-y-4">
+          <h3 class="text-base font-bold text-white flex items-center gap-2">
+            <i class="ph ph-clock text-indigo-400"></i> Standard Dubai Metro Network Hours
+          </h3>
+          <div class="grid grid-cols-2 gap-3 text-xs font-mono text-center">
+            <div class="bg-slate-900/80 p-3.5 rounded-xl border border-slate-800">
+              <span class="text-[10px] text-slate-400 block mb-1">Monday – Thursday</span>
+              <span class="text-sm font-bold text-white block">05:00 AM – 12:00 AM</span>
+              <span class="text-[10px] text-slate-500">Midnight Close</span>
+            </div>
+            <div class="bg-slate-900/80 p-3.5 rounded-xl border border-slate-800">
+              <span class="text-[10px] text-slate-400 block mb-1">Friday (Weekend)</span>
+              <span class="text-sm font-bold text-white block">05:00 AM – 01:00 AM</span>
+              <span class="text-[10px] text-brand-cyan">Extended Late Night</span>
+            </div>
+            <div class="bg-slate-900/80 p-3.5 rounded-xl border border-slate-800">
+              <span class="text-[10px] text-slate-400 block mb-1">Saturday</span>
+              <span class="text-sm font-bold text-white block">05:00 AM – 12:00 AM</span>
+              <span class="text-[10px] text-slate-500">Midnight Close</span>
+            </div>
+            <div class="bg-slate-900/80 p-3.5 rounded-xl border border-slate-800">
+              <span class="text-[10px] text-slate-400 block mb-1">Sunday</span>
+              <span class="text-sm font-bold text-amber-400 block">08:00 AM – 12:00 AM</span>
+              <span class="text-[10px] text-slate-500">Later Morning Opening</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blue Line Expansion 2029 -->
+        <div class="glass-card rounded-2xl p-6 space-y-4">
+          <div>
+            <span class="text-[10px] font-mono text-sky-400 uppercase tracking-widest block mb-1">Future Rail Expansion</span>
+            <h3 class="text-base font-bold text-white">Dubai Metro Blue Line (September 2029)</h3>
+            <p class="text-xs text-slate-400 mt-1 leading-relaxed">
+              AED 20.5B strategic rail line adding 30 km (15.5 km underground, 14.5 km elevated) and 14 new stations.
+            </p>
+          </div>
+          <div class="space-y-2 text-xs font-mono bg-slate-900/80 p-3.5 rounded-xl border border-slate-800 text-slate-300">
+            <div>• <strong>Key Interchanges:</strong> Creek (Green Line) & Centrepoint (Red Line)</div>
+            <div>• <strong>Communities Served:</strong> Dubai Creek Harbour, Silicon Oasis, Academic City, International City 1 & 2</div>
+            <div>• <strong>Landmark Viaduct:</strong> 1.3 km bridge crossing directly across Dubai Creek</div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
             <p class="text-xs text-slate-400 mt-1">Calculated by zone boundaries crossed per continuous single journey.</p>
           </div>
           <span class="text-xs font-mono text-brand-cyan bg-sky-500/10 border border-sky-500/20 px-3 py-1 rounded-lg">30-Min Transfer Window Active</span>
