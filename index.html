@@ -1074,25 +1074,69 @@
     // -------------------------------------------------------------
     // TRANSIT DATABASE
     // -------------------------------------------------------------
-    const locations = {
-      dxb: { name: "DXB Airport (T1/T3)", lat: 25.2532, lng: 55.3657, zone: 5, hasVertiport: true, vertiportName: "DXB Terminal 3 Vertiport", metroStation: "Airport Terminal 3 (Red Line)", busRoute: "Bus 32C / 11A / Airport Express" },
-      dwc: { name: "DWC Al Maktoum Airport", lat: 24.8967, lng: 55.1614, zone: 1, hasVertiport: false, metroStation: "Expo 2020 Station (Requires Bus Transfer)", busRoute: "Bus F55 (Direct from Expo 2020 Metro)" },
-      downtown: { name: "Downtown / Burj Khalifa", lat: 25.1972, lng: 55.2744, zone: 6, hasVertiport: true, vertiportName: "Downtown Burj Vertiport Pad", metroStation: "Burj Khalifa / Dubai Mall (Red Line)", busRoute: "Bus 27, 28, 29 (Dubai Mall Concourse)" },
-      difc: { name: "DIFC Financial Centre", lat: 25.2104, lng: 55.2818, zone: 6, hasVertiport: false, metroStation: "Financial Centre Station (Red Line)", busRoute: "Bus 21, F11" },
-      business_bay: { name: "Business Bay", lat: 25.1852, lng: 55.2677, zone: 6, hasVertiport: false, metroStation: "Business Bay Station (Red Line)", busRoute: "Bus F14, F19A, F41" },
-      deira: { name: "Deira / Al Rigga", lat: 25.2631, lng: 55.3235, zone: 5, hasVertiport: false, metroStation: "Al Rigga / Union Interchange (Red & Green Lines)", busRoute: "Bus C01, C09, 27" },
-      bur_dubai: { name: "Bur Dubai / Al Ghubaiba", lat: 25.2612, lng: 55.2891, zone: 6, hasVertiport: false, metroStation: "Al Ghubaiba Station (Green Line)", busRoute: "Bus C07, 8, 29, 33" },
-      marina: { name: "Dubai Marina / JBR", lat: 25.0805, lng: 55.1403, zone: 2, hasVertiport: true, vertiportName: "Dubai Marina AUD Skyport", metroStation: "Sobha Realty / DMCC (Red Line & Tram)", busRoute: "Bus 8, 84, F55A" },
-      palm: { name: "Palm Jumeirah (Atlantis)", lat: 25.1304, lng: 55.1171, zone: 2, hasVertiport: true, vertiportName: "Palm Jumeirah Vertiport (Atlantis)", metroStation: "Palm Gateway (Monorail Interchange)", busRoute: "Bus 8 to Palm Gateway + Monorail" },
-      jlt: { name: "Jumeirah Lakes Towers (JLT)", lat: 25.0740, lng: 55.1450, zone: 2, hasVertiport: false, metroStation: "DMCC Metro Station (Red Line)", busRoute: "Bus JLT1, JLT2" },
-      barsha: { name: "Al Barsha (Mall of the Emirates)", lat: 25.1181, lng: 55.2006, zone: 2, hasVertiport: false, metroStation: "Mall of the Emirates (Red Line)", busRoute: "Bus 84, 93, F30, F33" },
-      jvc: { name: "Jumeirah Village Circle (JVC)", lat: 25.0560, lng: 55.2090, zone: 2, hasVertiport: false, metroStation: "No direct metro (Feeder Bus J01 required)", busRoute: "Feeder Bus J01 (to Mall of the Emirates)" },
-      silicon: { name: "Dubai Silicon Oasis (DSO)", lat: 25.1246, lng: 55.3786, zone: 3, hasVertiport: false, metroStation: "No direct metro (Bus 320 to Centrepoint)", busRoute: "Bus 320, 365, X25" },
-      sharjah: { name: "Sharjah Border (Sahara / Al Taawun)", lat: 25.2970, lng: 55.3670, zone: 5, isIntercity: true, busLine: "E307 / E307A" },
-      auh: { name: "Abu Dhabi Central Bus Station", lat: 24.4672, lng: 54.3750, isIntercity: true, hasRail: true, busLine: "E100 / E101" },
-      al_ain: { name: "Al Ain Central Station", lat: 24.2190, lng: 55.7600, isIntercity: true, busLine: "E201" },
-      fujairah: { name: "Fujairah Central Station", lat: 25.1288, lng: 56.3265, isIntercity: true, hasRail: true, busLine: "E700" }
-    };
+   const locations = {
+  // --- DEIRA & HISTORIC HUB (NOL ZONE 5) ---
+  "dxb_t1_t3": { name: "DXB Airport (Terminal 1 & 3)", zone: 5, lat: 25.2532, lng: 55.3657, hasMetro: true },
+  "naif": { name: "Naif (Deira Souk)", zone: 5, lat: 25.2736, lng: 55.3051, hasMetro: false },
+  "abu_hail": { name: "Abu Hail / Hor Al Anz", zone: 5, lat: 25.2798, lng: 55.3342, hasMetro: true },
+  "al_muraqqabat": { name: "Al Muraqqabat / Al Rigga", zone: 5, lat: 25.2638, lng: 55.3228, hasMetro: true },
+  "al_ras": { name: "Al Ras (Gold Souk / Heritage)", zone: 5, lat: 25.2687, lng: 55.2974, hasMetro: true },
+  "al_muteena": { name: "Al Muteena (Deira)", zone: 5, lat: 25.2741, lng: 55.3188, hasMetro: false },
+  "al_baraha": { name: "Al Baraha / Corniche Deira", zone: 5, lat: 25.2831, lng: 55.3135, hasMetro: false },
+  "al_sabkha": { name: "Al Sabkha (Bus & Marine Station)", zone: 5, lat: 25.2672, lng: 55.3021, hasMetro: false },
+  "al_garhoud": { name: "Al Garhoud / GGICO", zone: 5, lat: 25.2443, lng: 55.3429, hasMetro: true },
+
+  // --- BUR DUBAI & CREEK HUB (NOL ZONE 5) ---
+  "al_karama": { name: "Al Karama", zone: 5, lat: 25.2458, lng: 55.3032, hasMetro: true },
+  "bur_dubai": { name: "Bur Dubai / Al Fahidi", zone: 5, lat: 25.2575, lng: 55.2983, hasMetro: true },
+  "al_ghubaiba": { name: "Al Ghubaiba (Bus & Marine Terminal)", zone: 5, lat: 25.2606, lng: 55.2891, hasMetro: true },
+  "al_mankhool": { name: "Al Mankhool", zone: 5, lat: 25.2505, lng: 55.2931, hasMetro: false },
+  "oud_metha": { name: "Oud Metha", zone: 5, lat: 25.2341, lng: 55.3142, hasMetro: true },
+  "al_jaddaf": { name: "Al Jaddaf / Culture Village", zone: 5, lat: 25.2185, lng: 55.3378, hasMetro: true },
+  "dubai_creek_harbour": { name: "Dubai Creek Harbour", zone: 5, lat: 25.2048, lng: 55.3524, hasMetro: false },
+
+  // --- NORTHERN RESIDENTIAL & SHARJAH BORDER (NOL ZONE 6) ---
+  "muhaisnah": { name: "Muhaisnah (1, 2, 3 & 4)", zone: 6, lat: 25.2755, lng: 55.4055, hasMetro: false },
+  "al_qusais": { name: "Al Qusais Industrial & Residential", zone: 6, lat: 25.2862, lng: 55.3811, hasMetro: true },
+  "al_twar": { name: "Al Twar", zone: 6, lat: 25.2682, lng: 55.3722, hasMetro: true },
+  "al_nahda_dubai": { name: "Al Nahda (Dubai side)", zone: 6, lat: 25.2952, lng: 55.3672, hasMetro: true },
+  "mirdif": { name: "Mirdif / City Centre", zone: 6, lat: 25.2198, lng: 55.4214, hasMetro: false },
+  "al_warqa": { name: "Al Warqa'a", zone: 6, lat: 25.1884, lng: 55.4201, hasMetro: false },
+  "al_khawaneej": { name: "Al Khawaneej", zone: 6, lat: 25.2631, lng: 55.4883, hasMetro: false },
+
+  // --- CENTRAL BUSINESS & DOWNTOWN (NOL ZONE 3) ---
+  "downtown": { name: "Downtown Dubai (Burj Khalifa / Mall)", zone: 3, lat: 25.1972, lng: 55.2744, hasMetro: true },
+  "business_bay": { name: "Business Bay", zone: 3, lat: 25.1852, lng: 55.2662, hasMetro: true },
+  "difc": { name: "DIFC (Financial Centre)", zone: 3, lat: 25.2114, lng: 55.2818, hasMetro: true },
+  "satwa": { name: "Al Satwa", zone: 3, lat: 25.2232, lng: 55.2731, hasMetro: false },
+  "al_wasl": { name: "Al Wasl / City Walk", zone: 3, lat: 25.2064, lng: 55.2612, hasMetro: false },
+  "jumeirah_1": { name: "Jumeirah (1, 2 & 3)", zone: 3, lat: 25.2021, lng: 55.2415, hasMetro: false },
+  "al_quoz": { name: "Al Quoz (Industrial & Creative)", zone: 3, lat: 25.1432, lng: 55.2421, hasMetro: true },
+
+  // --- SUBURBS & EASTERN DISTRICTS (NOL ZONE 4) ---
+  "dso": { name: "Dubai Silicon Oasis (DSO)", zone: 4, lat: 25.1245, lng: 55.3789, hasMetro: false },
+  "academic_city": { name: "Dubai Academic City", zone: 4, lat: 25.1118, lng: 55.4055, hasMetro: false },
+  "international_city": { name: "International City", zone: 4, lat: 25.1611, lng: 55.4124, hasMetro: false },
+  "dubai_hills": { name: "Dubai Hills Estate", zone: 4, lat: 25.1189, lng: 55.2531, hasMetro: false },
+  "arabian_ranches": { name: "Arabian Ranches", zone: 4, lat: 25.0561, lng: 55.2635, hasMetro: false },
+  "motor_city": { name: "Motor City / Sports City", zone: 4, lat: 25.0458, lng: 55.2389, hasMetro: false },
+
+  // --- SOUTHWEST COAST & MARINA (NOL ZONE 2) ---
+  "dubai_marina": { name: "Dubai Marina", zone: 2, lat: 25.0805, lng: 55.1403, hasMetro: true },
+  "jbr": { name: "Jumeirah Beach Residence (JBR)", zone: 2, lat: 25.0762, lng: 55.1321, hasMetro: true },
+  "jlt": { name: "Jumeirah Lake Towers (JLT / DMCC)", zone: 2, lat: 25.0701, lng: 55.1488, hasMetro: true },
+  "palm_jumeirah": { name: "Palm Jumeirah (Atlantis)", zone: 2, lat: 25.1304, lng: 55.1171, hasMetro: false },
+  "al_barsha": { name: "Al Barsha (Mall of the Emirates)", zone: 2, lat: 25.1181, lng: 55.2006, hasMetro: true },
+  "internet_city": { name: "Dubai Internet City / Media City", zone: 2, lat: 25.0971, lng: 55.1648, hasMetro: true },
+
+  // --- SOUTHERN CORRIDOR & EXPO (NOL ZONE 1) ---
+  "jafza": { name: "JAFZA / Jebel Ali Free Zone", zone: 1, lat: 24.9921, lng: 55.0811, hasMetro: true },
+  "expo_city": { name: "Expo City Dubai", zone: 1, lat: 24.9602, lng: 55.1504, hasMetro: true },
+  "dubai_south": { name: "Dubai South / DWC Airport", zone: 1, lat: 24.8963, lng: 55.1611, hasMetro: false },
+  "dip": { name: "Dubai Investment Park (DIP)", zone: 1, lat: 24.9882, lng: 55.1789, hasMetro: true },
+  "al_furjan": { name: "Al Furjan / Discovery Gardens", zone: 1, lat: 25.0312, lng: 55.1421, hasMetro: true },
+  "jvc": { name: "Jumeirah Village Circle (JVC)", zone: 1, lat: 25.0611, lng: 55.2091, hasMetro: false }
+};
 
     function getDistanceKm(loc1, loc2) {
       const R = 6371;
