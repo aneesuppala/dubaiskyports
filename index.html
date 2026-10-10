@@ -84,8 +84,8 @@
 
       <!-- Navigation Links -->
       <nav class="hidden md:flex items-center gap-2 text-xs font-medium text-slate-300">
-        <button onclick="switchTab('home')" id="tab-home" class="nav-btn px-4 py-2 rounded-lg text-white font-semibold">Home</button>
-        <button onclick="switchTab('estimator')" id="tab-estimator" class="nav-btn px-4 py-2 rounded-lg bg-[#0e172e] text-white border border-[#1e2d52] flex items-center gap-1.5 font-semibold">
+        <button onclick="switchTab('home')" id="tab-home" class="nav-btn px-4 py-2 rounded-lg bg-[#0e172e] text-white border border-[#1e2d52] font-semibold">Home</button>
+        <button onclick="switchTab('estimator')" id="tab-estimator" class="nav-btn px-4 py-2 rounded-lg hover:text-white transition flex items-center gap-1.5 font-medium">
           <i class="ph ph-navigation-arrow text-[#00e5ff]"></i> Trip & Fare Engine
         </button>
         <button onclick="switchTab('vertiports')" id="tab-vertiports" class="nav-btn px-4 py-2 rounded-lg hover:text-white transition flex items-center gap-1.5">
@@ -114,9 +114,9 @@
   <main class="flex-1 max-w-[1400px] w-full mx-auto px-6 py-8 space-y-12">
 
     <!-- ========================================================= -->
-    <!-- VIEW: HOME LANDING PAGE                                   -->
+    <!-- VIEW: HOME LANDING PAGE (OPENS FIRST BY DEFAULT)          -->
     <!-- ========================================================= -->
-    <section id="view-home" class="page-view hidden space-y-12">
+    <section id="view-home" class="page-view space-y-12">
       <!-- Hero -->
       <div class="relative rounded-3xl border border-[#192442] bg-gradient-to-b from-[#0a1126] to-[#060a12] p-8 sm:p-14 overflow-hidden">
         <div class="max-w-3xl space-y-6">
@@ -168,7 +168,7 @@
     <!-- ========================================================= -->
     <!-- VIEW: TRIP & FARE ENGINE                                  -->
     <!-- ========================================================= -->
-    <section id="view-estimator" class="page-view space-y-8">
+    <section id="view-estimator" class="page-view hidden space-y-8">
       
       <!-- Breadcrumb -->
       <div class="text-[11px] font-mono text-slate-500 uppercase tracking-widest flex items-center gap-2">
@@ -800,8 +800,9 @@
       runEstimator();
     }
 
-    // Run estimator on initialization
+    // Default initialization: Home tab opens first
     window.onload = function() {
+      switchTab('home');
       runEstimator();
     };
   </script>
