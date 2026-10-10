@@ -3,808 +3,1557 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dubai Skyports | Independent Urban Transit & Regional Mobility Directory</title>
-  <meta name="description" content="Independent multimodal transit reference detailing Dubai RTA Nol tariff zones, metropolitan metro lines, high-speed rail, and advanced vertiport developments.">
-
-  <!-- Tailwind CSS CDN -->
+  <title>Dubai Skyports — Independent UAE Transit & Mobility Guide</title>
+  
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Phosphor Icons CDN -->
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
-  <!-- Google Fonts: Inter & JetBrains Mono -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <script>
     tailwind.config = {
+      darkMode: 'class',
       theme: {
         extend: {
-          fontFamily: {
-            sans: ['"Inter"', 'sans-serif'],
-            mono: ['"JetBrains Mono"', 'monospace']
-          },
           colors: {
-            page: '#060a12',
-            navcard: '#0a101f',
-            cardbg: '#0c1326',
-            cardborder: '#192442',
-            brandcyan: '#00e5ff'
+            brand: {
+              dark: '#030712',
+              card: 'rgba(15, 23, 42, 0.72)',
+              border: 'rgba(255, 255, 255, 0.08)',
+              cyan: '#38bdf8',
+              sky: '#0284c7',
+              accent: '#818cf8',
+              purple: '#c084fc',
+              success: '#34d399',
+              amber: '#fbbf24'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+            mono: ['JetBrains Mono', 'Menlo', 'monospace']
           }
         }
       }
-    };
+    }
   </script>
 
   <style>
-    body {
-      background-color: #060a12;
-      color: #cbd5e1;
-      font-family: 'Inter', sans-serif;
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #030712; }
+    ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 9999px; }
+    ::-webkit-scrollbar-thumb:hover { background: #38bdf8; }
+
+    .glow-pulse { animation: pulseGlow 2.5s infinite ease-in-out; }
+    @keyframes pulseGlow {
+      0%, 100% { box-shadow: 0 0 8px #38bdf8; transform: scale(1); }
+      50% { box-shadow: 0 0 16px #38bdf8, 0 0 24px rgba(56, 189, 248, 0.45); transform: scale(1.08); }
     }
-    .custom-select {
-      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%2364748b' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
-      background-position: right 0.75rem center;
-      background-repeat: no-repeat;
-      background-size: 1.25em 1.25em;
-      appearance: none;
+    .glass-card {
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+    }
+    .gradient-hero-title {
+      background: linear-gradient(135deg, #ffffff 30%, #38bdf8 70%, #c084fc 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
   </style>
 </head>
-<body class="min-h-screen flex flex-col antialiased">
+<body class="bg-brand-dark text-slate-100 min-h-screen flex flex-col font-sans selection:bg-brand-cyan selection:text-brand-dark antialiased">
 
-  <!-- TOP STATUS BAR -->
-  <aside aria-label="Network Status" class="bg-[#04070d] border-b border-[#141d33] px-6 py-1.5 text-[11px] font-mono text-slate-400 flex justify-between items-center">
-    <div class="flex items-center gap-2">
-      <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-      <span>UAE MULTIMODAL TRANSIT NETWORK • LIVE DIRECTORY</span>
-    </div>
-    <div class="hidden sm:flex items-center gap-4 text-slate-500">
-      <span>7 NOL ZONES</span>
-      <span>•</span>
-      <span>ETIHAD RAIL PASSENGER CORRIDORS</span>
-    </div>
+  <!-- Top Unambiguous Legal Transparency Banner -->
+  <aside aria-label="Legal Notice" class="bg-slate-900 border-b border-slate-800 text-[11px] text-slate-400 py-1.5 px-4 text-center">
+    <span>Notice: <strong>dubaiskyports.com</strong> is an independent digital information guide. Not affiliated with RTA, Skyports Infrastructure, or Etihad Rail.</span>
   </aside>
 
-  <!-- NAVIGATION BAR -->
-  <header class="border-b border-[#141d33] bg-[#060a12] px-6 py-4 sticky top-0 z-50">
-    <div class="max-w-[1400px] mx-auto flex items-center justify-between">
-      
-      <!-- Logo -->
-      <div class="flex items-center gap-3 cursor-pointer" onclick="switchTab('home')">
-        <div class="w-3.5 h-3.5 rounded-full bg-[#00e5ff] shadow-[0_0_12px_#00e5ff]"></div>
-        <div>
-          <div class="text-white font-extrabold tracking-wider text-sm font-sans flex items-center gap-2">
-            DUBAI SKYPORTS
+  <header class="sticky top-0 z-50 glass-card border-b border-brand-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 sm:h-20 gap-4">
+        
+        <a href="javascript:void(0)" onclick="navigate('home')" class="flex items-center gap-3 group focus:outline-none">
+          <div class="w-3 h-3 rounded-full bg-brand-cyan glow-pulse"></div>
+          <div class="flex flex-col">
+            <span class="text-sm sm:base font-extrabold tracking-widest text-white uppercase group-hover:text-brand-cyan transition-colors">
+              Dubai Skyports
+            </span>
+            <span class="text-[9px] tracking-wider text-slate-400 font-mono">INDEPENDENT TRANSIT GUIDE</span>
           </div>
-          <div class="text-[9px] font-mono tracking-widest text-slate-500 uppercase">
-            Independent Transit Guide
-          </div>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-1">
+          <button onclick="navigate('home')" data-nav="home" class="nav-btn px-3 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:text-white hover:bg-slate-800/60 transition-all">Home</button>
+          <button onclick="navigate('planner')" data-nav="planner" class="nav-btn px-3 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:text-white hover:bg-slate-800/60 transition-all flex items-center gap-1.5"><i class="ph ph-navigation-arrow"></i> Trip & Fare Engine</button>
+          <button onclick="navigate('aerial')" data-nav="aerial" class="nav-btn px-3 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:text-white hover:bg-slate-800/60 transition-all flex items-center gap-1.5"><i class="ph ph-airplane-tilt"></i> Vertiports</button>
+          <button onclick="navigate('rta')" data-nav="rta" class="nav-btn px-3 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:text-white hover:bg-slate-800/60 transition-all flex items-center gap-1.5"><i class="ph ph-bus"></i> RTA Bus & Metro</button>
+          <button onclick="navigate('etihad')" data-nav="etihad" class="nav-btn px-3 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:text-white hover:bg-slate-800/60 transition-all flex items-center gap-1.5"><i class="ph ph-train"></i> Etihad Rail</button>
+        </nav>
+
+        <div class="flex items-center gap-3">
+          <button onclick="navigate('alerts')" class="px-3.5 py-1.5 rounded-lg bg-sky-500/10 border border-sky-400/30 text-brand-cyan hover:bg-sky-500/20 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 transition-all">
+            <span class="w-1.5 h-1.5 rounded-full bg-brand-cyan animate-ping"></span>
+            Route Alerts
+          </button>
+          <button onclick="toggleMobileMenu()" aria-label="Toggle Navigation Menu" class="lg:hidden p-2 text-slate-400 hover:text-white rounded-lg focus:outline-none">
+            <i class="ph ph-list text-2xl"></i>
+          </button>
         </div>
+
       </div>
 
-      <!-- Navigation Links -->
-      <nav class="hidden md:flex items-center gap-2 text-xs font-medium text-slate-300">
-        <button onclick="switchTab('home')" id="tab-home" class="nav-btn px-4 py-2 rounded-lg bg-[#0e172e] text-white border border-[#1e2d52] font-semibold">Home</button>
-        <button onclick="switchTab('estimator')" id="tab-estimator" class="nav-btn px-4 py-2 rounded-lg hover:text-white transition flex items-center gap-1.5 font-medium">
-          <i class="ph ph-navigation-arrow text-[#00e5ff]"></i> Trip & Fare Engine
-        </button>
-        <button onclick="switchTab('vertiports')" id="tab-vertiports" class="nav-btn px-4 py-2 rounded-lg hover:text-white transition flex items-center gap-1.5">
-          <i class="ph ph-airplane"></i> Vertiports
-        </button>
-        <button onclick="switchTab('rta')" id="tab-rta" class="nav-btn px-4 py-2 rounded-lg hover:text-white transition flex items-center gap-1.5">
-          <i class="ph ph-bus"></i> RTA Bus & Metro
-        </button>
-        <button onclick="switchTab('etihad')" id="tab-etihad" class="nav-btn px-4 py-2 rounded-lg hover:text-white transition flex items-center gap-1.5">
-          <i class="ph ph-train"></i> Etihad Rail
-        </button>
-      </nav>
-
-      <!-- Action Button -->
-      <div>
-        <button onclick="openModal()" class="px-4 py-2 rounded-lg bg-[#101b33] border border-[#1e2f57] text-[#00e5ff] text-xs font-mono font-semibold tracking-wider flex items-center gap-2 hover:bg-[#152342] transition">
-          <span class="w-2 h-2 rounded-full bg-[#00e5ff]"></span>
-          ROUTE ALERTS
-        </button>
+      <div id="mobile-menu" class="hidden lg:hidden py-4 border-t border-slate-800/80 flex flex-col gap-2">
+        <button onclick="navigate('home'); toggleMobileMenu()" class="text-left px-3 py-2 text-xs font-medium text-slate-300 hover:bg-slate-800/50 rounded-lg">Home Overview</button>
+        <button onclick="navigate('planner'); toggleMobileMenu()" class="text-left px-3 py-2 text-xs font-medium text-slate-300 hover:bg-slate-800/50 rounded-lg">Trip & Fare Engine</button>
+        <button onclick="navigate('aerial'); toggleMobileMenu()" class="text-left px-3 py-2 text-xs font-medium text-slate-300 hover:bg-slate-800/50 rounded-lg">Aerial Commute & Vertiports</button>
+        <button onclick="navigate('rta'); toggleMobileMenu()" class="text-left px-3 py-2 text-xs font-medium text-slate-300 hover:bg-slate-800/50 rounded-lg">RTA Intercity & Metro</button>
+        <button onclick="navigate('etihad'); toggleMobileMenu()" class="text-left px-3 py-2 text-xs font-medium text-slate-300 hover:bg-slate-800/50 rounded-lg">Etihad Rail Passenger Network</button>
       </div>
 
+      <div class="py-2.5 border-t border-white/5 flex items-center text-[11px] text-slate-400 overflow-x-auto whitespace-nowrap">
+        <div id="breadcrumbs" class="flex items-center gap-1.5 font-mono"></div>
+      </div>
     </div>
   </header>
 
-  <!-- MAIN CONTAINER -->
-  <main class="flex-1 max-w-[1400px] w-full mx-auto px-6 py-8 space-y-12">
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
 
-    <!-- ========================================================= -->
-    <!-- VIEW: HOME LANDING PAGE (OPENS FIRST BY DEFAULT)          -->
-    <!-- ========================================================= -->
+    <!-- VIEW: HOME (Overview) -->
     <section id="view-home" class="page-view space-y-12">
-      <!-- Hero -->
-      <div class="relative rounded-3xl border border-[#192442] bg-gradient-to-b from-[#0a1126] to-[#060a12] p-8 sm:p-14 overflow-hidden">
-        <div class="max-w-3xl space-y-6">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00e5ff]/10 border border-[#00e5ff]/30 text-[11px] font-mono text-[#00e5ff]">
-            <span>INDEPENDENT REGIONAL MOBILITY REPOSITORY</span>
-          </div>
-          <h1 class="text-4xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
-            Integrated Mobility for the Modern Emirates
-          </h1>
-          <p class="text-base text-slate-300 leading-relaxed">
-            DubaiSkyports.com provides commuters, residents, and transport researchers with independent route decision logic across RTA Metro & Bus zones, high-speed regional rail, and commercial vertiport air corridors.
-          </p>
-          <div class="flex flex-wrap gap-4 pt-2">
-            <button onclick="switchTab('estimator')" class="px-6 py-3 rounded-xl bg-[#00e5ff] text-slate-950 font-bold text-xs uppercase tracking-wider flex items-center gap-2 hover:bg-[#33ebff] transition">
-              <i class="ph ph-calculator"></i> Launch Trip & Fare Estimator
-            </button>
-            <button onclick="switchTab('rta')" class="px-6 py-3 rounded-xl bg-[#0e172e] border border-[#1e2d52] text-white font-semibold text-xs tracking-wider flex items-center gap-2 hover:bg-[#152347] transition">
-              <i class="ph ph-map-trifold"></i> 7 Nol Zones Guide
-            </button>
-          </div>
+      <div class="text-center max-w-3xl mx-auto space-y-6 pt-4">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-xs text-slate-400">
+          <span class="w-2 h-2 rounded-full bg-brand-cyan"></span>
+          Independent UAE Multimodal Transit Guide
         </div>
-      </div>
-
-      <!-- Live Network Metric Counters -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div class="bg-[#080d1a] border border-[#141e36] rounded-2xl p-5 space-y-1">
-          <div class="text-[10px] font-mono text-slate-500 uppercase tracking-wider">Dubai Nol Network</div>
-          <div class="text-2xl font-extrabold text-white font-mono">7 Zones</div>
-          <div class="text-[11px] text-slate-400">Standard unified fare tiers</div>
-        </div>
-        <div class="bg-[#080d1a] border border-[#141e36] rounded-2xl p-5 space-y-1">
-          <div class="text-[10px] font-mono text-slate-500 uppercase tracking-wider">Interstate Corridors</div>
-          <div class="text-2xl font-extrabold text-[#00e5ff] font-mono">7 Emirates</div>
-          <div class="text-[11px] text-slate-400">Direct highway bus routes</div>
-        </div>
-        <div class="bg-[#080d1a] border border-[#141e36] rounded-2xl p-5 space-y-1">
-          <div class="text-[10px] font-mono text-slate-500 uppercase tracking-wider">Commercial Air Taxi</div>
-          <div class="text-2xl font-extrabold text-white font-mono">4 Vertiports</div>
-          <div class="text-[11px] text-slate-400">Initial network footprint</div>
-        </div>
-        <div class="bg-[#080d1a] border border-[#141e36] rounded-2xl p-5 space-y-1">
-          <div class="text-[10px] font-mono text-slate-500 uppercase tracking-wider">Etihad Rail Track</div>
-          <div class="text-2xl font-extrabold text-purple-400 font-mono">200 KM/H</div>
-          <div class="text-[11px] text-slate-400">Passenger link speed</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========================================================= -->
-    <!-- VIEW: TRIP & FARE ENGINE                                  -->
-    <!-- ========================================================= -->
-    <section id="view-estimator" class="page-view hidden space-y-8">
-      
-      <!-- Breadcrumb -->
-      <div class="text-[11px] font-mono text-slate-500 uppercase tracking-widest flex items-center gap-2">
-        <span>Portal</span>
-        <span>/</span>
-        <span class="text-slate-300 font-bold">Trip & Fare Engine</span>
-      </div>
-
-      <!-- Header & Reference Pill -->
-      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-4">
-        <div>
-          <div class="text-xs font-mono text-[#00e5ff] tracking-widest uppercase mb-1 font-semibold">
-            Public Transit Decision Engine
-          </div>
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Multimodal Route & Fare Estimator
-          </h2>
-          <p class="text-sm text-slate-400 mt-2 max-w-3xl leading-relaxed">
-            Independent estimations based on standard RTA public Nol zones, metered taxi calculations, and announced high-speed rail corridors.
-          </p>
-        </div>
-
-        <div>
-          <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0d1f1f] border border-[#16443c] text-[11px] font-mono text-[#00ffc4]">
-            <span class="w-2 h-2 rounded-full bg-[#00ffc4]"></span>
-            Public Tariff Reference Mode
-          </span>
-        </div>
-      </div>
-
-      <!-- SEARCH & CONTROLS BOX -->
-      <div class="bg-[#080d1a] border border-[#141e36] rounded-2xl p-6 sm:p-7 space-y-5">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-          
-          <!-- ORIGIN LOCATION -->
-          <div>
-            <label for="origin-select" class="block text-[11px] font-mono tracking-wider text-slate-400 uppercase mb-2">
-              Origin Location
-            </label>
-            <select id="origin-select" onchange="runEstimator()" class="custom-select w-full bg-[#050811] border border-[#1c294a] rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-[#00e5ff]">
-              <option value="dxb_t1_t3" selected>DXB Airport (Terminal 1 & 3)</option>
-              <option value="naif">Naif (Deira Souk)</option>
-              <option value="abu_hail">Abu Hail / Hor Al Anz</option>
-              <option value="muhaisnah">Muhaisnah (1, 2, 3 & 4)</option>
-              <option value="al_ras">Al Ras (Gold Souk / Heritage)</option>
-              <option value="al_sabkha">Al Sabkha (Bus & Marine Station)</option>
-              <option value="al_muraqqabat">Al Muraqqabat / Al Rigga</option>
-              <option value="al_muteena">Al Muteena (Deira)</option>
-              <option value="al_baraha">Al Baraha / Corniche Deira</option>
-              <option value="al_karama">Al Karama</option>
-              <option value="bur_dubai">Bur Dubai / Al Fahidi</option>
-              <option value="al_ghubaiba">Al Ghubaiba (Bus & Marine Terminal)</option>
-              <option value="al_mankhool">Al Mankhool</option>
-              <option value="oud_metha">Oud Metha</option>
-              <option value="al_jaddaf">Al Jaddaf / Culture Village</option>
-              <option value="dubai_creek_harbour">Dubai Creek Harbour</option>
-              <option value="al_qusais">Al Qusais Industrial & Residential</option>
-              <option value="al_twar">Al Twar</option>
-              <option value="al_nahda_dubai">Al Nahda (Dubai side)</option>
-              <option value="mirdif">Mirdif / City Centre</option>
-              <option value="al_warqa">Al Warqa'a</option>
-              <option value="al_khawaneej">Al Khawaneej</option>
-              <option value="downtown">Downtown Dubai (Burj Khalifa / Mall)</option>
-              <option value="business_bay">Business Bay</option>
-              <option value="difc">DIFC (Financial Centre)</option>
-              <option value="satwa">Al Satwa</option>
-              <option value="al_wasl">Al Wasl / City Walk</option>
-              <option value="jumeirah_1">Jumeirah (1, 2 & 3)</option>
-              <option value="al_quoz">Al Quoz (Industrial & Creative)</option>
-              <option value="dso">Dubai Silicon Oasis (DSO)</option>
-              <option value="academic_city">Dubai Academic City</option>
-              <option value="international_city">International City</option>
-              <option value="dubai_hills">Dubai Hills Estate</option>
-              <option value="arabian_ranches">Arabian Ranches</option>
-              <option value="motor_city">Motor City / Sports City</option>
-              <option value="dubai_marina">Dubai Marina</option>
-              <option value="jbr">Jumeirah Beach Residence (JBR)</option>
-              <option value="jlt">Jumeirah Lake Towers (JLT / DMCC)</option>
-              <option value="palm_jumeirah">Palm Jumeirah (Atlantis)</option>
-              <option value="al_barsha">Al Barsha (Mall of the Emirates)</option>
-              <option value="internet_city">Dubai Internet City / Media City</option>
-              <option value="jafza">JAFZA / Jebel Ali Free Zone</option>
-              <option value="expo_city">Expo City Dubai</option>
-              <option value="dubai_south">Dubai South / DWC Airport</option>
-              <option value="dip">Dubai Investment Park (DIP)</option>
-              <option value="al_furjan">Al Furjan / Discovery Gardens</option>
-              <option value="jvc">Jumeirah Village Circle (JVC)</option>
-            </select>
-          </div>
-
-          <!-- DESTINATION LOCATION -->
-          <div>
-            <label for="destination-select" class="block text-[11px] font-mono tracking-wider text-slate-400 uppercase mb-2">
-              Destination Location
-            </label>
-            <select id="destination-select" onchange="runEstimator()" class="custom-select w-full bg-[#050811] border border-[#1c294a] rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-[#00e5ff]">
-              <option value="dxb_t1_t3">DXB Airport (Terminal 1 & 3)</option>
-              <option value="naif">Naif (Deira Souk)</option>
-              <option value="abu_hail">Abu Hail / Hor Al Anz</option>
-              <option value="muhaisnah">Muhaisnah (1, 2, 3 & 4)</option>
-              <option value="al_ras">Al Ras (Gold Souk / Heritage)</option>
-              <option value="al_sabkha">Al Sabkha (Bus & Marine Station)</option>
-              <option value="al_muraqqabat">Al Muraqqabat / Al Rigga</option>
-              <option value="al_muteena">Al Muteena (Deira)</option>
-              <option value="al_baraha">Al Baraha / Corniche Deira</option>
-              <option value="al_karama">Al Karama</option>
-              <option value="bur_dubai">Bur Dubai / Al Fahidi</option>
-              <option value="al_ghubaiba">Al Ghubaiba (Bus & Marine Terminal)</option>
-              <option value="al_mankhool">Al Mankhool</option>
-              <option value="oud_metha">Oud Metha</option>
-              <option value="al_jaddaf">Al Jaddaf / Culture Village</option>
-              <option value="dubai_creek_harbour">Dubai Creek Harbour</option>
-              <option value="al_qusais">Al Qusais Industrial & Residential</option>
-              <option value="al_twar">Al Twar</option>
-              <option value="al_nahda_dubai">Al Nahda (Dubai side)</option>
-              <option value="mirdif">Mirdif / City Centre</option>
-              <option value="al_warqa">Al Warqa'a</option>
-              <option value="al_khawaneej">Al Khawaneej</option>
-              <option value="downtown">Downtown Dubai (Burj Khalifa / Mall)</option>
-              <option value="business_bay">Business Bay</option>
-              <option value="difc">DIFC (Financial Centre)</option>
-              <option value="satwa">Al Satwa</option>
-              <option value="al_wasl">Al Wasl / City Walk</option>
-              <option value="jumeirah_1">Jumeirah (1, 2 & 3)</option>
-              <option value="al_quoz">Al Quoz (Industrial & Creative)</option>
-              <option value="dso">Dubai Silicon Oasis (DSO)</option>
-              <option value="academic_city">Dubai Academic City</option>
-              <option value="international_city">International City</option>
-              <option value="dubai_hills">Dubai Hills Estate</option>
-              <option value="arabian_ranches">Arabian Ranches</option>
-              <option value="motor_city">Motor City / Sports City</option>
-              <option value="dubai_marina">Dubai Marina</option>
-              <option value="jbr">Jumeirah Beach Residence (JBR)</option>
-              <option value="jlt">Jumeirah Lake Towers (JLT / DMCC)</option>
-              <option value="palm_jumeirah" selected>Palm Jumeirah (Atlantis)</option>
-              <option value="al_barsha">Al Barsha (Mall of the Emirates)</option>
-              <option value="internet_city">Dubai Internet City / Media City</option>
-              <option value="jafza">JAFZA / Jebel Ali Free Zone</option>
-              <option value="expo_city">Expo City Dubai</option>
-              <option value="dubai_south">Dubai South / DWC Airport</option>
-              <option value="dip">Dubai Investment Park (DIP)</option>
-              <option value="al_furjan">Al Furjan / Discovery Gardens</option>
-              <option value="jvc">Jumeirah Village Circle (JVC)</option>
-            </select>
-          </div>
-
-          <!-- TRAFFIC TIME PROFILE -->
-          <div>
-            <label for="traffic-select" class="block text-[11px] font-mono tracking-wider text-slate-400 uppercase mb-2">
-              Traffic Time Profile
-            </label>
-            <select id="traffic-select" onchange="runEstimator()" class="custom-select w-full bg-[#050811] border border-[#1c294a] rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-[#00e5ff]">
-              <option value="peak" selected>Peak Rush Hour (Estimated Congestion)</option>
-              <option value="offpeak">Off-Peak / Normal Traffic Flow</option>
-              <option value="night">Late Night / Clear Flow</option>
-            </select>
-          </div>
-
-        </div>
-
-        <!-- Distance and Swap Route Bar -->
-        <div class="pt-4 border-t border-[#141e36] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs font-mono">
-          <div class="text-[#00e5ff] flex items-center gap-2">
-            <span id="route-indicator-text">Route: DXB Airport (T1/T3) &rarr; Palm Jumeirah (Atlantis)</span>
-            <span class="text-slate-600">|</span>
-            <span class="text-slate-300" id="route-distance-text">Est. Road Distance: 38 km</span>
-          </div>
-          <button onclick="swapLocations()" class="text-slate-400 hover:text-white flex items-center gap-1.5 transition">
-            <i class="ph ph-arrows-left-right"></i> Swap Origin & Destination
+        <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight gradient-hero-title">
+          The Future of UAE Commute <span class="block">Is Arriving.</span>
+        </h1>
+        <p class="text-slate-400 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
+          An informational directory tracking public data on Dubai's vertiport developments, urban bus and metro networks, and the national passenger railway.
+        </p>
+        <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
+          <button onclick="navigate('planner')" class="px-5 py-3 rounded-xl bg-brand-cyan text-brand-dark font-bold text-xs uppercase tracking-wider hover:bg-sky-300 transition-all flex items-center gap-2 shadow-lg shadow-sky-500/20">
+            <i class="ph ph-navigation-arrow text-base"></i> Launch Route Calculator
+          </button>
+          <button onclick="navigate('aerial')" class="px-5 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs uppercase tracking-wider transition-all border border-slate-700 flex items-center gap-2">
+            <i class="ph ph-airplane-takeoff text-base"></i> View Vertiport Developments
           </button>
         </div>
       </div>
 
-      <!-- 5 ESTIMATION RESULTS CARDS -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-        
-        <!-- CARD 1: EVTOL AIR TAXI -->
-        <div class="bg-[#090f20] border border-[#16274e] rounded-2xl p-5 flex flex-col justify-between space-y-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
+        <div onclick="navigate('aerial')" class="glass-card p-6 rounded-2xl transition-all cursor-pointer group hover:-translate-y-1">
+          <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/20 text-brand-cyan flex items-center justify-center text-2xl mb-5 group-hover:scale-110 transition-transform">
+            <i class="ph ph-airplane-tilt"></i>
+          </div>
+          <h2 class="text-lg font-bold text-white group-hover:text-brand-cyan transition-colors mb-2">Aerial Vertiports</h2>
+          <p class="text-xs text-slate-400 leading-relaxed mb-4">
+            Informational tracking of upcoming electric air taxi vertiport sites (DXB, Palm Jumeirah, Dubai Marina, Downtown).
+          </p>
+        </div>
+
+        <div onclick="navigate('rta')" class="glass-card p-6 rounded-2xl transition-all cursor-pointer group hover:-translate-y-1">
+          <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center text-2xl mb-5 group-hover:scale-110 transition-transform">
+            <i class="ph ph-bus"></i>
+          </div>
+          <h2 class="text-lg font-bold text-white group-hover:text-indigo-400 transition-colors mb-2">RTA Bus & Metro</h2>
+          <p class="text-xs text-slate-400 leading-relaxed mb-4">
+            Commuter guide for Metro Red/Green lines and Intercity bus routes (E100, E101, E201, E700) using public tariff models.
+          </p>
+        </div>
+
+        <div onclick="navigate('etihad')" class="glass-card p-6 rounded-2xl transition-all cursor-pointer group hover:-translate-y-1">
+          <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center text-2xl mb-5 group-hover:scale-110 transition-transform">
+            <i class="ph ph-train"></i>
+          </div>
+          <h2 class="text-lg font-bold text-white group-hover:text-purple-400 transition-colors mb-2">Etihad Rail Passenger</h2>
+          <p class="text-xs text-slate-400 leading-relaxed mb-4">
+            Project updates on the national 200 km/h passenger railway connecting Dubai Central to Abu Dhabi and the northern emirates.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW: PLANNER -->
+    <section id="view-planner" class="page-view hidden space-y-10">
+      
+      <div class="border-b border-slate-800 pb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <div class="text-xs font-mono text-brand-cyan uppercase tracking-widest mb-1">Public Transit Decision Engine</div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Multimodal Route & Fare Estimator</h2>
+          <p class="text-slate-400 text-sm mt-2 max-w-3xl">
+            Independent estimations based on standard RTA public Nol zones, metered taxi calculations, and announced high-speed rail corridors.
+          </p>
+        </div>
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-slate-400">
+          <span class="w-2 h-2 rounded-full bg-emerald-400"></span> Public Tariff Reference Mode
+        </div>
+      </div>
+
+      <!-- Route Selector Controls -->
+      <div class="glass-card rounded-2xl p-6 sm:p-8 space-y-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
           <div>
-            <div class="flex items-center justify-between mb-3">
-              <span class="text-[10px] font-mono text-[#00e5ff] font-bold tracking-wider uppercase">Evtol Air Taxi</span>
-              <span class="text-[9px] font-mono uppercase px-2 py-0.5 rounded bg-[#102347] text-[#00e5ff] border border-[#1a3873]">Pre-Launch</span>
-            </div>
-            <div class="text-[11px] font-mono text-slate-500 uppercase tracking-widest mb-1">Flight Service</div>
-            <div class="text-lg font-bold text-white flex items-center gap-2">
-              <i class="ph ph-airplane-takeoff text-[#00e5ff]"></i> In Development
-            </div>
-            <p class="text-[11px] text-slate-400 mt-2 leading-relaxed">
-              Commercial public passenger flights have not launched yet.
+            <label for="calc-origin" class="block text-xs font-mono text-slate-300 uppercase mb-2">Origin Location</label>
+            <select id="calc-origin" onchange="runCalculation()" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-brand-cyan font-medium">
+              <optgroup label="Aviation & Major Hubs">
+                <option value="dxb" selected>DXB Airport (Terminal 1 & 3)</option>
+                <option value="dwc">DWC Al Maktoum Airport</option>
+              </optgroup>
+              <optgroup label="Deira & Historic Creek (Zone 5)">
+                <option value="naif">Naif (Deira Souk)</option>
+                <option value="abu_hail">Abu Hail / Hor Al Anz</option>
+                <option value="al_ras">Al Ras (Gold Souk / Heritage)</option>
+                <option value="al_sabkha">Al Sabkha (Bus & Marine)</option>
+                <option value="deira">Deira / Al Rigga (Zone 5)</option>
+                <option value="al_muteena">Al Muteena (Deira)</option>
+                <option value="al_baraha">Al Baraha / Corniche</option>
+                <option value="al_garhoud">Al Garhoud / GGICO</option>
+              </optgroup>
+              <optgroup label="Bur Dubai & Creek (Zone 5)">
+                <option value="bur_dubai">Bur Dubai / Al Ghubaiba</option>
+                <option value="al_karama">Al Karama</option>
+                <option value="al_mankhool">Al Mankhool</option>
+                <option value="oud_metha">Oud Metha</option>
+                <option value="al_jaddaf">Al Jaddaf / Culture Village</option>
+                <option value="creek_harbour">Dubai Creek Harbour</option>
+              </optgroup>
+              <optgroup label="Northern Districts & Suburbs (Zone 6)">
+                <option value="muhaisnah">Muhaisnah (1, 2, 3 & 4)</option>
+                <option value="al_qusais">Al Qusais Industrial & Residential</option>
+                <option value="al_twar">Al Twar</option>
+                <option value="al_nahda">Al Nahda (Dubai side)</option>
+                <option value="mirdif">Mirdif / City Centre</option>
+                <option value="al_warqa">Al Warqa'a</option>
+                <option value="al_khawaneej">Al Khawaneej</option>
+              </optgroup>
+              <optgroup label="Central & Business Corridors (Zone 3)">
+                <option value="downtown">Downtown Dubai / Burj Khalifa</option>
+                <option value="difc">DIFC Financial Centre</option>
+                <option value="business_bay">Business Bay</option>
+                <option value="satwa">Al Satwa</option>
+                <option value="al_wasl">Al Wasl / City Walk</option>
+                <option value="jumeirah">Jumeirah (1, 2 & 3)</option>
+                <option value="al_quoz">Al Quoz (Industrial & Creative)</option>
+              </optgroup>
+              <optgroup label="Inland Communities & Suburbs (Zone 4)">
+                <option value="silicon">Dubai Silicon Oasis (DSO)</option>
+                <option value="academic_city">Dubai Academic City</option>
+                <option value="international_city">International City</option>
+                <option value="dubai_hills">Dubai Hills Estate</option>
+                <option value="arabian_ranches">Arabian Ranches</option>
+                <option value="motor_city">Motor City / Sports City</option>
+              </optgroup>
+              <optgroup label="Coastal & Marina Corridors (Zone 2)">
+                <option value="marina">Dubai Marina / JBR (Sobha Hub)</option>
+                <option value="palm">Palm Jumeirah (Atlantis)</option>
+                <option value="jlt">Jumeirah Lakes Towers (DMCC)</option>
+                <option value="barsha">Al Barsha (Mall of the Emirates)</option>
+                <option value="internet_city">Dubai Internet City / Media City</option>
+              </optgroup>
+              <optgroup label="Southern Corridor & Expo (Zone 1)">
+                <option value="jafza">JAFZA / Jebel Ali Free Zone</option>
+                <option value="expo_city">Expo City Dubai</option>
+                <option value="dubai_south">Dubai South / DWC Corridor</option>
+                <option value="dip">Dubai Investment Park (DIP)</option>
+                <option value="al_furjan">Al Furjan / Discovery Gardens</option>
+                <option value="jvc">Jumeirah Village Circle (JVC)</option>
+              </optgroup>
+              <optgroup label="Inter-Emirate Terminals">
+                <option value="sharjah">Sharjah Border (Sahara / Al Jubail)</option>
+                <option value="auh">Abu Dhabi Central Bus Station</option>
+                <option value="al_ain">Al Ain Central Station</option>
+                <option value="fujairah">Fujairah Central Station</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <div>
+            <label for="calc-dest" class="block text-xs font-mono text-slate-300 uppercase mb-2">Destination Location</label>
+            <select id="calc-dest" onchange="runCalculation()" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-brand-cyan font-medium">
+              <optgroup label="Aviation & Major Hubs">
+                <option value="dxb">DXB Airport (Terminal 1 & 3)</option>
+                <option value="dwc">DWC Al Maktoum Airport</option>
+              </optgroup>
+              <optgroup label="Deira & Historic Creek (Zone 5)">
+                <option value="naif">Naif (Deira Souk)</option>
+                <option value="abu_hail">Abu Hail / Hor Al Anz</option>
+                <option value="al_ras">Al Ras (Gold Souk / Heritage)</option>
+                <option value="al_sabkha">Al Sabkha (Bus & Marine)</option>
+                <option value="deira">Deira / Al Rigga (Zone 5)</option>
+                <option value="al_muteena">Al Muteena (Deira)</option>
+                <option value="al_baraha">Al Baraha / Corniche</option>
+                <option value="al_garhoud">Al Garhoud / GGICO</option>
+              </optgroup>
+              <optgroup label="Bur Dubai & Creek (Zone 5)">
+                <option value="bur_dubai">Bur Dubai / Al Ghubaiba</option>
+                <option value="al_karama">Al Karama</option>
+                <option value="al_mankhool">Al Mankhool</option>
+                <option value="oud_metha">Oud Metha</option>
+                <option value="al_jaddaf">Al Jaddaf / Culture Village</option>
+                <option value="creek_harbour">Dubai Creek Harbour</option>
+              </optgroup>
+              <optgroup label="Northern Districts & Suburbs (Zone 6)">
+                <option value="muhaisnah">Muhaisnah (1, 2, 3 & 4)</option>
+                <option value="al_qusais">Al Qusais Industrial & Residential</option>
+                <option value="al_twar">Al Twar</option>
+                <option value="al_nahda">Al Nahda (Dubai side)</option>
+                <option value="mirdif">Mirdif / City Centre</option>
+                <option value="al_warqa">Al Warqa'a</option>
+                <option value="al_khawaneej">Al Khawaneej</option>
+              </optgroup>
+              <optgroup label="Central & Business Corridors (Zone 3)">
+                <option value="downtown">Downtown Dubai / Burj Khalifa</option>
+                <option value="difc">DIFC Financial Centre</option>
+                <option value="business_bay">Business Bay</option>
+                <option value="satwa">Al Satwa</option>
+                <option value="al_wasl">Al Wasl / City Walk</option>
+                <option value="jumeirah">Jumeirah (1, 2 & 3)</option>
+                <option value="al_quoz">Al Quoz (Industrial & Creative)</option>
+              </optgroup>
+              <optgroup label="Inland Communities & Suburbs (Zone 4)">
+                <option value="silicon">Dubai Silicon Oasis (DSO)</option>
+                <option value="academic_city">Dubai Academic City</option>
+                <option value="international_city">International City</option>
+                <option value="dubai_hills">Dubai Hills Estate</option>
+                <option value="arabian_ranches">Arabian Ranches</option>
+                <option value="motor_city">Motor City / Sports City</option>
+              </optgroup>
+              <optgroup label="Coastal & Marina Corridors (Zone 2)">
+                <option value="marina">Dubai Marina / JBR (Sobha Hub)</option>
+                <option value="palm" selected>Palm Jumeirah (Atlantis)</option>
+                <option value="jlt">Jumeirah Lakes Towers (DMCC)</option>
+                <option value="barsha">Al Barsha (Mall of the Emirates)</option>
+                <option value="internet_city">Dubai Internet City / Media City</option>
+              </optgroup>
+              <optgroup label="Southern Corridor & Expo (Zone 1)">
+                <option value="jafza">JAFZA / Jebel Ali Free Zone</option>
+                <option value="expo_city">Expo City Dubai</option>
+                <option value="dubai_south">Dubai South / DWC Corridor</option>
+                <option value="dip">Dubai Investment Park (DIP)</option>
+                <option value="al_furjan">Al Furjan / Discovery Gardens</option>
+                <option value="jvc">Jumeirah Village Circle (JVC)</option>
+              </optgroup>
+              <optgroup label="Inter-Emirate Terminals">
+                <option value="sharjah">Sharjah Border (Sahara / Al Jubail)</option>
+                <option value="auh">Abu Dhabi Central Bus Station</option>
+                <option value="al_ain">Al Ain Central Station</option>
+                <option value="fujairah">Fujairah Central Station</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <div>
+            <label for="calc-timeframe" class="block text-xs font-mono text-slate-300 uppercase mb-2">Traffic Time Profile</label>
+            <select id="calc-timeframe" onchange="runCalculation()" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-brand-cyan font-medium">
+              <option value="regular">Standard Off-Peak (Flow Traffic)</option>
+              <option value="peak" selected>Peak Rush Hour (Estimated Congestion)</option>
+              <option value="night">Night Window (22:00 – 06:00)</option>
+            </select>
+          </div>
+
+        </div>
+
+        <div class="flex items-center justify-between pt-2 border-t border-slate-800 text-xs text-slate-400">
+          <div id="route-distance-summary" class="font-mono text-brand-cyan"></div>
+          <button onclick="swapLocations()" class="hover:text-white flex items-center gap-1 font-mono text-xs">
+            <i class="ph ph-arrows-clockwise text-base"></i> Swap Origin & Destination
+          </button>
+        </div>
+      </div>
+
+      <!-- 5-Column Multimodal Comparison Matrix -->
+      <div id="calc-results" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4"></div>
+
+      <!-- Step-by-Step Breakdown -->
+      <div id="route-step-breakdown" class="space-y-4"></div>
+
+    </section>
+
+    <!-- VIEW: AERIAL (Advanced Air Mobility Directory) -->
+    <section id="view-aerial" class="page-view hidden space-y-10">
+      
+      <!-- Section Header -->
+      <div class="border-b border-slate-800 pb-6 flex flex-col lg:flex-row lg:items-end justify-between gap-4">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/10 border border-sky-400/30 text-[11px] font-mono text-brand-cyan mb-3">
+            INFRASTRUCTURE MONITORING
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Dubai Commercial Vertiport Developments</h2>
+          <p class="text-slate-400 text-sm mt-2 max-w-2xl">
+            An independent informational index detailing the planned electric air taxi hubs and vertiport infrastructure under development in the emirate.
+          </p>
+        </div>
+        <div class="flex items-center gap-2 text-xs font-mono text-slate-400 bg-slate-900/80 p-3 rounded-xl border border-slate-800">
+          <div><span class="text-slate-500 block text-[10px]">EXTERNAL ENTITIES IN NEWS</span> Skyports Infrastructure • Joby Aviation • Dubai RTA</div>
+        </div>
+      </div>
+
+      <!-- Aircraft Architecture (Factual Overview) -->
+      <div class="glass-card rounded-2xl p-6 sm:p-8 border border-sky-500/20 bg-gradient-to-r from-slate-900/90 via-sky-950/20 to-slate-900/90 space-y-6">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
+          
+          <div class="lg:col-span-2 space-y-3">
+            <div class="text-xs font-mono text-brand-cyan uppercase tracking-wider">Public Aircraft Specifications</div>
+            <h3 class="text-2xl font-bold text-white">Joby S4 eVTOL (Electric Vertical Takeoff)</h3>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Based on official technical filings, this commercial electric aircraft utilizes six tilting rotors, engineered for vertical ascents and quiet forward cruise along designated low-altitude air transit corridors.
             </p>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
+              <div class="bg-slate-950/70 p-3 rounded-xl border border-slate-800/80">
+                <span class="text-[10px] text-slate-400 uppercase font-mono block">Max Cruise Speed</span>
+                <span class="text-lg font-bold text-white font-mono">320 km/h</span>
+              </div>
+              <div class="bg-slate-950/70 p-3 rounded-xl border border-slate-800/80">
+                <span class="text-[10px] text-slate-400 uppercase font-mono block">Max Range</span>
+                <span class="text-lg font-bold text-white font-mono">160+ km</span>
+              </div>
+              <div class="bg-slate-950/70 p-3 rounded-xl border border-slate-800/80">
+                <span class="text-[10px] text-slate-400 uppercase font-mono block">Design Capacity</span>
+                <span class="text-lg font-bold text-white font-mono">4 Pax + Pilot</span>
+              </div>
+              <div class="bg-slate-950/70 p-3 rounded-xl border border-slate-800/80">
+                <span class="text-[10px] text-slate-400 uppercase font-mono block">Acoustic Profile</span>
+                <span class="text-lg font-bold text-brand-success font-mono">&lt; 45 dBA</span>
+              </div>
+            </div>
           </div>
-          <div class="pt-4 border-t border-[#142142]">
-            <button onclick="openModal()" class="w-full py-2.5 px-3 rounded-xl bg-[#0c1630] border border-[#1c3266] text-[#00e5ff] text-xs font-mono font-medium flex items-center justify-center gap-1.5 hover:bg-[#12224d] transition">
-              <i class="ph ph-bell"></i> Get Launch Alert
-            </button>
+          <!-- Project Information Reference Box -->
+          <div class="bg-slate-900/80 p-5 rounded-xl border border-slate-800 space-y-3 text-xs">
+            <div class="font-bold text-white flex items-center gap-1.5 text-xs">
+              <i class="ph ph-info text-brand-cyan text-base"></i> Industry Data Points
+            </div>
+            <div class="space-y-2 text-slate-300">
+              <div class="flex justify-between border-b border-slate-800 pb-1.5">
+                <span>Vertiport Developer:</span> <strong class="text-white">Skyports Infrastructure</strong>
+              </div>
+              <div class="flex justify-between border-b border-slate-800 pb-1.5">
+                <span>Aircraft Partner:</span> <strong class="text-white">Joby Aviation</strong>
+              </div>
+              <div class="flex justify-between border-b border-slate-800 pb-1.5">
+                <span>Transport Authority:</span> <strong class="text-white">Dubai RTA</strong>
+              </div>
+              <div class="flex justify-between">
+                <span>Commercial Booking:</span> <strong class="text-amber-400">Pre-Launch / Pending</strong>
+              </div>
+            </div>
           </div>
-        </div>
 
-        <!-- CARD 2: RTA METRO -->
-        <div class="bg-[#090f20] border border-[#2e1d28] rounded-2xl p-5 flex flex-col justify-between space-y-4">
-          <div>
-            <div class="flex items-center justify-between mb-3">
-              <span class="text-[10px] font-mono text-rose-400 font-bold tracking-wider uppercase">RTA Metro</span>
-              <span class="text-[9px] font-mono uppercase px-2 py-0.5 rounded bg-[#2a131b] text-rose-400 border border-[#481e2b]">Rail Track</span>
-            </div>
-            <div class="text-3xl font-extrabold text-white font-sans mt-2" id="metro-time-val">
-              63 Mins
-            </div>
-            <div class="text-xs text-slate-300 font-mono mt-1" id="metro-fare-val">
-              Nol Tariff: <span class="font-bold text-white">AED 7.50 (Silver Nol)</span>
-            </div>
-          </div>
-          <div class="pt-4 border-t border-[#1d1b2e] text-[10px] font-mono text-slate-500">
-            Fixed schedule • Zero traffic delay
-          </div>
         </div>
-
-        <!-- CARD 3: RTA BUS -->
-        <div class="bg-[#090f20] border border-[#1a2342] rounded-2xl p-5 flex flex-col justify-between space-y-4">
-          <div>
-            <div class="flex items-center justify-between mb-3">
-              <span class="text-[10px] font-mono text-indigo-400 font-bold tracking-wider uppercase">RTA Bus</span>
-              <span class="text-[9px] font-mono uppercase px-2 py-0.5 rounded bg-[#121b36] text-indigo-400 border border-[#1d2d59]">Public Road</span>
-            </div>
-            <div class="text-3xl font-extrabold text-white font-sans mt-2" id="bus-time-val">
-              81 Mins
-            </div>
-            <div class="text-xs text-slate-300 font-mono mt-1" id="bus-fare-val">
-              Bus Tariff: <span class="font-bold text-white">AED 7.50 (Silver Nol)</span>
-            </div>
-          </div>
-          <div class="pt-4 border-t border-[#141e38] text-[10px] font-mono text-slate-500">
-            Local Feeder / Trunk
-          </div>
-        </div>
-
-        <!-- CARD 4: RTA TAXI / CAR -->
-        <div class="bg-[#090f20] border border-[#332b1c] rounded-2xl p-5 flex flex-col justify-between space-y-4">
-          <div>
-            <div class="flex items-center justify-between mb-3">
-              <span class="text-[10px] font-mono text-amber-400 font-bold tracking-wider uppercase">RTA Taxi / Car</span>
-              <span class="text-[9px] font-mono uppercase px-2 py-0.5 rounded bg-[#2b2210] text-amber-400 border border-[#4d3d19]">Metered</span>
-            </div>
-            <div class="text-3xl font-extrabold text-white font-sans mt-2" id="taxi-time-val">
-              49 Mins
-            </div>
-            <div class="text-xs text-slate-300 font-mono mt-1" id="taxi-fare-val">
-              Est. Meter: <span class="font-bold text-white">AED 116</span>
-            </div>
-          </div>
-          <div class="pt-4 border-t border-[#292215] text-[10px] font-mono text-amber-400 flex items-center gap-1.5" id="traffic-warning-box">
-            <i class="ph ph-warning"></i> Peak Hour Delay
-          </div>
-        </div>
-
-        <!-- CARD 5: ETIHAD RAIL -->
-        <div class="bg-[#090f20] border border-[#2b1938] rounded-2xl p-5 flex flex-col justify-between space-y-4">
-          <div>
-            <div class="flex items-center justify-between mb-3">
-              <span class="text-[10px] font-mono text-purple-400 font-bold tracking-wider uppercase">Etihad Rail</span>
-              <span class="text-[9px] font-mono uppercase px-2 py-0.5 rounded bg-[#231230] text-purple-400 border border-[#3e1c59]">200 KM/H</span>
-            </div>
-            <div class="text-3xl font-extrabold text-white font-sans mt-2">
-              --
-            </div>
-            <div class="text-xs text-slate-300 font-mono mt-1">
-              Ticket: <span class="font-bold text-white">Intercity Only</span>
-            </div>
-          </div>
-          <div class="pt-4 border-t border-[#21162e] text-[10px] font-mono text-purple-400/80">
-            National Network Only
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ========================================================= -->
-    <!-- VIEW: VERTIPORTS & AERIAL MOBILITY                        -->
-    <!-- ========================================================= -->
-    <section id="view-vertiports" class="page-view hidden space-y-8">
-      <div class="border-b border-[#141d33] pb-6">
-        <div class="text-xs font-mono text-[#00e5ff] tracking-widest uppercase mb-1 font-semibold">
-          Commercial Electric Flight Footprint
-        </div>
-        <h2 class="text-3xl font-extrabold text-white">Initial 4 Commercial Vertiports</h2>
-        <p class="text-sm text-slate-400 mt-2">
-          Dubai's high-speed electric air taxi vertiport infrastructure network connecting high-priority international arrival and residential hubs.
-        </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="bg-[#080d1a] border border-[#141e36] rounded-2xl p-6 space-y-3">
-          <div class="text-[10px] font-mono text-[#00e5ff]">HUB 01</div>
-          <h3 class="text-lg font-bold text-white">DXB International</h3>
-          <p class="text-xs text-slate-400">Positioned directly at Dubai International Airport Terminal 3 for zero-road terminal transfers.</p>
-        </div>
-        <div class="bg-[#080d1a] border border-[#141e36] rounded-2xl p-6 space-y-3">
-          <div class="text-[10px] font-mono text-[#00e5ff]">HUB 02</div>
-          <h3 class="text-lg font-bold text-white">Palm Jumeirah</h3>
-          <p class="text-xs text-slate-400">Trunk location integrated near Atlantis The Royal, serving hotel and hospitality corridors.</p>
-        </div>
-        <div class="bg-[#080d1a] border border-[#141e36] rounded-2xl p-6 space-y-3">
-          <div class="text-[10px] font-mono text-[#00e5ff]">HUB 03</div>
-          <h3 class="text-lg font-bold text-white">Downtown Dubai</h3>
-          <p class="text-xs text-slate-400">Located adjacent to Burj Khalifa, Dubai Mall, and Dubai International Financial Centre (DIFC).</p>
-        </div>
-        <div class="bg-[#080d1a] border border-[#141e36] rounded-2xl p-6 space-y-3">
-          <div class="text-[10px] font-mono text-[#00e5ff]">HUB 04</div>
-          <h3 class="text-lg font-bold text-white">Dubai Marina</h3>
-          <p class="text-xs text-slate-400">Waterfront corridor hub integrating directly with DMCC Metro Station and Dubai Tram.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========================================================= -->
-    <!-- VIEW: RTA BUS, METRO & 7 EMIRATES REGIONAL DIRECTORY      -->
-    <!-- ========================================================= -->
-    <section id="view-rta" class="page-view hidden space-y-8">
-      <div class="border-b border-[#141d33] pb-6">
-        <div class="text-xs font-mono text-[#00e5ff] tracking-widest uppercase mb-1 font-semibold">
-          RTA Nol Fare & Regional Highway Network
-        </div>
-        <h2 class="text-3xl font-extrabold text-white">Dubai 7 Nol Zones & 7 Emirates Network</h2>
-        <p class="text-sm text-slate-400 mt-2">
-          Standardized commuter matrix across all 7 Nol tariff zones and interstate bus coaches connecting all 7 UAE Emirates.
-        </p>
-      </div>
-
-      <!-- Quick Nol Fare Matrix -->
-      <div class="bg-[#080d1a] border border-[#141e36] rounded-2xl p-6 space-y-4">
-        <h3 class="text-base font-bold text-white flex items-center gap-2">
-          <i class="ph ph-credit-card text-[#00e5ff]"></i> RTA Nol Card Standard Tariff Model
+      <!-- The 4 Vertiport Hub Cards -->
+      <div>
+        <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+          <i class="ph ph-buildings text-brand-cyan"></i> The 4 Designated Vertiport Gateways
         </h3>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+          
+          <!-- Hub 1: DXB -->
+          <div class="glass-card p-5 rounded-2xl border border-slate-800 hover:border-sky-500/40 transition-all flex flex-col justify-between group">
+            <div>
+              <div class="flex items-center justify-between text-xs font-mono text-brand-cyan mb-2">
+                <span>HUB #01</span>
+                <span class="px-2 py-0.5 rounded bg-sky-500/10 border border-sky-500/20 text-[10px]">Airport Gateway</span>
+              </div>
+              <h4 class="text-base font-bold text-white group-hover:text-brand-cyan transition-colors">DXB Airport Terminal 3</h4>
+              <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                Planned multilevel terminal adjacent to airside concourses to enable rapid transfers without road traffic delay.
+              </p>
+            </div>
+            <div class="pt-4 mt-4 border-t border-slate-800/80 text-[11px] font-mono text-slate-400 flex justify-between">
+              <span>Public Status:</span> <strong class="text-brand-cyan">Under Construction</strong>
+            </div>
+          </div>
+
+          <!-- Hub 2: Palm Jumeirah -->
+          <div class="glass-card p-5 rounded-2xl border border-slate-800 hover:border-sky-500/40 transition-all flex flex-col justify-between group">
+            <div>
+              <div class="flex items-center justify-between text-xs font-mono text-brand-cyan mb-2">
+                <span>HUB #02</span>
+                <span class="px-2 py-0.5 rounded bg-sky-500/10 border border-sky-500/20 text-[10px]">Coastal Hub</span>
+              </div>
+              <h4 class="text-base font-bold text-white group-hover:text-brand-cyan transition-colors">Palm Jumeirah (Atlantis)</h4>
+              <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                Designated coastal site planned near Atlantis The Palm and Atlantis The Royal for over-water approach routes.
+              </p>
+            </div>
+            <div class="pt-4 mt-4 border-t border-slate-800/80 text-[11px] font-mono text-slate-400 flex justify-between">
+              <span>Public Status:</span> <strong class="text-brand-cyan">Site Designated</strong>
+            </div>
+          </div>
+
+          <!-- Hub 3: Dubai Marina -->
+          <div class="glass-card p-5 rounded-2xl border border-slate-800 hover:border-sky-500/40 transition-all flex flex-col justify-between group">
+            <div>
+              <div class="flex items-center justify-between text-xs font-mono text-brand-cyan mb-2">
+                <span>HUB #03</span>
+                <span class="px-2 py-0.5 rounded bg-sky-500/10 border border-sky-500/20 text-[10px]">Urban Hub</span>
+              </div>
+              <h4 class="text-base font-bold text-white group-hover:text-brand-cyan transition-colors">Dubai Marina (AUD)</h4>
+              <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                Located by the AUD corridor, offering public transit connectivity to the Dubai Tram and Sobha Realty Metro.
+              </p>
+            </div>
+            <div class="pt-4 mt-4 border-t border-slate-800/80 text-[11px] font-mono text-slate-400 flex justify-between">
+              <span>Public Status:</span> <strong class="text-brand-cyan">Terminal Planning</strong>
+            </div>
+          </div>
+
+          <!-- Hub 4: Downtown -->
+          <div class="glass-card p-5 rounded-2xl border border-slate-800 hover:border-sky-500/40 transition-all flex flex-col justify-between group">
+            <div>
+              <div class="flex items-center justify-between text-xs font-mono text-brand-cyan mb-2">
+                <span>HUB #04</span>
+                <span class="px-2 py-0.5 rounded bg-sky-500/10 border border-sky-500/20 text-[10px]">Financial Core</span>
+              </div>
+              <h4 class="text-base font-bold text-white group-hover:text-brand-cyan transition-colors">Downtown Burj Khalifa</h4>
+              <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                Central vertiport site serving the business core, Dubai Mall perimeter, and DIFC corporate connectivity.
+              </p>
+            </div>
+            <div class="pt-4 mt-4 border-t border-slate-800/80 text-[11px] font-mono text-slate-400 flex justify-between">
+              <span>Public Status:</span> <strong class="text-brand-cyan">Corridor Study</strong>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Launch Dispatch CTA Banner -->
+      <div class="p-6 rounded-2xl bg-gradient-to-r from-sky-950/40 to-slate-900 border border-sky-500/30 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div>
+          <h4 class="text-base font-bold text-white">Receive Public Route Announcements</h4>
+          <p class="text-xs text-slate-400 mt-1">Get independent email updates when official authorities publish certified ticket booking dates.</p>
+        </div>
+        <button onclick="navigate('alerts')" class="px-5 py-2.5 rounded-xl bg-brand-cyan hover:bg-sky-300 text-brand-dark font-extrabold text-xs uppercase tracking-wider shrink-0 transition-all flex items-center gap-1.5">
+          <i class="ph ph-bell"></i> Subscribe to Route Notices
+        </button>
+      </div>
+
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- VIEW: RTA BUS & METRO (Comprehensive Public Transit Guide) -->
+    <!-- ========================================================= -->
+    <section id="view-rta" class="page-view hidden space-y-12">
+      
+      <!-- Section Header -->
+      <div class="border-b border-slate-800 pb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-400/30 text-[11px] font-mono text-indigo-400 mb-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-ping"></span>
+            DUBAI PUBLIC MOBILITY & TARIFF DIRECTORY
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white">RTA Metro, Tram & Bus Network</h2>
+          <p class="text-slate-400 text-sm mt-2 max-w-2xl leading-relaxed">
+            Independent reference guide for Dubai's high-capacity rail lines, standard Nol smart-card zone pricing, operating timetables, and intercity express coaches across the UAE.
+          </p>
+        </div>
+        <div class="flex items-center gap-2 bg-slate-900/90 border border-slate-800 p-3 rounded-xl text-xs font-mono text-slate-300">
+          <div><span class="text-slate-500 block text-[10px]">INTEGRATED TARIFF</span> RTA 7-Zone Nol Model</div>
+        </div>
+      </div>
+
+      <!-- Nol Card Fare Matrix Table -->
+      <div class="glass-card rounded-2xl p-6 sm:p-8 space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-4">
+          <div>
+            <h3 class="text-lg font-bold text-white flex items-center gap-2">
+              <i class="ph ph-credit-card text-indigo-400"></i> Standard Nol Card Fare Matrix
+            </h3>
+            <p class="text-xs text-slate-400 mt-1">Calculated by zone boundaries crossed per continuous single journey.</p>
+          </div>
+          <span class="text-xs font-mono text-brand-cyan bg-sky-500/10 border border-sky-500/20 px-3 py-1 rounded-lg">30-Min Transfer Window Active</span>
+        </div>
+
         <div class="overflow-x-auto">
-          <table class="w-full text-left text-xs font-mono text-slate-300">
-            <thead class="border-b border-slate-800 text-slate-500 uppercase text-[10px]">
-              <tr>
-                <th class="py-2.5 px-3">Journey Scope</th>
-                <th class="py-2.5 px-3">Silver Nol Card</th>
-                <th class="py-2.5 px-3">Red Ticket (Paper)</th>
-                <th class="py-2.5 px-3">Gold Class</th>
+          <table class="w-full text-left text-xs text-slate-300 border-collapse">
+            <thead>
+              <tr class="border-b border-slate-800 text-[11px] font-mono text-slate-400 uppercase">
+                <th class="py-3 px-4">Journey Scope</th>
+                <th class="py-3 px-4">Silver Nol Card</th>
+                <th class="py-3 px-4">Red Ticket (Paper)</th>
+                <th class="py-3 px-4">Gold Class Card</th>
+                <th class="py-3 px-4">Concessions (Students / Seniors)</th>
               </tr>
             </thead>
-            <tbody class="divide-y divide-slate-800/60">
-              <tr>
-                <td class="py-2.5 px-3 font-sans font-medium text-white">Tier 1: Within 1 Zone (or &le; 3 km)</td>
-                <td class="py-2.5 px-3 text-[#00e5ff] font-bold">AED 3.00</td>
-                <td class="py-2.5 px-3">AED 4.00</td>
-                <td class="py-2.5 px-3 text-amber-400">AED 6.00</td>
+            <tbody class="divide-y divide-slate-800/60 font-mono">
+              <tr class="hover:bg-slate-800/30 transition-colors">
+                <td class="py-3.5 px-4 font-sans font-bold text-white">Tier 1: Within 1 Zone (or &le; 3 km)</td>
+                <td class="py-3.5 px-4 text-brand-cyan font-bold">AED 3.00</td>
+                <td class="py-3.5 px-4 text-slate-300">AED 4.00</td>
+                <td class="py-3.5 px-4 text-amber-400 font-bold">AED 6.00</td>
+                <td class="py-3.5 px-4 text-emerald-400">50% Off / Senior Citizens Free</td>
               </tr>
-              <tr>
-                <td class="py-2.5 px-3 font-sans font-medium text-white">Tier 2: 2 Adjacent Zones</td>
-                <td class="py-2.5 px-3 text-[#00e5ff] font-bold">AED 5.00</td>
-                <td class="py-2.5 px-3">AED 6.00</td>
-                <td class="py-2.5 px-3 text-amber-400">AED 10.00</td>
+              <tr class="hover:bg-slate-800/30 transition-colors">
+                <td class="py-3.5 px-4 font-sans font-bold text-white">Tier 2: 2 Adjacent Zones</td>
+                <td class="py-3.5 px-4 text-brand-cyan font-bold">AED 5.00</td>
+                <td class="py-3.5 px-4 text-slate-300">AED 6.00</td>
+                <td class="py-3.5 px-4 text-amber-400 font-bold">AED 10.00</td>
+                <td class="py-3.5 px-4 text-emerald-400">50% Off / Senior Citizens Free</td>
               </tr>
-              <tr>
-                <td class="py-2.5 px-3 font-sans font-medium text-white">Tier 3: 3 or More Zones</td>
-                <td class="py-2.5 px-3 text-[#00e5ff] font-bold">AED 7.50</td>
-                <td class="py-2.5 px-3">AED 8.50</td>
-                <td class="py-2.5 px-3 text-amber-400">AED 15.00</td>
+              <tr class="hover:bg-slate-800/30 transition-colors">
+                <td class="py-3.5 px-4 font-sans font-bold text-white">Tier 3: 3 or More Zones</td>
+                <td class="py-3.5 px-4 text-brand-cyan font-bold">AED 7.50</td>
+                <td class="py-3.5 px-4 text-slate-300">AED 8.50</td>
+                <td class="py-3.5 px-4 text-amber-400 font-bold">AED 15.00</td>
+                <td class="py-3.5 px-4 text-emerald-400">50% Off / Senior Citizens Free</td>
               </tr>
             </tbody>
           </table>
         </div>
+        
+        <div class="text-[11px] text-slate-400 bg-slate-900/60 p-3 rounded-xl border border-slate-800 space-y-1">
+          <p><strong>Transfer Rule:</strong> Switching between Metro, Tram, and Feeder Buses within 30 minutes counts as a single journey (up to 3 transfers total).</p>
+          <p><strong>Minimum Balance:</strong> A minimum balance of AED 7.50 is required on standard Silver Nol cards prior to tapping in.</p>
+        </div>
       </div>
+
+      <!-- Dubai Metro Lines -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        
+        <!-- Red Line -->
+        <div class="glass-card p-6 rounded-2xl border-l-4 border-l-red-500 space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-mono font-bold text-red-400">DUBAI METRO</span>
+            <span class="px-2 py-0.5 rounded bg-red-500/10 border border-red-500/30 text-red-300 text-[10px] font-mono">Primary Arterial</span>
+          </div>
+          <h3 class="text-lg font-bold text-white">Red Line (Centrepoint ⇄ Expo 2020 / UAE Exchange)</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Spanning along the Sheikh Zayed Road (E11) corridor, connecting Dubai International Airport (DXB Terminals 1 & 3), Downtown Dubai, DIFC, Dubai Marina, and Expo City.
+          </p>
+          <div class="space-y-2 text-xs font-mono bg-slate-900/70 p-3.5 rounded-xl border border-slate-800 text-slate-300">
+            <div class="flex justify-between"><span>Key Interchanges:</span> <strong class="text-white">Union & BurJuman (Green Line)</strong></div>
+            <div class="flex justify-between"><span>Tram Interchanges:</span> <strong class="text-white">Sobha Realty & DMCC</strong></div>
+            <div class="flex justify-between"><span>Peak Frequency:</span> <strong class="text-brand-cyan">Every 2.5 – 3.5 minutes</strong></div>
+          </div>
+        </div>
+
+        <!-- Green Line -->
+        <div class="glass-card p-6 rounded-2xl border-l-4 border-l-emerald-500 space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-mono font-bold text-emerald-400">DUBAI METRO</span>
+            <span class="px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-[10px] font-mono">Historic & Cultural</span>
+          </div>
+          <h3 class="text-lg font-bold text-white">Green Line (Etisalat by e& ⇄ Creek)</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Servicing traditional trade sectors, governmental departments, and heritage districts across Deira, Bur Dubai, Al Ras, Gold Souk, and Healthcare City through Al Jaddaf.
+          </p>
+          <div class="space-y-2 text-xs font-mono bg-slate-900/70 p-3.5 rounded-xl border border-slate-800 text-slate-300">
+            <div class="flex justify-between"><span>Key Interchanges:</span> <strong class="text-white">Union & BurJuman (Red Line)</strong></div>
+            <div class="flex justify-between"><span>Bus Hub Links:</span> <strong class="text-white">Al Ghubaiba Intercity Bus Terminal</strong></div>
+            <div class="flex justify-between"><span>Off-Peak Frequency:</span> <strong class="text-brand-cyan">Every 5 – 7 minutes</strong></div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Weekly Operating Schedule -->
+      <div class="glass-card rounded-2xl p-6 sm:p-7 space-y-4">
+        <h3 class="text-base font-bold text-white flex items-center gap-2">
+          <i class="ph ph-clock text-indigo-400"></i> Standard Dubai Metro Network Hours
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-4 gap-3 text-xs font-mono text-center">
+          <div class="bg-slate-900/80 p-3.5 rounded-xl border border-slate-800">
+            <span class="text-[10px] text-slate-400 block mb-1">Monday – Thursday</span>
+            <span class="text-sm font-bold text-white block">05:00 AM – 12:00 AM</span>
+            <span class="text-[10px] text-slate-500">Midnight Close</span>
+          </div>
+          <div class="bg-slate-900/80 p-3.5 rounded-xl border border-slate-800">
+            <span class="text-[10px] text-slate-400 block mb-1">Friday (Weekend Start)</span>
+            <span class="text-sm font-bold text-white block">05:00 AM – 01:00 AM</span>
+            <span class="text-[10px] text-brand-cyan">Extended Late Night</span>
+          </div>
+          <div class="bg-slate-900/80 p-3.5 rounded-xl border border-slate-800">
+            <span class="text-[10px] text-slate-400 block mb-1">Saturday</span>
+            <span class="text-sm font-bold text-white block">05:00 AM – 12:00 AM</span>
+            <span class="text-[10px] text-slate-500">Midnight Close</span>
+          </div>
+          <div class="bg-slate-900/80 p-3.5 rounded-xl border border-slate-800">
+            <span class="text-[10px] text-slate-400 block mb-1">Sunday</span>
+            <span class="text-sm font-bold text-amber-400 block">08:00 AM – 12:00 AM</span>
+            <span class="text-[10px] text-slate-500">Later Morning Opening</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Major RTA Intercity Express Bus Routes -->
+      <div class="space-y-4">
+        <div class="flex items-center justify-between">
+          <h3 class="text-lg font-bold text-white flex items-center gap-2">
+            <i class="ph ph-bus text-indigo-400"></i> Key Intercity Express Bus Corridors
+          </h3>
+          <span class="text-xs font-mono text-slate-400">Direct Interstate Connections</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          
+          <!-- E100 -->
+          <div class="glass-card p-5 rounded-2xl border-t-2 border-t-indigo-400 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono font-bold text-indigo-300">ROUTE E100</span>
+              <span class="text-xs font-mono font-bold text-white">AED 25 (Nol)</span>
+            </div>
+            <h4 class="text-base font-bold text-white">Al Ghubaiba ⇄ Abu Dhabi Central</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Express air-conditioned coach connecting historic Dubai with the capital via Sheikh Zayed Road (E11). Departures every 15 minutes.
+            </p>
+            <div class="text-[11px] font-mono text-slate-300 pt-2 border-t border-slate-800">
+              Duration: <strong class="text-white">~120 Mins</strong> • Boarding: Al Ghubaiba Bus Station
+            </div>
+          </div>
+
+          <!-- E101 -->
+          <div class="glass-card p-5 rounded-2xl border-t-2 border-t-indigo-400 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono font-bold text-indigo-300">ROUTE E101</span>
+              <span class="text-xs font-mono font-bold text-white">AED 25 (Nol)</span>
+            </div>
+            <h4 class="text-base font-bold text-white">Ibn Battuta ⇄ Abu Dhabi Central</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Fastest bus route to Abu Dhabi, originating at the southern metro terminus (Ibn Battuta). Departures every 20 minutes.
+            </p>
+            <div class="text-[11px] font-mono text-slate-300 pt-2 border-t border-slate-800">
+              Duration: <strong class="text-white">~95 Mins</strong> • Boarding: Ibn Battuta Metro Station
+            </div>
+          </div>
+
+          <!-- E201 -->
+          <div class="glass-card p-5 rounded-2xl border-t-2 border-t-indigo-400 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono font-bold text-indigo-300">ROUTE E201</span>
+              <span class="text-xs font-mono font-bold text-white">AED 25 (Nol)</span>
+            </div>
+            <h4 class="text-base font-bold text-white">Al Ghubaiba ⇄ Al Ain Central</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Direct inland link connecting central Dubai to the Garden City of Al Ain via Dubai-Al Ain Road (E66). Departures every 30 minutes.
+            </p>
+            <div class="text-[11px] font-mono text-slate-300 pt-2 border-t border-slate-800">
+              Duration: <strong class="text-white">~120 Mins</strong> • Boarding: Al Ghubaiba Bus Station
+            </div>
+          </div>
+
+          <!-- E307 -->
+          <div class="glass-card p-5 rounded-2xl border-t-2 border-t-sky-400 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono font-bold text-sky-300">ROUTE E307 / E307A</span>
+              <span class="text-xs font-mono font-bold text-white">AED 10 (Nol)</span>
+            </div>
+            <h4 class="text-base font-bold text-white">Deira City Centre ⇄ Sharjah Al Jubail</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Crucial inter-emirate commuter link connecting eastern Dubai directly into Sharjah’s central Al Jubail bus terminal.
+            </p>
+            <div class="text-[11px] font-mono text-slate-300 pt-2 border-t border-slate-800">
+              Duration: <strong class="text-white">~45–75 Mins (Traffic Dependent)</strong> • Boarding: Deira / Union
+            </div>
+          </div>
+
+          <!-- E700 -->
+          <div class="glass-card p-5 rounded-2xl border-t-2 border-t-purple-400 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono font-bold text-purple-300">ROUTE E700</span>
+              <span class="text-xs font-mono font-bold text-white">AED 30 (Nol)</span>
+            </div>
+            <h4 class="text-base font-bold text-white">Union Square ⇄ Fujairah Central</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              East-coast mountain highway express linking Deira to Fujairah Choithrams and City Centre via Maleha and Masafi.
+            </p>
+            <div class="text-[11px] font-mono text-slate-300 pt-2 border-t border-slate-800">
+              Duration: <strong class="text-white">~135 Mins</strong> • Boarding: Union Bus Station
+            </div>
+          </div>
+
+          <!-- Intercity Bus Features -->
+          <div class="bg-slate-900/80 p-5 rounded-2xl border border-slate-800 flex flex-col justify-between space-y-2">
+            <div>
+              <span class="text-xs font-mono text-brand-cyan">PASSENGER AMENITIES</span>
+              <h4 class="text-base font-bold text-white mt-1">Intercity Coach Standards</h4>
+              <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                All RTA intercity buses feature contactless Nol card tap gates, climate-controlled cabins, luggage compartments, and free onboard Wi-Fi.
+              </p>
+            </div>
+            <div class="text-[11px] font-mono text-slate-500 pt-2 border-t border-slate-800">
+              No paper cash accepted onboard.
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Future Metro Expansion: Blue Line 2029 Showcase -->
+      <div class="glass-card rounded-2xl p-6 sm:p-8 space-y-6">
+        <div>
+          <span class="text-xs font-mono text-sky-400 uppercase tracking-widest block mb-1">Network Expansion Project</span>
+          <h3 class="text-xl font-bold text-white">Dubai Metro Blue Line (Opening September 2029)</h3>
+          <p class="text-xs text-slate-400 mt-1 max-w-2xl leading-relaxed">
+            The AED 20.5 billion strategic expansion spanning 30 km (15.5 km underground, 14.5 km elevated) and adding 14 stations across key high-density districts.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 text-xs">
+          
+          <div class="bg-slate-900/80 p-5 rounded-xl border border-slate-800 space-y-2">
+            <div class="font-bold text-white flex items-center gap-1.5">
+              <i class="ph ph-git-branch text-brand-cyan text-base"></i> Dual Branch Y-Junction
+            </div>
+            <p class="text-slate-400 leading-relaxed">
+              Branch A runs 21 km from <strong>Creek Interchange (Green Line)</strong> to Academic City. Branch B runs 9 km from <strong>Centrepoint (Red Line)</strong>, meeting at International City 1.
+            </p>
+          </div>
+
+          <div class="bg-slate-900/80 p-5 rounded-xl border border-slate-800 space-y-2">
+            <div class="font-bold text-white flex items-center gap-1.5">
+              <i class="ph ph-buildings text-emerald-400 text-base"></i> Key Connected Communities
+            </div>
+            <p class="text-slate-400 leading-relaxed">
+              Provides direct rail access to <strong>Dubai Creek Harbour</strong> (featuring a landmark 74m tall station), <strong>Dubai Silicon Oasis</strong>, <strong>International City</strong>, and <strong>Academic City</strong>.
+            </p>
+          </div>
+
+          <div class="bg-slate-900/80 p-5 rounded-xl border border-slate-800 space-y-2">
+            <div class="font-bold text-white flex items-center gap-1.5">
+              <i class="ph ph-bridge text-indigo-400 text-base"></i> Creek Crossing Landmark
+            </div>
+            <p class="text-slate-400 leading-relaxed">
+              Features the Dubai Metro’s first bridge crossing directly over Dubai Creek via a 1.3 km architectural viaduct, cutting travel from Creek to Academic City to ~25 minutes.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
     </section>
 
     <!-- ========================================================= -->
-    <!-- VIEW: ETIHAD RAIL                                         -->
+    <!-- VIEW: ETIHAD RAIL PASSENGER NETWORK (Comprehensive Guide) -->
     <!-- ========================================================= -->
-    <section id="view-etihad" class="page-view hidden space-y-8">
-      <div class="border-b border-[#141d33] pb-6">
-        <div class="text-xs font-mono text-purple-400 tracking-widest uppercase mb-1 font-semibold">
-          National Passenger Railway Backbone
+    <section id="view-etihad" class="page-view hidden space-y-12">
+      
+      <!-- Header Strip -->
+      <div class="border-b border-slate-800 pb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-400/30 text-[11px] font-mono text-purple-400 mb-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-purple-400 animate-ping"></span>
+            NATIONAL PASSENGER RAILWAY DIRECTORY
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Etihad Rail Passenger Network</h2>
+          <p class="text-slate-400 text-sm mt-2 max-w-2xl leading-relaxed">
+            Connecting 11 major urban centres across 4 emirates with 200 km/h aerodynamic passenger trains, revolutionizing intercity commute between Dubai, Abu Dhabi, Sharjah, and Fujairah.
+          </p>
         </div>
-        <h2 class="text-3xl font-extrabold text-white">Etihad Rail Passenger Network</h2>
-        <p class="text-sm text-slate-400 mt-2">
-          Strategic passenger rail line connecting major UAE transport hubs at operating speeds of up to 200 km/h.
-        </p>
+        <div class="flex items-center gap-2 bg-slate-900/90 border border-slate-800 p-3 rounded-xl text-xs font-mono text-slate-300">
+          <div><span class="text-slate-500 block text-[10px]">TOP CRUISE SPEED</span> 200 km/h Intercity</div>
+        </div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs">
-        <div class="bg-[#080d1a] border border-[#141e36] rounded-2xl p-6 space-y-2">
-          <div class="font-bold text-white text-base">Abu Dhabi Hub</div>
-          <p class="text-slate-400 leading-relaxed">Terminal located in Mohammed bin Zayed City connecting passengers to Dubai and the Western Region.</p>
+      <!-- Quick Route Performance Metrics Strip -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <div class="glass-card p-4 rounded-xl border border-slate-800 text-center">
+          <span class="text-[10px] text-slate-400 uppercase font-mono block">Dubai ⇄ Abu Dhabi</span>
+          <span class="text-2xl font-bold text-purple-400 font-mono mt-1 block">57 Mins</span>
+          <span class="text-[10px] text-rose-400">vs 1h 45m Road Traffic</span>
         </div>
-        <div class="bg-[#080d1a] border border-[#141e36] rounded-2xl p-6 space-y-2">
-          <div class="font-bold text-white text-base">Dubai Hub</div>
-          <p class="text-slate-400 leading-relaxed">Central passenger terminal situated in the Al Yalayis corridor, adjacent to Expo City and Dubai South.</p>
+        <div class="glass-card p-4 rounded-xl border border-slate-800 text-center">
+          <span class="text-[10px] text-slate-400 uppercase font-mono block">Abu Dhabi ⇄ Fujairah</span>
+          <span class="text-2xl font-bold text-purple-400 font-mono mt-1 block">105 Mins</span>
+          <span class="text-[10px] text-rose-400">vs 3h 15m Mountain Road</span>
         </div>
-        <div class="bg-[#080d1a] border border-[#141e36] rounded-2xl p-6 space-y-2">
-          <div class="font-bold text-white text-base">Sharjah & Northern Emirates</div>
-          <p class="text-slate-400 leading-relaxed">Passenger terminals servicing University City Sharjah and coastal links into Fujairah.</p>
+        <div class="glass-card p-4 rounded-xl border border-slate-800 text-center">
+          <span class="text-[10px] text-slate-400 uppercase font-mono block">Abu Dhabi ⇄ Al Ruwais</span>
+          <span class="text-2xl font-bold text-purple-400 font-mono mt-1 block">70 Mins</span>
+          <span class="text-[10px] text-rose-400">vs 2h 45m by Car</span>
         </div>
+        <div class="glass-card p-4 rounded-xl border border-slate-800 text-center">
+          <span class="text-[10px] text-slate-400 uppercase font-mono block">Annual Passenger Target</span>
+          <span class="text-2xl font-bold text-brand-success font-mono mt-1 block">36M Pax</span>
+          <span class="text-[10px] text-slate-400">Target by 2030</span>
+        </div>
+      </div>
+
+      <!-- Complete Stations Directory -->
+      <div class="space-y-4">
+        <div class="flex items-center justify-between">
+          <h3 class="text-lg font-bold text-white flex items-center gap-2">
+            <i class="ph ph-map-pin text-purple-400"></i> Confirmed Passenger Stations & Rollout Status
+          </h3>
+          <span class="text-xs font-mono text-slate-400">11 Stations Across UAE</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-xs">
+          
+          <!-- Station 1: Dubai Al Yalayis -->
+          <div class="glass-card p-5 rounded-2xl border-l-4 border-l-purple-500 space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono font-bold text-purple-300">DUBAI</span>
+              <span class="px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-[10px] font-mono">Operational Hub</span>
+            </div>
+            <h4 class="text-base font-bold text-white">Al Yalayis / Jumeirah Golf Estates</h4>
+            <p class="text-slate-400 leading-relaxed">
+              Dubai's primary passenger rail terminal situated along the Sheikh Mohammed Bin Zayed Road corridor. Direct pedestrian link with Dubai Metro Red Line (JGE) plus dedicated RTA feeder bus integration.
+            </p>
+            <div class="text-[11px] font-mono text-slate-300 pt-2 border-t border-slate-800/80">
+              Interchange: <span class="text-white">Dubai Metro Red Line & RTA Taxis</span>
+            </div>
+          </div>
+
+          <!-- Station 2: Abu Dhabi MBZ City -->
+          <div class="glass-card p-5 rounded-2xl border-l-4 border-l-purple-500 space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono font-bold text-purple-300">ABU DHABI</span>
+              <span class="px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-[10px] font-mono">Operational Hub</span>
+            </div>
+            <h4 class="text-base font-bold text-white">Mohamed bin Zayed City Station</h4>
+            <p class="text-slate-400 leading-relaxed">
+              The flagship capital terminal serving central Abu Dhabi and Mussafah. Supported by integrated express electric shuttle routes directly into ADNOC HQ Corniche, ADNEC Centre, and Reem Mall.
+            </p>
+            <div class="text-[11px] font-mono text-slate-300 pt-2 border-t border-slate-800/80">
+              Connections: <span class="text-white">Capital Express Shuttles & Zayed Airport</span>
+            </div>
+          </div>
+
+          <!-- Station 3: Fujairah Al Hilal -->
+          <div class="glass-card p-5 rounded-2xl border-l-4 border-l-purple-500 space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono font-bold text-purple-300">FUJAIRAH</span>
+              <span class="px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-[10px] font-mono">Operational Hub</span>
+            </div>
+            <h4 class="text-base font-bold text-white">Al Hilal City Station (East Coast)</h4>
+            <p class="text-slate-400 leading-relaxed">
+              The eastern terminus connecting the Gulf of Oman coast through the Hajar mountain rail tunnels. Located 12 minutes from Fujairah International Airport and 6 minutes from Umbrella Beach.
+            </p>
+            <div class="text-[11px] font-mono text-slate-300 pt-2 border-t border-slate-800/80">
+              Transit Link: <span class="text-white">Fujairah City Centre & Port Authority</span>
+            </div>
+          </div>
+
+          <!-- Station 4: Sharjah Al Dhaid -->
+          <div class="glass-card p-5 rounded-2xl border-l-4 border-l-sky-500 space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono font-bold text-sky-300">SHARJAH</span>
+              <span class="px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-[10px] font-mono">Operational Hub</span>
+            </div>
+            <h4 class="text-base font-bold text-white">Al Dhaid Passenger Station</h4>
+            <p class="text-slate-400 leading-relaxed">
+              Strategic inland hub serving central Sharjah and agricultural districts, unlocking fast connections directly into Dubai and Fujairah.
+            </p>
+            <div class="text-[11px] font-mono text-slate-300 pt-2 border-t border-slate-800/80">
+              Corridor: <span class="text-white">Inland Central Sharjah Gateway</span>
+            </div>
+          </div>
+
+          <!-- Station 5: Sharjah University City -->
+          <div class="glass-card p-5 rounded-2xl border-l-4 border-l-slate-600 space-y-2 opacity-90">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono font-bold text-slate-400">SHARJAH</span>
+              <span class="px-2 py-0.5 rounded bg-amber-500/10 border border-amber-500/30 text-amber-400 text-[10px] font-mono">Opens 2027</span>
+            </div>
+            <h4 class="text-base font-bold text-white">University City Station</h4>
+            <p class="text-slate-400 leading-relaxed">
+              Serving Sharjah’s academic capital, cultural center, and Sharjah International Airport passengers, bypassing interstate highway bottlenecks.
+            </p>
+            <div class="text-[11px] font-mono text-slate-300 pt-2 border-t border-slate-800/80">
+              Proximity: <span class="text-white">Sharjah Airport (SHJ) & Academic City</span>
+            </div>
+          </div>
+
+          <!-- Station 6: Al Dhafra Region -->
+          <div class="glass-card p-5 rounded-2xl border-l-4 border-l-slate-600 space-y-2 opacity-90">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono font-bold text-slate-400">AL DHAFRA</span>
+              <span class="px-2 py-0.5 rounded bg-sky-500/10 border border-sky-500/30 text-sky-400 text-[10px] font-mono">Western Coast</span>
+            </div>
+            <h4 class="text-base font-bold text-white">Madinat Zayed, Liwa, Al Dhannah, Al Sila</h4>
+            <p class="text-slate-400 leading-relaxed">
+              Extensive desert and coastal line linking industrial cities, energy hubs, and the western border at Ghuweifat to the capital.
+            </p>
+            <div class="text-[11px] font-mono text-slate-300 pt-2 border-t border-slate-800/80">
+              Future Link: <span class="text-white">GCC Railway Connection (Saudi Arabia)</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Ticket Fares & Cabin Classes -->
+      <div class="glass-card rounded-2xl p-6 sm:p-8 space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-4">
+          <div>
+            <h3 class="text-lg font-bold text-white flex items-center gap-2">
+              <i class="ph ph-ticket text-purple-400"></i> Public Ticket Classes & Pricing Structure
+            </h3>
+            <p class="text-xs text-slate-400 mt-1">Official tariff structure for intercity journeys across the national network.</p>
+          </div>
+          <span class="text-xs font-mono text-brand-success bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-lg">All Seats Include High-Speed Wi-Fi</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          
+          <!-- Comfort Class -->
+          <div class="bg-slate-900/80 rounded-xl p-5 border border-slate-800 space-y-4">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <i class="ph ph-armchair text-xl text-purple-400"></i>
+                <h4 class="text-base font-bold text-white">Comfort Class</h4>
+              </div>
+              <span class="text-xs font-mono text-purple-300 font-bold">Standard Fare</span>
+            </div>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Generous legroom, ergonomic reclining seating, individual power sockets, USB charging, tray tables, and family seating clusters.
+            </p>
+            <div class="space-y-2 pt-2 border-t border-slate-800 text-xs">
+              <div class="flex justify-between text-slate-300">
+                <span>Adult Launch Saver:</span> <strong class="text-white font-mono">From AED 39 – 55</strong>
+              </div>
+              <div class="flex justify-between text-slate-300">
+                <span>Children (2 to 17 yrs):</span> <strong class="text-emerald-400 font-mono">50% Discount (AED 28)</strong>
+              </div>
+              <div class="flex justify-between text-slate-300">
+                <span>Seniors (60+ yrs):</span> <strong class="text-emerald-400 font-mono">Discounted (AED 44)</strong>
+              </div>
+              <div class="flex justify-between text-slate-300">
+                <span>Infants (under 2 on lap):</span> <strong class="text-emerald-400 font-mono">Free</strong>
+              </div>
+              <div class="flex justify-between text-slate-300">
+                <span>Standard Post-Launch Tariff:</span> <strong class="text-slate-400 font-mono">AED 109</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Premium Class -->
+          <div class="bg-slate-900/80 rounded-xl p-5 border border-purple-500/30 space-y-4">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <i class="ph ph-sparkle text-xl text-brand-cyan"></i>
+                <h4 class="text-base font-bold text-white">Premium Class (First Class)</h4>
+              </div>
+              <span class="text-xs font-mono text-brand-cyan font-bold">Executive Carriage</span>
+            </div>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Spacious 2+1 wide seating layout, dedicated quiet cabins, priority boarding, extra baggage allowance, personal reading lamps, and executive station lounge access.
+            </p>
+            <div class="space-y-2 pt-2 border-t border-slate-800 text-xs">
+              <div class="flex justify-between text-slate-300">
+                <span>Adult Launch Saver:</span> <strong class="text-brand-cyan font-mono">From AED 120</strong>
+              </div>
+              <div class="flex justify-between text-slate-300">
+                <span>Flex Option (Free Refund & Changes):</span> <strong class="text-white font-mono">AED 160</strong>
+              </div>
+              <div class="flex justify-between text-slate-300">
+                <span>Children (2 to 17 yrs):</span> <strong class="text-emerald-400 font-mono">AED 60</strong>
+              </div>
+              <div class="flex justify-between text-slate-300">
+                <span>Seniors (60+ yrs):</span> <strong class="text-emerald-400 font-mono">AED 96</strong>
+              </div>
+              <div class="flex justify-between text-slate-300">
+                <span>Standard Post-Launch Tariff:</span> <strong class="text-slate-400 font-mono">AED 239</strong>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Inclusions Strip -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2 text-center text-xs font-mono">
+          <div class="p-3 bg-slate-950/60 rounded-xl border border-slate-800">
+            <i class="ph ph-wifi-high text-purple-400 text-lg block mb-1"></i>
+            <span class="text-slate-300">Gigabit Onboard Wi-Fi</span>
+          </div>
+          <div class="p-3 bg-slate-950/60 rounded-xl border border-slate-800">
+            <i class="ph ph-suitcase text-purple-400 text-lg block mb-1"></i>
+            <span class="text-slate-300">Checked + Hand Luggage</span>
+          </div>
+          <div class="p-3 bg-slate-950/60 rounded-xl border border-slate-800">
+            <i class="ph ph-plug text-purple-400 text-lg block mb-1"></i>
+            <span class="text-slate-300">Power at Every Seat</span>
+          </div>
+          <div class="p-3 bg-slate-950/60 rounded-xl border border-slate-800">
+            <i class="ph ph-coffee text-purple-400 text-lg block mb-1"></i>
+            <span class="text-slate-300">Onboard Café & Refreshments</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Future Expansion Roadmap & Dubai Master Plan -->
+      <div class="glass-card rounded-2xl p-6 sm:p-8 space-y-6">
+        <div>
+          <span class="text-xs font-mono text-purple-400 uppercase tracking-widest block mb-1">National Mobility Blueprint</span>
+          <h3 class="text-xl font-bold text-white">Future Network Expansions & High-Speed Corridors</h3>
+          <p class="text-xs text-slate-400 mt-1 max-w-2xl leading-relaxed">
+            Etihad Rail’s long-term master plan involves deeper urban integration into Dubai and high-speed connections across the Arabian Gulf.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 text-xs">
+          
+          <div class="bg-slate-900/80 p-5 rounded-xl border border-slate-800 space-y-2">
+            <div class="font-bold text-white flex items-center gap-1.5">
+              <i class="ph ph-buildings text-purple-400 text-base"></i> 4 Dubai Stations Plan
+            </div>
+            <p class="text-slate-400 leading-relaxed">
+              In addition to <strong>Al Yalayis (JGE)</strong>, future planned Dubai stations include <strong>Al Jaddaf</strong> (connecting to Dubai Metro Green & Blue Lines) and <strong>Meydan</strong> (connecting to the upcoming Gold Line).
+            </p>
+          </div>
+
+          <div class="bg-slate-900/80 p-5 rounded-xl border border-slate-800 space-y-2">
+            <div class="font-bold text-white flex items-center gap-1.5">
+              <i class="ph ph-speedometer text-brand-cyan text-base"></i> 350 km/h Bullet Rail Corridor
+            </div>
+            <p class="text-slate-400 leading-relaxed">
+              A dedicated ultra-high-speed bullet rail system designed for speeds up to 350 km/h is planned to slash Dubai-to-Abu Dhabi travel times down to just 30 minutes.
+            </p>
+          </div>
+
+          <div class="bg-slate-900/80 p-5 rounded-xl border border-slate-800 space-y-2">
+            <div class="font-bold text-white flex items-center gap-1.5">
+              <i class="ph ph-globe text-emerald-400 text-base"></i> GCC Rail Network (Saudi Link)
+            </div>
+            <p class="text-slate-400 leading-relaxed">
+              The western stretch terminating at Al Sila and Ghuweifat is designed to integrate into the cross-border GCC Railway Network, directly linking the UAE with the Kingdom of Saudi Arabia.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- VIEW: ALERTS (Formspree) -->
+    <section id="view-alerts" class="page-view hidden space-y-10">
+      <div class="max-w-xl mx-auto glass-card p-8 rounded-2xl border border-slate-800 space-y-5">
+        <h2 class="text-2xl font-bold text-white text-center">Subscribe to Route Dispatch</h2>
+        <p class="text-xs text-slate-400 text-center">Receive notifications when official public transit routes or commercial vertiport operations officially open.</p>
+        <form id="active-notify-form" action="https://formspree.io/f/xqpeqnno" method="POST" class="space-y-4">
+          <input type="email" name="email" required placeholder="Enter your email" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-xs text-white">
+          <button type="submit" id="notify-submit-btn" class="w-full py-3 rounded-xl bg-brand-cyan text-brand-dark font-bold text-xs uppercase">Notify Me</button>
+        </form>
+        <div id="notify-status" class="hidden text-center py-4 text-xs text-brand-cyan">✓ Confirmed! You are registered for independent dispatch updates.</div>
       </div>
     </section>
 
   </main>
 
-  <!-- MODAL: ROUTE ALERTS -->
-  <div id="modal-alerts" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
-    <div class="bg-[#0a101f] border border-[#1e2f57] rounded-2xl max-w-md w-full p-6 space-y-5">
-      <div class="flex justify-between items-center border-b border-[#142142] pb-3">
-        <div class="text-white font-bold text-sm flex items-center gap-2">
-          <i class="ph ph-bell text-[#00e5ff]"></i> Transit Dispatch Alerts
-        </div>
-        <button onclick="closeModal()" class="text-slate-500 hover:text-white">
-          <i class="ph ph-x text-lg"></i>
-        </button>
-      </div>
-      <p class="text-xs text-slate-400 leading-relaxed">
-        Get independent updates on newly announced RTA bus feeder lines, Dubai Metro Blue Line station updates, and commercial vertiport flight timings.
+  <!-- Legal Safeguard & Disclaimer Strip -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 mb-6">
+    <div class="p-4 rounded-xl bg-slate-950/90 border border-slate-800/80 text-[11px] text-slate-400 leading-relaxed space-y-1.5">
+      <p class="font-bold text-slate-300 uppercase tracking-wider font-mono">Independent Transparency & Trademark Disclaimer:</p>
+      <p>
+        <strong>dubaiskyports.com</strong> is a privately managed digital information portal and commuter research directory. This website is <strong>not affiliated with, authorized by, sponsored by, or officially associated with</strong> the Dubai Roads and Transport Authority (RTA), Skyports Infrastructure Limited, Joby Aviation Inc, or Etihad Rail PJSC, nor any of their subsidiaries or affiliates.
       </p>
-      <form onsubmit="event.preventDefault(); alert('Subscribed to route dispatches.'); closeModal();" class="space-y-3">
-        <input type="email" required placeholder="Enter your email address" class="w-full bg-[#060a12] border border-[#1a2b52] rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-[#00e5ff]">
-        <button type="submit" class="w-full py-2.5 rounded-xl bg-[#00e5ff] text-slate-950 font-bold text-xs uppercase tracking-wider hover:bg-[#33ebff] transition">
-          Confirm Subscription
-        </button>
-      </form>
+      <p>
+        All registered trademarks, service marks, company names, trade names, and brand logos mentioned herein remain the sole intellectual property of their respective owners. Descriptions of routes, fares, and transport infrastructure are provided strictly for general informational purposes based on publicly accessible data and estimations.
+      </p>
     </div>
-  </div>
+  </section>
 
-  <!-- EDITORIAL DISCLAIMER FOOTER -->
-  <footer class="border-t border-[#141d33] bg-[#04070d] py-10 px-6 text-xs text-slate-500">
-    <div class="max-w-[1400px] mx-auto space-y-6">
-      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-[#141d33] pb-6">
-        <div class="text-slate-300 font-bold font-mono tracking-wider flex items-center gap-2">
-          <i class="ph ph-shield-check text-[#00e5ff]"></i>
-          DUBAISKYPORTS.COM • INDEPENDENT TRANSIT DIRECTORY
-        </div>
-        <div class="text-[10px] font-mono text-slate-500">
-          PORTAL REVISION: 2026.4 • LIVE NOL ZONE TARIFF
-        </div>
+  <footer class="glass-card border-t border-brand-border mt-auto pt-8 pb-8 text-xs text-slate-400">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left flex flex-col sm:flex-row justify-between items-center gap-4">
+      <div>
+        <p class="text-slate-300 font-medium">© 2026 Dubaiskyports.com. All rights reserved.</p>
+        <p class="text-[11px] text-slate-500 mt-1">Independent Multimodal Transit Information Portal.</p>
       </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-[11px] leading-relaxed text-slate-400">
-        <div>
-          <h4 class="font-bold text-slate-300 mb-1">Independent Information Portal</h4>
-          <p>
-            DubaiSkyports.com is an independent digital guide tracking public mobility and urban transit infrastructure across Dubai and the United Arab Emirates.
-          </p>
-        </div>
-        <div>
-          <h4 class="font-bold text-slate-300 mb-1">Regulatory Notice</h4>
-          <p>
-            This website is not operated by, affiliated with, sponsored by, or endorsed by the Roads and Transport Authority (RTA), Dubai Airports, Skyports Infrastructure Ltd, or Etihad Rail.
-          </p>
-        </div>
-        <div>
-          <h4 class="font-bold text-slate-300 mb-1">Tariffs & Trademarks</h4>
-          <p>
-            All trademarks (including Nol, RTA, and Dubai Metro) remain property of their respective owners. Commuters should verify real-time schedules on official agency portals.
-          </p>
-        </div>
-      </div>
-
-      <div class="pt-6 border-t border-[#141d33] text-[10px] font-mono text-slate-600 flex justify-between items-center">
-        <div>&copy; 2026 DubaiSkyports.com. All rights reserved.</div>
-        <div>dubaiskyports.com</div>
+      <div class="flex items-center gap-4 font-mono text-[11px]">
+        <a href="mailto:info@dubaiskyports.com" class="text-brand-cyan hover:underline">info@dubaiskyports.com</a>
       </div>
     </div>
   </footer>
 
-  <!-- SCRIPT ENGINE -->
   <script>
-    // Tab View Switching
-    function switchTab(viewName) {
-      document.querySelectorAll('.page-view').forEach(el => el.classList.add('hidden'));
-      document.querySelectorAll('.nav-btn').forEach(btn => {
-        btn.classList.remove('bg-[#0e172e]', 'border', 'border-[#1e2d52]', 'text-white');
-        btn.classList.add('text-slate-300');
-      });
+    // -------------------------------------------------------------
+    // TRANSIT DATABASE (Expanded Granular Neighborhoods)
+    // -------------------------------------------------------------
+    const locations = {
+      // Hubs
+      dxb: { name: "DXB Airport (T1/T3)", lat: 25.2532, lng: 55.3657, zone: 5, hasVertiport: true, vertiportName: "DXB Terminal 3 Vertiport", metroStation: "Airport Terminal 3 (Red Line)", busRoute: "Bus 32C / 11A / Airport Express" },
+      dwc: { name: "DWC Al Maktoum Airport", lat: 24.8967, lng: 55.1614, zone: 1, hasVertiport: false, metroStation: "Expo 2020 Station (Requires Feeder Bus)", busRoute: "Bus F55 (Direct from Expo 2020 Metro)" },
+      
+      // Deira & Historic (Zone 5)
+      naif: { name: "Naif (Deira Souk)", lat: 25.2736, lng: 55.3051, zone: 5, hasVertiport: false, metroStation: "Baniyas Square Station (Green Line)", busRoute: "Bus C01, 27, 53" },
+      abu_hail: { name: "Abu Hail / Hor Al Anz", lat: 25.2798, lng: 55.3342, zone: 5, hasVertiport: false, metroStation: "Abu Hail Metro Station (Green Line)", busRoute: "Bus C03, C10, C28" },
+      al_ras: { name: "Al Ras (Gold Souk / Heritage)", lat: 25.2687, lng: 55.2974, zone: 5, hasVertiport: false, metroStation: "Al Ras Metro Station (Green Line)", busRoute: "Bus C07, C09, Marine Abra" },
+      al_sabkha: { name: "Al Sabkha (Bus & Marine)", lat: 25.2672, lng: 55.3021, zone: 5, hasVertiport: false, metroStation: "Baniyas Square (Green Line)", busRoute: "Al Sabkha Major Bus Terminal" },
+      deira: { name: "Deira / Al Rigga", lat: 25.2631, lng: 55.3235, zone: 5, hasVertiport: false, metroStation: "Al Rigga / Union Interchange (Red & Green)", busRoute: "Bus C01, C09, 27" },
+      al_muteena: { name: "Al Muteena (Deira)", lat: 25.2741, lng: 55.3188, zone: 5, hasVertiport: false, metroStation: "Salah Al Din Station (Green Line)", busRoute: "Bus 13, 43, C14" },
+      al_baraha: { name: "Al Baraha / Corniche", lat: 25.2831, lng: 55.3135, zone: 5, hasVertiport: false, metroStation: "Gold Souq Station (Green Line)", busRoute: "Bus 17, C15" },
+      al_garhoud: { name: "Al Garhoud / GGICO", lat: 25.2443, lng: 55.3429, zone: 5, hasVertiport: false, metroStation: "GGICO Metro Station (Red Line)", busRoute: "Bus 32C, 33" },
 
-      const targetView = document.getElementById('view-' + viewName);
-      const targetBtn = document.getElementById('tab-' + viewName);
+      // Bur Dubai & Creek (Zone 5)
+      bur_dubai: { name: "Bur Dubai / Al Ghubaiba", lat: 25.2612, lng: 55.2891, zone: 5, hasVertiport: false, metroStation: "Al Ghubaiba Station (Green Line)", busRoute: "Bus C07, 8, 29, 33" },
+      al_karama: { name: "Al Karama", lat: 25.2458, lng: 55.3032, zone: 5, hasVertiport: false, metroStation: "ADCB Metro Station (Red Line)", busRoute: "Bus 28, 33, 44, C03, C05" },
+      al_mankhool: { name: "Al Mankhool", lat: 25.2505, lng: 55.2931, zone: 5, hasVertiport: false, metroStation: "BurJuman Interchange (Red & Green Lines)", busRoute: "Bus 8, 9, 29, C10" },
+      oud_metha: { name: "Oud Metha", lat: 25.2341, lng: 55.3142, zone: 5, hasVertiport: false, metroStation: "Oud Metha Station (Green Line)", busRoute: "Bus 10, 27, 28, F18" },
+      al_jaddaf: { name: "Al Jaddaf / Culture Village", lat: 25.2185, lng: 55.3378, zone: 5, hasVertiport: false, metroStation: "Al Jaddaf Station (Green Line)", busRoute: "Bus 44, C04, Marine Ferry" },
+      creek_harbour: { name: "Dubai Creek Harbour", lat: 25.2048, lng: 55.3524, zone: 5, hasVertiport: false, metroStation: "Creek Metro Station (Green Line)", busRoute: "Bus 53, Marine Abra Route" },
 
-      if (targetView) targetView.classList.remove('hidden');
-      if (targetBtn) {
-        targetBtn.classList.remove('text-slate-300');
-        targetBtn.classList.add('bg-[#0e172e]', 'border', 'border-[#1e2d52]', 'text-white');
-      }
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+      // Northern Communities (Zone 6)
+      muhaisnah: { name: "Muhaisnah (1, 2, 3 & 4)", lat: 25.2755, lng: 55.4055, zone: 6, hasVertiport: false, metroStation: "Centrepoint Station (Requires Feeder Bus)", busRoute: "Feeder Bus 31, 32, F05, F03" },
+      al_qusais: { name: "Al Qusais Industrial & Residential", lat: 25.2862, lng: 55.3811, zone: 6, hasVertiport: false, metroStation: "Al Qusais Metro Station (Green Line)", busRoute: "Bus 13, 33, 43, X28" },
+      al_twar: { name: "Al Twar", lat: 25.2682, lng: 55.3722, zone: 6, hasVertiport: false, metroStation: "DAFZA Station (Green Line)", busRoute: "Bus 31, 33, C19" },
+      al_nahda: { name: "Al Nahda (Dubai side)", lat: 25.2952, lng: 55.3672, zone: 6, hasVertiport: false, metroStation: "Al Nahda Metro Station (Green Line)", busRoute: "Bus 22, 24, F21, F22" },
+      mirdif: { name: "Mirdif / City Centre", lat: 25.2198, lng: 55.4214, zone: 6, hasVertiport: false, metroStation: "Centrepoint Station (Requires Bus)", busRoute: "Bus 367, F10" },
+      al_warqa: { name: "Al Warqa'a", lat: 25.1884, lng: 55.4201, zone: 6, hasVertiport: false, metroStation: "Rashidiya / Centrepoint (Feeder Transfer)", busRoute: "Bus F61" },
+      al_khawaneej: { name: "Al Khawaneej", lat: 25.2631, lng: 55.4883, zone: 6, hasVertiport: false, metroStation: "Centrepoint Metro (Requires Feeder Bus)", busRoute: "Bus F05, 11A" },
 
-    function openModal() {
-      document.getElementById('modal-alerts').classList.remove('hidden');
-    }
+      // Central & Business (Zone 3)
+      downtown: { name: "Downtown / Burj Khalifa", lat: 25.1972, lng: 55.2744, zone: 3, hasVertiport: true, vertiportName: "Downtown Burj Vertiport Pad", metroStation: "Burj Khalifa / Dubai Mall (Red Line)", busRoute: "Bus 27, 28, 29 (Dubai Mall Concourse)" },
+      difc: { name: "DIFC Financial Centre", lat: 25.2104, lng: 55.2818, zone: 3, hasVertiport: false, metroStation: "Financial Centre Station (Red Line)", busRoute: "Bus 21, F11" },
+      business_bay: { name: "Business Bay", lat: 25.1852, lng: 55.2677, zone: 3, hasVertiport: false, metroStation: "Business Bay Station (Red Line)", busRoute: "Bus F14, F19A, F41" },
+      satwa: { name: "Al Satwa", lat: 25.2232, lng: 55.2731, zone: 3, hasVertiport: false, metroStation: "Max / World Trade Centre (Red Line)", busRoute: "Satwa Major Bus Station (Routes 32C, C09, X28)" },
+      al_wasl: { name: "Al Wasl / City Walk", lat: 25.2064, lng: 55.2612, zone: 3, hasVertiport: false, metroStation: "Burj Khalifa / Dubai Mall (Red Line)", busRoute: "Bus 7, 28, 81" },
+      jumeirah: { name: "Jumeirah (1, 2 & 3)", lat: 25.2021, lng: 55.2415, zone: 3, hasVertiport: false, metroStation: "Onpassive (Al Safa) (Red Line - transfer)", busRoute: "Bus 8, 81, 88, C10" },
+      al_quoz: { name: "Al Quoz (Industrial & Creative)", lat: 25.1432, lng: 55.2421, zone: 3, hasVertiport: false, metroStation: "Equiti Metro Station (Red Line)", busRoute: "Bus 21, F25, F26" },
 
-    function closeModal() {
-      document.getElementById('modal-alerts').classList.add('hidden');
-    }
+      // Inland Communities (Zone 4)
+      silicon: { name: "Dubai Silicon Oasis (DSO)", lat: 25.1246, lng: 55.3786, zone: 4, hasVertiport: false, metroStation: "No direct metro (Bus 320 to Centrepoint)", busRoute: "Bus 320, 365, X25" },
+      academic_city: { name: "Dubai Academic City", lat: 25.1118, lng: 55.4055, zone: 4, hasVertiport: false, metroStation: "No direct metro (Planned Blue Line 2029)", busRoute: "Bus 365, 366, X25" },
+      international_city: { name: "International City", lat: 25.1611, lng: 55.4124, zone: 4, hasVertiport: false, metroStation: "Centrepoint (Requires Feeder Bus)", busRoute: "Bus 365, 366, 367, X23" },
+      dubai_hills: { name: "Dubai Hills Estate", lat: 25.1189, lng: 55.2531, zone: 4, hasVertiport: false, metroStation: "Mall of the Emirates / Equiti (Bus link)", busRoute: "Bus F36, F37" },
+      arabian_ranches: { name: "Arabian Ranches", lat: 25.0561, lng: 55.2635, zone: 4, hasVertiport: false, metroStation: "Mall of the Emirates (Feeder transfer)", busRoute: "Bus F30, J02" },
+      motor_city: { name: "Motor City / Sports City", lat: 25.0458, lng: 55.2389, zone: 4, hasVertiport: false, metroStation: "Mall of the Emirates Station (Bus transfer)", busRoute: "Bus F37, F38" },
 
-    // Granular Dubai Locations Database
-    const locationsDB = {
-      // Zone 5 (Deira / Bur Dubai / Historic Creek)
-      "dxb_t1_t3": { name: "DXB Airport (T1/T3)", zone: 5, lat: 25.2532, lng: 55.3657 },
-      "naif": { name: "Naif (Deira Souk)", zone: 5, lat: 25.2736, lng: 55.3051 },
-      "abu_hail": { name: "Abu Hail / Hor Al Anz", zone: 5, lat: 25.2798, lng: 55.3342 },
-      "al_ras": { name: "Al Ras (Gold Souk)", zone: 5, lat: 25.2687, lng: 55.2974 },
-      "al_sabkha": { name: "Al Sabkha (Deira)", zone: 5, lat: 25.2672, lng: 55.3021 },
-      "al_muraqqabat": { name: "Al Muraqqabat / Al Rigga", zone: 5, lat: 25.2638, lng: 55.3228 },
-      "al_muteena": { name: "Al Muteena", zone: 5, lat: 25.2741, lng: 55.3188 },
-      "al_baraha": { name: "Al Baraha", zone: 5, lat: 25.2831, lng: 55.3135 },
-      "al_karama": { name: "Al Karama", zone: 5, lat: 25.2458, lng: 55.3032 },
-      "bur_dubai": { name: "Bur Dubai", zone: 5, lat: 25.2575, lng: 55.2983 },
-      "al_ghubaiba": { name: "Al Ghubaiba", zone: 5, lat: 25.2606, lng: 55.2891 },
-      "al_mankhool": { name: "Al Mankhool", zone: 5, lat: 25.2505, lng: 55.2931 },
-      "oud_metha": { name: "Oud Metha", zone: 5, lat: 25.2341, lng: 55.3142 },
-      "al_jaddaf": { name: "Al Jaddaf", zone: 5, lat: 25.2185, lng: 55.3378 },
-      "dubai_creek_harbour": { name: "Dubai Creek Harbour", zone: 5, lat: 25.2048, lng: 55.3524 },
+      // Coastal & Marina (Zone 2)
+      marina: { name: "Dubai Marina / JBR", lat: 25.0805, lng: 55.1403, zone: 2, hasVertiport: true, vertiportName: "Dubai Marina AUD Skyport", metroStation: "Sobha Realty / DMCC (Red Line & Tram)", busRoute: "Bus 8, 84, F55A" },
+      palm: { name: "Palm Jumeirah (Atlantis)", lat: 25.1304, lng: 55.1171, zone: 2, hasVertiport: true, vertiportName: "Palm Jumeirah Vertiport (Atlantis)", metroStation: "Palm Gateway (Monorail Interchange)", busRoute: "Bus 8 to Palm Gateway + Monorail" },
+      jlt: { name: "Jumeirah Lakes Towers (JLT)", lat: 25.0740, lng: 55.1450, zone: 2, hasVertiport: false, metroStation: "DMCC Metro Station (Red Line)", busRoute: "Bus JLT1, JLT2" },
+      barsha: { name: "Al Barsha (Mall of the Emirates)", lat: 25.1181, lng: 55.2006, zone: 2, hasVertiport: false, metroStation: "Mall of the Emirates (Red Line)", busRoute: "Bus 84, 93, F30, F33" },
+      internet_city: { name: "Dubai Internet City / Media City", lat: 25.0971, lng: 55.1648, zone: 2, hasVertiport: false, metroStation: "Dubai Internet City Metro (Red Line)", busRoute: "Bus 88, F31, F34" },
 
-      // Zone 6 (Northern Communities)
-      "muhaisnah": { name: "Muhaisnah (1-4)", zone: 6, lat: 25.2755, lng: 55.4055 },
-      "al_qusais": { name: "Al Qusais", zone: 6, lat: 25.2862, lng: 55.3811 },
-      "al_twar": { name: "Al Twar", zone: 6, lat: 25.2682, lng: 55.3722 },
-      "al_nahda_dubai": { name: "Al Nahda (Dubai)", zone: 6, lat: 25.2952, lng: 55.3672 },
-      "mirdif": { name: "Mirdif", zone: 6, lat: 25.2198, lng: 55.4214 },
-      "al_warqa": { name: "Al Warqa'a", zone: 6, lat: 25.1884, lng: 55.4201 },
-      "al_khawaneej": { name: "Al Khawaneej", zone: 6, lat: 25.2631, lng: 55.4883 },
+      // Southern & Expo (Zone 1)
+      jafza: { name: "JAFZA / Jebel Ali Free Zone", lat: 24.9921, lng: 55.0811, zone: 1, hasVertiport: false, metroStation: "UAE Exchange Metro Station (Red Line)", busRoute: "Bus F54, 91" },
+      expo_city: { name: "Expo City Dubai", lat: 24.9602, lng: 55.1504, zone: 1, hasVertiport: false, metroStation: "Expo 2020 Metro Station (Red Line)", busRoute: "Bus F55, F57" },
+      dubai_south: { name: "Dubai South / DWC Corridor", lat: 24.8963, lng: 55.1611, zone: 1, hasVertiport: false, metroStation: "Expo 2020 Metro Station (Feeder transfer)", busRoute: "Bus F55" },
+      dip: { name: "Dubai Investment Park (DIP)", lat: 24.9882, lng: 55.1789, zone: 1, hasVertiport: false, metroStation: "DIP Metro Station (Red Line Expo Branch)", busRoute: "Bus F46, F47, F48" },
+      al_furjan: { name: "Al Furjan / Discovery Gardens", lat: 25.0312, lng: 55.1421, zone: 1, hasVertiport: false, metroStation: "Al Furjan Metro Station (Red Line)", busRoute: "Bus F43, F45" },
+      jvc: { name: "Jumeirah Village Circle (JVC)", lat: 25.0560, lng: 55.2090, zone: 1, hasVertiport: false, metroStation: "Mall of the Emirates (Feeder Bus J01)", busRoute: "Feeder Bus J01" },
 
-      // Zone 3 (Downtown / DIFC / Al Quoz)
-      "downtown": { name: "Downtown Dubai", zone: 3, lat: 25.1972, lng: 55.2744 },
-      "business_bay": { name: "Business Bay", zone: 3, lat: 25.1852, lng: 55.2662 },
-      "difc": { name: "DIFC", zone: 3, lat: 25.2114, lng: 55.2818 },
-      "satwa": { name: "Al Satwa", zone: 3, lat: 25.2232, lng: 55.2731 },
-      "al_wasl": { name: "Al Wasl", zone: 3, lat: 25.2064, lng: 55.2612 },
-      "jumeirah_1": { name: "Jumeirah", zone: 3, lat: 25.2021, lng: 55.2415 },
-      "al_quoz": { name: "Al Quoz", zone: 3, lat: 25.1432, lng: 55.2421 },
-
-      // Zone 4 (Suburbs)
-      "dso": { name: "Dubai Silicon Oasis", zone: 4, lat: 25.1245, lng: 55.3789 },
-      "academic_city": { name: "Academic City", zone: 4, lat: 25.1118, lng: 55.4055 },
-      "international_city": { name: "International City", zone: 4, lat: 25.1611, lng: 55.4124 },
-      "dubai_hills": { name: "Dubai Hills", zone: 4, lat: 25.1189, lng: 55.2531 },
-      "arabian_ranches": { name: "Arabian Ranches", zone: 4, lat: 25.0561, lng: 55.2635 },
-      "motor_city": { name: "Motor City", zone: 4, lat: 25.0458, lng: 55.2389 },
-
-      // Zone 2 (Marina / Barsha / Coastal)
-      "dubai_marina": { name: "Dubai Marina", zone: 2, lat: 25.0805, lng: 55.1403 },
-      "jbr": { name: "JBR", zone: 2, lat: 25.0762, lng: 55.1321 },
-      "jlt": { name: "JLT / DMCC", zone: 2, lat: 25.0701, lng: 55.1488 },
-      "palm_jumeirah": { name: "Palm Jumeirah (Atlantis)", zone: 2, lat: 25.1304, lng: 55.1171 },
-      "al_barsha": { name: "Al Barsha (MOE)", zone: 2, lat: 25.1181, lng: 55.2006 },
-      "internet_city": { name: "Internet City", zone: 2, lat: 25.0971, lng: 55.1648 },
-
-      // Zone 1 (South / Expo / Jebel Ali)
-      "jafza": { name: "JAFZA", zone: 1, lat: 24.9921, lng: 55.0811 },
-      "expo_city": { name: "Expo City Dubai", zone: 1, lat: 24.9602, lng: 55.1504 },
-      "dubai_south": { name: "Dubai South / DWC", zone: 1, lat: 24.8963, lng: 55.1611 },
-      "dip": { name: "DIP", zone: 1, lat: 24.9882, lng: 55.1789 },
-      "al_furjan": { name: "Al Furjan", zone: 1, lat: 25.0312, lng: 55.1421 },
-      "jvc": { name: "JVC", zone: 1, lat: 25.0611, lng: 55.2091 }
+      // Intercity
+      sharjah: { name: "Sharjah Border (Sahara / Al Jubail)", lat: 25.2970, lng: 55.3670, zone: 6, isIntercity: true, busLine: "E307 / E307A" },
+      auh: { name: "Abu Dhabi Central Bus Station", lat: 24.4672, lng: 54.3750, isIntercity: true, hasRail: true, busLine: "E100 / E101" },
+      al_ain: { name: "Al Ain Central Station", lat: 24.2190, lng: 55.7600, isIntercity: true, busLine: "E201" },
+      fujairah: { name: "Fujairah Central Station", lat: 25.1288, lng: 56.3265, isIntercity: true, hasRail: true, busLine: "E700" }
     };
 
-    // Haversine formula for road distance approximation
-    function getDistance(lat1, lon1, lat2, lon2) {
+    function getDistanceKm(loc1, loc2) {
       const R = 6371;
-      const dLat = (lat2 - lat1) * Math.PI / 180;
-      const dLon = (lon2 - lon1) * Math.PI / 180;
-      const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
-                Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
-                Math.sin(dLon/2) * Math.sin(dLon/2);
+      const dLat = (loc2.lat - loc1.lat) * Math.PI / 180;
+      const dLng = (loc2.lng - loc1.lng) * Math.PI / 180;
+      const a = 
+        Math.sin(dLat/2) * Math.sin(dLat/2) +
+        Math.cos(loc1.lat * Math.PI / 180) * Math.cos(loc2.lat * Math.PI / 180) * 
+        Math.sin(dLng/2) * Math.sin(dLng/2);
       const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-      return Math.round(R * c * 1.35); // 1.35x road detour multiplier
+      return R * c;
     }
 
-    function runEstimator() {
-      const oKey = document.getElementById('origin-select').value;
-      const dKey = document.getElementById('destination-select').value;
-      const traffic = document.getElementById('traffic-select').value;
+    // -------------------------------------------------------------
+    // MULTIMODAL COMPUTATION
+    // -------------------------------------------------------------
+    function runCalculation() {
+      const origKey = document.getElementById('calc-origin').value;
+      const destKey = document.getElementById('calc-dest').value;
+      const timeframe = document.getElementById('calc-timeframe').value;
+      const resultsContainer = document.getElementById('calc-results');
+      const breakdownContainer = document.getElementById('route-step-breakdown');
+      const summaryHeader = document.getElementById('route-distance-summary');
 
-      const origin = locationsDB[oKey] || locationsDB['dxb_t1_t3'];
-      const dest = locationsDB[dKey] || locationsDB['palm_jumeirah'];
-
-      // Distance calculation
-      let km = getDistance(origin.lat, origin.lng, dest.lat, dest.lng);
-      if (km < 3) km = 3;
-
-      document.getElementById('route-indicator-text').innerText = `Route: ${origin.name} \u2192 ${dest.name}`;
-      document.getElementById('route-distance-text').innerText = `Est. Road Distance: ${km} km`;
-
-      // Nol Tariff Calculation
-      const zoneDiff = Math.abs(origin.zone - dest.zone);
-      let nolFare = "AED 3.00 (Silver Nol)";
-      if (zoneDiff === 1) nolFare = "AED 5.00 (Silver Nol)";
-      else if (zoneDiff >= 2) nolFare = "AED 7.50 (Silver Nol)";
-
-      document.getElementById('metro-fare-val').innerHTML = `Nol Tariff: <span class="font-bold text-white">${nolFare}</span>`;
-      document.getElementById('bus-fare-val').innerHTML = `Bus Tariff: <span class="font-bold text-white">${nolFare}</span>`;
-
-      // Traffic multipliers
-      let trafficMultiplier = 1.0;
-      if (traffic === 'peak') trafficMultiplier = 1.45;
-      else if (traffic === 'night') trafficMultiplier = 0.85;
-
-      // Taxi meter: Base 12 AED + 2.19 AED/km
-      const taxiMeter = Math.round(12 + (km * 2.19) + (traffic === 'peak' ? 15 : 0));
-      const taxiMinutes = Math.round((km / 45) * 60 * trafficMultiplier);
-
-      // Metro time: ~38 km/h average with station stops
-      const metroMinutes = Math.round(15 + (km * 1.25));
-
-      // Bus time: ~24 km/h average
-      const busMinutes = Math.round(20 + (km * 1.6 * (traffic === 'peak' ? 1.2 : 1.0)));
-
-      document.getElementById('taxi-fare-val').innerHTML = `Est. Meter: <span class="font-bold text-white">AED ${taxiMeter}</span>`;
-      document.getElementById('taxi-time-val').innerText = `${taxiMinutes} Mins`;
-      document.getElementById('metro-time-val').innerText = `${metroMinutes} Mins`;
-      document.getElementById('bus-time-val').innerText = `${busMinutes} Mins`;
-
-      const warningBox = document.getElementById('traffic-warning-box');
-      if (traffic === 'peak') {
-        warningBox.innerHTML = `<i class="ph ph-warning"></i> Peak Hour Delay`;
-        warningBox.className = "pt-4 border-t border-[#292215] text-[10px] font-mono text-amber-400 flex items-center gap-1.5";
-      } else {
-        warningBox.innerHTML = `<i class="ph ph-check-circle"></i> Standard Road Flow`;
-        warningBox.className = "pt-4 border-t border-[#292215] text-[10px] font-mono text-emerald-400 flex items-center gap-1.5";
+      if (origKey === destKey) {
+        resultsContainer.innerHTML = `<div class="col-span-full p-6 text-center text-xs text-amber-400 glass-card rounded-2xl">Please select two distinct locations to calculate multimodal travel timing and fares.</div>`;
+        breakdownContainer.innerHTML = '';
+        summaryHeader.innerHTML = '';
+        return;
       }
+
+      const orig = locations[origKey];
+      const dest = locations[destKey];
+      const straightLineKm = getDistanceKm(orig, dest);
+      const highwayKm = Math.max(3, Math.round(straightLineKm * 1.32));
+
+      summaryHeader.innerHTML = `Route: <strong>${orig.name}</strong> ➔ <strong>${dest.name}</strong> | Est. Road Distance: <strong>${highwayKm} km</strong>`;
+
+      // 1. ROAD TAXI / CAR
+      let taxiBase = origKey === 'dxb' ? 25.00 : 5.00;
+      if (timeframe === 'night' && origKey !== 'dxb') taxiBase = 5.50;
+      let trafficMultiplier = timeframe === 'peak' ? 1.45 : (timeframe === 'night' ? 0.90 : 1.15);
+      
+      let drivingMinutes = Math.round((highwayKm / 68) * 60 * trafficMultiplier);
+      if (drivingMinutes < 10) drivingMinutes = 10;
+      
+      let tollGates = (highwayKm > 15) ? Math.min(3, Math.floor(highwayKm / 14)) : 0;
+      let taxiFare = Math.max(12, Math.round(taxiBase + (highwayKm * 2.18) + (tollGates * 4.00)));
+      if (dest.isIntercity && destKey === 'auh') taxiFare = 280;
+      if (dest.isIntercity && destKey === 'al_ain') taxiFare = 310;
+      if (dest.isIntercity && destKey === 'fujairah') taxiFare = 290;
+
+      // 2. RTA METRO ONLY
+      let metroTimeMins = 0;
+      let metroFare = "";
+      let metroNote = "";
+      let isMetroAvailable = true;
+
+      let zonesCrossed = Math.abs((orig.zone || 5) - (dest.zone || 5));
+      let metroNolFare = 3.00;
+      if (zonesCrossed === 1) metroNolFare = 5.00;
+      else if (zonesCrossed >= 2) metroNolFare = 7.50;
+
+      if (orig.isIntercity || dest.isIntercity) {
+        isMetroAvailable = false;
+        metroTimeMins = "--";
+        metroFare = "No Rail Link";
+        metroNote = "Outside urban Dubai Metro zone";
+      } else if (orig.metroStation && orig.metroStation.includes("Requires") || (dest.metroStation && dest.metroStation.includes("Requires"))) {
+        metroTimeMins = Math.round((highwayKm * 1.5) + 25);
+        metroFare = `AED ${(metroNolFare + 3).toFixed(2)} (Nol)`;
+        metroNote = "Requires feeder bus transfer to station";
+      } else {
+        metroTimeMins = Math.round((highwayKm * 1.35) + 12);
+        metroFare = `AED ${metroNolFare.toFixed(2)} (Silver Nol)`;
+        metroNote = "Fixed schedule • Zero traffic delay";
+      }
+
+      // 3. RTA BUS ONLY
+      let busTimeMins = 0;
+      let busFare = "";
+      let busRouteSummary = "";
+
+      if (orig.isIntercity || dest.isIntercity) {
+        if (destKey === 'auh' || origKey === 'auh') {
+          busTimeMins = origKey === 'marina' ? 95 : 120;
+          busFare = "AED 25.00";
+          busRouteSummary = origKey === 'marina' ? "Intercity Bus E101 (from Ibn Battuta)" : "Intercity Bus E100 (from Al Ghubaiba)";
+        } else if (destKey === 'al_ain' || origKey === 'al_ain') {
+          busTimeMins = 120;
+          busFare = "AED 25.00";
+          busRouteSummary = "RTA Route E201 (Al Ghubaiba ⇄ Al Ain)";
+        } else if (destKey === 'fujairah' || origKey === 'fujairah') {
+          busTimeMins = 135;
+          busFare = "AED 30.00";
+          busRouteSummary = "RTA Route E700 (Union ⇄ Fujairah)";
+        } else {
+          busTimeMins = timeframe === 'peak' ? 70 : 45;
+          busFare = "AED 10.00";
+          busRouteSummary = "RTA Route E307 / E307A (to Sharjah)";
+        }
+      } else {
+        busTimeMins = Math.round(drivingMinutes * 1.45 + 10);
+        busFare = `AED ${metroNolFare.toFixed(2)} (Silver Nol)`;
+        busRouteSummary = `${orig.busRoute || 'Local Feeder'} ➔ Regional network`;
+      }
+
+      // 4. ETIHAD HIGH-SPEED RAIL
+      let hasEtihad = (destKey === 'auh' || destKey === 'fujairah' || origKey === 'auh' || origKey === 'fujairah');
+      let railTime = hasEtihad ? (destKey === 'auh' || origKey === 'auh' ? "57 Mins" : "105 Mins") : "--";
+      let railFare = hasEtihad ? "AED 45 - 65" : "Intercity Only";
+
+      // 5. eVTOL STATUS
+      let evtolHubInfo = (orig.hasVertiport && dest.hasVertiport)
+        ? `Designated Hubs: ${orig.vertiportName} ⇄ ${dest.vertiportName}`
+        : `Corridor in development for this sector`;
+
+      // RENDER ALL 5 MODES
+      resultsContainer.innerHTML = `
+        <!-- eVTOL Status Card -->
+        <div class="glass-card p-5 rounded-2xl border-t-2 border-t-brand-cyan flex flex-col justify-between relative overflow-hidden group">
+          <div>
+            <div class="flex items-center justify-between text-[10px] font-mono text-brand-cyan uppercase">
+              <span>eVTOL Air Taxi</span>
+              <span class="px-2 py-0.5 rounded-full bg-sky-500/10 border border-sky-400/40 text-[9px] text-brand-cyan animate-pulse">Pre-Launch</span>
+            </div>
+            <div class="mt-3">
+              <div class="text-xs font-mono uppercase text-slate-400 tracking-wider">Flight Service</div>
+              <div class="text-base font-bold text-white mt-0.5 flex items-center gap-1.5">
+                <i class="ph ph-airplane-tilt text-brand-cyan"></i> In Development
+              </div>
+            </div>
+            <div class="mt-2 text-[11px] text-slate-300 leading-snug">
+              Commercial public passenger flights have not launched yet.
+            </div>
+          </div>
+          <div class="pt-3 border-t border-slate-800">
+            <button onclick="navigate('alerts')" class="w-full py-1.5 px-2 rounded-lg bg-sky-500/10 hover:bg-sky-500/20 text-brand-cyan text-[11px] font-bold border border-sky-400/30 flex items-center justify-center gap-1">
+              <i class="ph ph-bell"></i> Get Launch Alert
+            </button>
+          </div>
+        </div>
+
+        <!-- RTA Metro Card -->
+        <div class="glass-card p-5 rounded-2xl border-t-2 border-t-red-500 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-[10px] font-mono text-red-400 uppercase">
+              <span>RTA Metro</span>
+              <span class="px-1.5 py-0.5 rounded bg-red-500/10 border border-red-500/30">Rail Track</span>
+            </div>
+            <div class="text-2xl font-bold text-white font-mono mt-2">${isMetroAvailable ? metroTimeMins + ' Mins' : '--'}</div>
+            <div class="text-xs text-slate-300 mt-1">Nol Tariff: <strong class="text-white">${metroFare}</strong></div>
+          </div>
+          <div class="pt-3 border-t border-slate-800 text-[11px] text-slate-400 font-medium">
+            ${metroNote}
+          </div>
+        </div>
+
+        <!-- RTA Bus Card -->
+        <div class="glass-card p-5 rounded-2xl border-t-2 border-t-indigo-400 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-[10px] font-mono text-indigo-400 uppercase">
+              <span>RTA Bus</span>
+              <span class="px-1.5 py-0.5 rounded bg-indigo-500/10 border border-indigo-500/30">Public Road</span>
+            </div>
+            <div class="text-2xl font-bold text-white font-mono mt-2">${busTimeMins} Mins</div>
+            <div class="text-xs text-slate-300 mt-1">Bus Tariff: <strong class="text-white">${busFare}</strong></div>
+          </div>
+          <div class="pt-3 border-t border-slate-800 text-[11px] text-indigo-300 truncate font-medium">
+            ${orig.isIntercity || dest.isIntercity ? 'Intercity Express' : 'Local Feeder / Trunk'}
+          </div>
+        </div>
+
+        <!-- RTA Taxi / Car Card -->
+        <div class="glass-card p-5 rounded-2xl border-t-2 border-t-amber-400 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-[10px] font-mono text-amber-400 uppercase">
+              <span>RTA Taxi / Car</span>
+              <span class="px-1.5 py-0.5 rounded bg-amber-500/10 border border-amber-500/30">Metered</span>
+            </div>
+            <div class="text-2xl font-bold text-white font-mono mt-2">${drivingMinutes} Mins</div>
+            <div class="text-xs text-slate-300 mt-1">Est. Meter: <strong class="text-white">AED ${taxiFare}</strong></div>
+          </div>
+          <div class="pt-3 border-t border-slate-800 text-[11px] text-amber-300/80 font-medium">
+            ${timeframe === 'peak' ? '⚠️ Peak Hour Delay' : 'Standard Traffic Flow'}
+          </div>
+        </div>
+
+        <!-- Etihad Rail Card -->
+        <div class="glass-card p-5 rounded-2xl border-t-2 border-t-purple-400 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-[10px] font-mono text-purple-400 uppercase">
+              <span>Etihad Rail</span>
+              <span class="px-1.5 py-0.5 rounded bg-purple-500/10 border border-purple-500/30">200 km/h</span>
+            </div>
+            <div class="text-2xl font-bold text-white font-mono mt-2">${railTime}</div>
+            <div class="text-xs text-slate-300 mt-1">Ticket: <strong class="text-white">${railFare}</strong></div>
+          </div>
+          <div class="pt-3 border-t border-slate-800 text-[11px] text-purple-300 font-medium">
+            ${hasEtihad ? 'Inter-Emirate High Speed' : 'National Network Only'}
+          </div>
+        </div>
+      `;
+
+      // DETAILED ITINERARY BREAKDOWN
+      breakdownContainer.innerHTML = `
+        <div class="glass-card rounded-2xl p-6 sm:p-7 space-y-6">
+          <h3 class="text-base font-bold text-white flex items-center gap-2">
+            <i class="ph ph-map-trifold text-brand-cyan"></i> Segmented Itinerary & Transfer Guide
+          </h3>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs text-slate-300">
+            
+            <div class="space-y-3 bg-slate-900/70 p-4 rounded-xl border border-slate-800">
+              <div class="font-bold text-red-400 flex items-center gap-1.5">
+                <i class="ph ph-train text-base"></i> RTA Metro Details:
+              </div>
+              <ul class="space-y-1.5 list-disc list-inside text-slate-300">
+                <li>Boarding: <strong>${orig.metroStation || 'Nearby Metro Station'}</strong></li>
+                <li>Arrival: <strong>${dest.metroStation || 'Destination Metro Station'}</strong></li>
+                <li>Zone Calculation: <strong>${zonesCrossed} zone boundary crossings</strong></li>
+                <li>Standard Nol card fare applied at barrier gates.</li>
+              </ul>
+            </div>
+
+            <div class="space-y-3 bg-slate-900/70 p-4 rounded-xl border border-slate-800">
+              <div class="font-bold text-indigo-400 flex items-center gap-1.5">
+                <i class="ph ph-bus text-base"></i> RTA Bus Details:
+              </div>
+              <ul class="space-y-1.5 list-disc list-inside text-slate-300">
+                <li>Route corridor: <strong>${busRouteSummary}</strong></li>
+                <li>Departure Frequency: Every 12–20 minutes</li>
+                <li>Travel subject to road traffic and signal queues</li>
+              </ul>
+            </div>
+
+            <div class="space-y-3 bg-slate-900/70 p-4 rounded-xl border border-slate-800">
+              <div class="font-bold text-brand-cyan flex items-center gap-1.5">
+                <i class="ph ph-airplane-tilt text-base"></i> Vertiport Readiness Status:
+              </div>
+              <p class="text-slate-300">
+                ${evtolHubInfo}
+              </p>
+              <p class="text-slate-400 text-[11px]">
+                Pre-commercial testing phase. Official public passenger pricing and scheduled flight intervals will be announced once regulatory flight permissions are finalized by authorities.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      `;
     }
 
     function swapLocations() {
-      const o = document.getElementById('origin-select');
-      const d = document.getElementById('destination-select');
-      const temp = o.value;
-      o.value = d.value;
-      d.value = temp;
-      runEstimator();
+      const orig = document.getElementById('calc-origin');
+      const dest = document.getElementById('calc-dest');
+      const temp = orig.value;
+      orig.value = dest.value;
+      dest.value = temp;
+      runCalculation();
     }
 
-    // Default initialization: Home tab opens first
-    window.onload = function() {
-      switchTab('home');
-      runEstimator();
-    };
+    // -------------------------------------------------------------
+    // NAVIGATION
+    // -------------------------------------------------------------
+    function navigate(viewId) {
+      document.querySelectorAll('.page-view').forEach(el => el.classList.add('hidden'));
+      const activeView = document.getElementById(`view-${viewId}`);
+      if (activeView) activeView.classList.remove('hidden');
+
+      document.querySelectorAll('.nav-btn').forEach(btn => {
+        if (btn.getAttribute('data-nav') === viewId) {
+          btn.classList.add('text-brand-cyan', 'bg-slate-800/80');
+          btn.classList.remove('text-slate-300');
+        } else {
+          btn.classList.remove('text-brand-cyan', 'bg-slate-800/80');
+          btn.classList.add('text-slate-300');
+        }
+      });
+
+      const crumbs = document.getElementById('breadcrumbs');
+      let title = "OVERVIEW";
+      if (viewId === 'planner') title = "TRIP & FARE ENGINE";
+      if (viewId === 'aerial') title = "VERTIPORTS";
+      if (viewId === 'rta') title = "RTA METRO & BUS";
+      if (viewId === 'etihad') title = "ETIHAD RAIL";
+      if (viewId === 'alerts') title = "ROUTE NOTIFICATIONS";
+      crumbs.innerHTML = `<a href="javascript:void(0)" onclick="navigate('home')" class="hover:text-brand-cyan">PORTAL</a> <span class="text-slate-600">/</span> <span class="text-white">${title}</span>`;
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function toggleMobileMenu() {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    }
+
+    // Formspree Handling
+    const notifyForm = document.getElementById('active-notify-form');
+    if (notifyForm) {
+      notifyForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const submitBtn = document.getElementById('notify-submit-btn');
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Transmitting...';
+        const formData = new FormData(notifyForm);
+        try {
+          const response = await fetch(notifyForm.action, { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } });
+          if (response.ok) {
+            notifyForm.style.display = 'none';
+            document.getElementById('notify-status').classList.remove('hidden');
+          } else { throw new Error(); }
+        } catch (err) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Notify Me';
+          alert('Submission error. Please try again.');
+        }
+      });
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      navigate('home');
+      runCalculation();
+    });
   </script>
 </body>
 </html>
