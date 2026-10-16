@@ -70,7 +70,7 @@
 </head>
 <body class="bg-brand-dark text-slate-100 min-h-screen flex flex-col font-sans selection:bg-brand-cyan selection:text-brand-dark antialiased">
 
-  <!-- Legal Transparency Banner -->
+  <!-- Top Legal Transparency Banner -->
   <aside aria-label="Legal Notice" class="bg-slate-900 border-b border-slate-800 text-[11px] text-slate-400 py-1.5 px-4 text-center">
     <span>Notice: <strong>dubaiskyports.com</strong> is an independent digital information guide. Not affiliated with RTA, Skyports Infrastructure, or Etihad Rail. Fares and timings are estimations based on public tariff models.</span>
   </aside>
@@ -96,7 +96,7 @@
           <button type="button" onclick="navigate('aerial')" data-nav="aerial" class="nav-btn px-3 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:text-white hover:bg-slate-800/60 transition-all flex items-center gap-1.5"><i class="ph ph-airplane-tilt"></i> Vertiports</button>
           <button type="button" onclick="navigate('rta')" data-nav="rta" class="nav-btn px-3 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:text-white hover:bg-slate-800/60 transition-all flex items-center gap-1.5"><i class="ph ph-bus"></i> RTA Bus & Metro</button>
           <button type="button" onclick="navigate('etihad')" data-nav="etihad" class="nav-btn px-3 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:text-white hover:bg-slate-800/60 transition-all flex items-center gap-1.5"><i class="ph ph-train"></i> Etihad Rail</button>
-          <button type="button" onclick="navigate('history')" data-nav="history" class="nav-btn px-3 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:text-white hover:bg-slate-800/60 transition-all flex items-center gap-1.5"><i class="ph ph-hourglass-high"></i> Transit Heritage</button>
+          <button type="button" onclick="navigate('history')" data-nav="history" class="nav-btn px-3 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:text-white hover:bg-slate-800/60 transition-all flex items-center gap-1.5"><i class="ph ph-hourglass-high"></i> Dubai Transit Heritage</button>
         </nav>
 
         <div class="flex items-center gap-3">
@@ -118,7 +118,7 @@
         <button type="button" onclick="navigate('aerial'); toggleMobileMenu()" class="text-left px-3 py-2 text-xs font-medium text-slate-300 hover:bg-slate-800/50 rounded-lg">Aerial Commute & Vertiports</button>
         <button type="button" onclick="navigate('rta'); toggleMobileMenu()" class="text-left px-3 py-2 text-xs font-medium text-slate-300 hover:bg-slate-800/50 rounded-lg">RTA Intercity & Metro</button>
         <button type="button" onclick="navigate('etihad'); toggleMobileMenu()" class="text-left px-3 py-2 text-xs font-medium text-slate-300 hover:bg-slate-800/50 rounded-lg">Etihad Rail Passenger Network</button>
-        <button type="button" onclick="navigate('history'); toggleMobileMenu()" class="text-left px-3 py-2 text-xs font-medium text-slate-300 hover:bg-slate-800/50 rounded-lg">Transit Heritage (1950–Present)</button>
+        <button type="button" onclick="navigate('history'); toggleMobileMenu()" class="text-left px-3 py-2 text-xs font-medium text-slate-300 hover:bg-slate-800/50 rounded-lg">Dubai Transit Heritage (Ancient–Future)</button>
       </div>
 
       <div class="py-2.5 border-t border-white/5 flex items-center text-[11px] text-slate-400 overflow-x-auto whitespace-nowrap">
@@ -147,7 +147,7 @@
             <i class="ph ph-navigation-arrow text-base"></i> Launch Route Calculator
           </button>
           <button type="button" onclick="navigate('history')" class="px-5 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs uppercase tracking-wider transition-all border border-slate-700 flex items-center gap-2">
-            <i class="ph ph-hourglass-high text-base"></i> Explore Transit Heritage
+            <i class="ph ph-hourglass-high text-base"></i> Explore Dubai Transit Heritage
           </button>
         </div>
       </div>
@@ -912,7 +912,9 @@
       </div>
     </section>
 
-    <!-- VIEW: HISTORY (Dubai Multimodal Transit Heritage) -->
+    <!-- ========================================================= -->
+    <!-- VIEW: DUBAI TRANSIT HERITAGE (Ancient, Modern & Beyond)   -->
+    <!-- ========================================================= -->
     <section id="view-history" class="page-view hidden space-y-12">
       <div class="border-b border-slate-800 pb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
@@ -920,171 +922,235 @@
             <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
             HISTORICAL TRANSIT RETROSPECTIVE
           </div>
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-white">The Evolution of Dubai Mobility</h2>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Dubai Transit Heritage</h2>
           <p class="text-slate-400 text-sm mt-2 max-w-2xl leading-relaxed">
-            From wooden abras plying the historic Creek to the world’s longest driverless metro network and upcoming low-altitude vertiports.
+            The extraordinary leap of urban mobility: from camel caravans and wooden abras to the world's longest driverless metro, high-speed rail, and commercial electric vertiports.
           </p>
         </div>
         <div class="flex items-center gap-2 bg-slate-900/90 border border-slate-800 p-3 rounded-xl text-xs font-mono text-slate-300">
-          <div><span class="text-slate-500 block text-[10px]">TIME SPAN</span> 1950s — Future Horizons</div>
+          <div><span class="text-slate-500 block text-[10px]">TIME SPAN</span> Ancient Arabia — 2026+ Frontiers</div>
         </div>
       </div>
 
-      <div class="space-y-8">
-        <!-- Era 1: Abra -->
-        <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 grid grid-cols-1 lg:grid-cols-12 gap-0 group">
-          <div class="lg:col-span-5 relative h-56 lg:h-auto overflow-hidden bg-slate-950">
-            <img 
-              src="https://images.unsplash.com/photo-1580674684081-7617fbf3d745?auto=format&fit=crop&w=1000&q=80" 
-              alt="Traditional wooden Abra on Dubai Creek" 
-              loading="lazy"
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
-            />
-            <div class="absolute bottom-2 left-2 bg-slate-950/80 backdrop-blur px-2 py-0.5 rounded text-[10px] font-mono text-slate-400">
-              CC0 / Public Archive
-            </div>
-          </div>
-          <div class="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-4">
+      <!-- Mobility Statistics Showcase Strip -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="glass-card p-4 rounded-xl border border-slate-800 text-center">
+          <span class="text-[10px] text-slate-400 uppercase font-mono block">Daily Transit Commuters</span>
+          <span class="text-2xl font-bold text-brand-cyan font-mono mt-1 block">2.1M+</span>
+          <span class="text-[10px] text-slate-500">Across Metro, Bus & Marine</span>
+        </div>
+        <div class="glass-card p-4 rounded-xl border border-slate-800 text-center">
+          <span class="text-[10px] text-slate-400 uppercase font-mono block">Driverless Metro Track</span>
+          <span class="text-2xl font-bold text-red-400 font-mono mt-1 block">89.6 km</span>
+          <span class="text-[10px] text-slate-500">Red + Green (+30km Blue Line)</span>
+        </div>
+        <div class="glass-card p-4 rounded-xl border border-slate-800 text-center">
+          <span class="text-[10px] text-slate-400 uppercase font-mono block">Public Transport Trips</span>
+          <span class="text-2xl font-bold text-emerald-400 font-mono mt-1 block">743M+</span>
+          <span class="text-[10px] text-slate-500">Annual passenger movements</span>
+        </div>
+        <div class="glass-card p-4 rounded-xl border border-slate-800 text-center">
+          <span class="text-[10px] text-slate-400 uppercase font-mono block">Autonomous Target</span>
+          <span class="text-2xl font-bold text-purple-400 font-mono mt-1 block">25%</span>
+          <span class="text-[10px] text-slate-500">Dubai Smart Mobility Strategy 2030</span>
+        </div>
+      </div>
+
+      <!-- 8 Historical Eras with Dual Photo Galleries -->
+      <div class="space-y-10">
+
+        <!-- Era 1: Ancient Overland & Desert Caravans -->
+        <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 p-6 sm:p-8 space-y-6">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-800 pb-3 gap-2">
             <div>
-              <div class="flex items-center justify-between text-xs font-mono text-amber-400 mb-2">
-                <span>ERA 01</span>
-                <span>1950s – 1960s</span>
-              </div>
-              <h3 class="text-xl font-bold text-white">The Creek Lifeline: Wooden Abras & Dhow Trade</h3>
-              <p class="text-xs text-slate-300 leading-relaxed mt-2">
-                Before bridges or paved coastal corridors connected the emirate, small motorized wooden water taxis (Abras) were the sole lifeline between the trading suqs of Deira and Bur Dubai. A crossing took minutes for a single coin, laying the foundation for Dubai's cross-creek commuter patterns that persist to this day.
-              </p>
+              <span class="text-xs font-mono text-amber-400 font-bold block uppercase">Era 01 • Ancient Age</span>
+              <h3 class="text-xl sm:text-2xl font-bold text-white">Desert Caravans & Camel Overland Trails</h3>
             </div>
-            <div class="pt-4 border-t border-slate-800 text-[11px] font-mono text-slate-400 flex flex-wrap gap-4">
-              <span>Primary Hub: <strong class="text-white">Al Sabkha & Al Ras</strong></span>
-              <span>Propulsion: <strong class="text-white">Single-Cylinder Diesel</strong></span>
+            <span class="text-xs font-mono text-slate-400 bg-slate-900 border border-slate-800 px-3 py-1 rounded-lg self-start sm:self-auto">Pre-1950s</span>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            Long before asphalt was poured across the desert, the Arabian camel was the quintessential mode of overland transportation across Dubai and the Trucial States. Bedouin camel caravans crossed the desert between oases, transporting frankincense, dried dates, textiles, and freshwater across historic trails linking Liwa, Abu Dhabi, Al Ain, and Dubai Creek.
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="relative h-56 rounded-xl overflow-hidden bg-slate-950 group">
+              <img src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=900&q=80" alt="Camels traversing the desert sand dunes" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90" />
+              <div class="absolute bottom-2 left-2 bg-slate-950/80 backdrop-blur px-2.5 py-1 rounded text-[10px] font-mono text-slate-300">Desert Caravan Route</div>
+            </div>
+            <div class="relative h-56 rounded-xl overflow-hidden bg-slate-950 group">
+              <img src="https://images.unsplash.com/photo-1547234935-80c7145ec969?auto=format&fit=crop&w=900&q=80" alt="Desert landscape trail in the UAE" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90" />
+              <div class="absolute bottom-2 left-2 bg-slate-950/80 backdrop-blur px-2.5 py-1 rounded text-[10px] font-mono text-slate-300">Ancient Overland Trade Track</div>
             </div>
           </div>
         </div>
 
-        <!-- Era 2: Bridges -->
-        <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 grid grid-cols-1 lg:grid-cols-12 gap-0 group">
-          <div class="lg:col-span-5 relative h-56 lg:h-auto overflow-hidden bg-slate-950">
-            <img 
-              src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1000&q=80" 
-              alt="Sheikh Zayed Road arterial infrastructure" 
-              loading="lazy"
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
-            />
-            <div class="absolute bottom-2 left-2 bg-slate-950/80 backdrop-blur px-2 py-0.5 rounded text-[10px] font-mono text-slate-400">
-              CC0 / Public Domain
-            </div>
-          </div>
-          <div class="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-4">
+        <!-- Era 2: Maritime Creek Crossings & Abras -->
+        <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 p-6 sm:p-8 space-y-6">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-800 pb-3 gap-2">
             <div>
-              <div class="flex items-center justify-between text-xs font-mono text-brand-cyan mb-2">
-                <span>ERA 02</span>
-                <span>1969 – 1980s</span>
-              </div>
-              <h3 class="text-xl font-bold text-white">The First Bridges & The Desert Motorways</h3>
-              <p class="text-xs text-slate-300 leading-relaxed mt-2">
-                In 1969, Al Maktoum Bridge opened as the first fixed road crossing over Dubai Creek, requiring a 50-fils toll to fund infrastructure development. Soon after, the Al Shindagha Tunnel and Al Garhoud Bridge linked vehicular traffic, while the Abu Dhabi–Dubai highway (now Sheikh Zayed Road E11) paved the way for motorized regional travel.
-              </p>
+              <span class="text-xs font-mono text-sky-400 font-bold block uppercase">Era 02 • Waterway Foundations</span>
+              <h3 class="text-xl sm:text-2xl font-bold text-white">The Creek Lifeline: Wooden Abras & Dhows</h3>
             </div>
-            <div class="pt-4 border-t border-slate-800 text-[11px] font-mono text-slate-400 flex flex-wrap gap-4">
-              <span>Landmark: <strong class="text-white">Al Maktoum Bridge (1969)</strong></span>
-              <span>Corridor: <strong class="text-white">E11 Highway Expansion</strong></span>
+            <span class="text-xs font-mono text-slate-400 bg-slate-900 border border-slate-800 px-3 py-1 rounded-lg self-start sm:self-auto">1950s – 1960s</span>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            Dubai Creek served as the city's natural harbour and dividing artery. Without bridges connecting the twin trading settlements of Deira and Bur Dubai, motorized wooden Abras and traditional rowing boats handled passenger transfers. Dhows brought spices and textiles from India and East Africa, anchoring Dubai’s merchant status.
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="relative h-56 rounded-xl overflow-hidden bg-slate-950 group">
+              <img src="https://images.unsplash.com/photo-1580674684081-7617fbf3d745?auto=format&fit=crop&w=900&q=80" alt="Traditional wooden Abra on Dubai Creek" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90" />
+              <div class="absolute bottom-2 left-2 bg-slate-950/80 backdrop-blur px-2.5 py-1 rounded text-[10px] font-mono text-slate-300">Traditional Wooden Abra on Creek</div>
+            </div>
+            <div class="relative h-56 rounded-xl overflow-hidden bg-slate-950 group">
+              <img src="https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=900&q=80" alt="Dubai Creek historic trading port" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90" />
+              <div class="absolute bottom-2 left-2 bg-slate-950/80 backdrop-blur px-2.5 py-1 rounded text-[10px] font-mono text-slate-300">Historic Dhow Wharfage & Port</div>
             </div>
           </div>
         </div>
 
-        <!-- Era 3: RTA Formation -->
-        <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 grid grid-cols-1 lg:grid-cols-12 gap-0 group">
-          <div class="lg:col-span-5 relative h-56 lg:h-auto overflow-hidden bg-slate-950">
-            <img 
-              src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1000&q=80" 
-              alt="Urban bus rapid transport system" 
-              loading="lazy"
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
-            />
-            <div class="absolute bottom-2 left-2 bg-slate-950/80 backdrop-blur px-2 py-0.5 rounded text-[10px] font-mono text-slate-400">
-              CC0 License
-            </div>
-          </div>
-          <div class="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-4">
+        <!-- Era 3: Paved Roads, First Bridges & Motor Vehicles -->
+        <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 p-6 sm:p-8 space-y-6">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-800 pb-3 gap-2">
             <div>
-              <div class="flex items-center justify-between text-xs font-mono text-indigo-400 mb-2">
-                <span>ERA 03</span>
-                <span>1990s – 2005</span>
-              </div>
-              <h3 class="text-xl font-bold text-white">Unified Fleet Transit & The Birth of RTA</h3>
-              <p class="text-xs text-slate-300 leading-relaxed mt-2">
-                As Dubai rapidly expanded into southern corridors, municipal public bus networks were consolidated into unified timetabled trunk lines. In November 2005, the Dubai Roads and Transport Authority (RTA) was founded by decree, centralizing road design, metered taxis, and marine lines under one planning vision.
-              </p>
+              <span class="text-xs font-mono text-indigo-400 font-bold block uppercase">Era 03 • Motor Age</span>
+              <h3 class="text-xl sm:text-2xl font-bold text-white">First Bridges, Land Rovers & Paved Corridors</h3>
             </div>
-            <div class="pt-4 border-t border-slate-800 text-[11px] font-mono text-slate-400 flex flex-wrap gap-4">
-              <span>Milestone: <strong class="text-white">RTA Established (Nov 2005)</strong></span>
-              <span>Integration: <strong class="text-white">Unified Metered Taxis & Buses</strong></span>
+            <span class="text-xs font-mono text-slate-400 bg-slate-900 border border-slate-800 px-3 py-1 rounded-lg self-start sm:self-auto">1969 – 1980s</span>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            In 1969, the opening of Al Maktoum Bridge marked the very first fixed road link over Dubai Creek, replacing long detours around the swampy creekhead. Motor vehicles, led by early 4x4 Land Rovers, Bedfords, and saloon cabs, began dominating urban transit, soon followed by Al Shindagha Tunnel and Al Garhoud Bridge.
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="relative h-56 rounded-xl overflow-hidden bg-slate-950 group">
+              <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=900&q=80" alt="Motor vehicle road transport" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90" />
+              <div class="absolute bottom-2 left-2 bg-slate-950/80 backdrop-blur px-2.5 py-1 rounded text-[10px] font-mono text-slate-300">Early Motor Vehicle Corridors</div>
+            </div>
+            <div class="relative h-56 rounded-xl overflow-hidden bg-slate-950 group">
+              <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=900&q=80" alt="Public commuter buses and street mobility" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90" />
+              <div class="absolute bottom-2 left-2 bg-slate-950/80 backdrop-blur px-2.5 py-1 rounded text-[10px] font-mono text-slate-300">Municipal Bus Fleets & Road Links</div>
             </div>
           </div>
         </div>
 
-        <!-- Era 4: Dubai Metro -->
-        <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 grid grid-cols-1 lg:grid-cols-12 gap-0 group">
-          <div class="lg:col-span-5 relative h-56 lg:h-auto overflow-hidden bg-slate-950">
-            <img 
-              src="https://images.unsplash.com/photo-1580674285054-bed31e145f59?auto=format&fit=crop&w=1000&q=80" 
-              alt="Dubai Metro viaduct and elevated tracks" 
-              loading="lazy"
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
-            />
-            <div class="absolute bottom-2 left-2 bg-slate-950/80 backdrop-blur px-2 py-0.5 rounded text-[10px] font-mono text-slate-400">
-              CC0 License
-            </div>
-          </div>
-          <div class="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-4">
+        <!-- Era 4: Highway Master Network & Civil Aviation Gateway -->
+        <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 p-6 sm:p-8 space-y-6">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-800 pb-3 gap-2">
             <div>
-              <div class="flex items-center justify-between text-xs font-mono text-red-400 mb-2">
-                <span>ERA 04</span>
-                <span>09 / 09 / 2009 — Present</span>
-              </div>
-              <h3 class="text-xl font-bold text-white">The Driverless Urban Rail Era</h3>
-              <p class="text-xs text-slate-300 leading-relaxed mt-2">
-                At 09:09:09 PM on September 9, 2009, the Dubai Metro Red Line launched as the world's longest automated driverless rail system. Joined by the Green Line in 2011, Dubai Tram in 2014, and the unified contactless Nol card system, urban mobility shifted from car dependency to mass transit.
-              </p>
+              <span class="text-xs font-mono text-brand-cyan font-bold block uppercase">Era 04 • Arterial Highways & Flights</span>
+              <h3 class="text-xl sm:text-2xl font-bold text-white">Sheikh Zayed Road Corridors & Global Flight Hub</h3>
             </div>
-            <div class="pt-4 border-t border-slate-800 text-[11px] font-mono text-slate-400 flex flex-wrap gap-4">
-              <span>Inauguration: <strong class="text-white">09.09.2009</strong></span>
-              <span>Network Scale: <strong class="text-white">Red & Green Lines + Route 2020</strong></span>
+            <span class="text-xs font-mono text-slate-400 bg-slate-900 border border-slate-800 px-3 py-1 rounded-lg self-start sm:self-auto">1980s – 2000s</span>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            The multi-lane Sheikh Zayed Road (E11) replaced the old Defence Roundabout, establishing the backbone for Dubai's southern skyscrapers. Simultaneously, Dubai International Airport (DXB) expanded rapidly into a premier global aviation crossroads, welcoming international airlines and establishing the Emirates airline fleet.
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="relative h-56 rounded-xl overflow-hidden bg-slate-950 group">
+              <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=900&q=80" alt="Sheikh Zayed Road superhighway" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90" />
+              <div class="absolute bottom-2 left-2 bg-slate-950/80 backdrop-blur px-2.5 py-1 rounded text-[10px] font-mono text-slate-300">Sheikh Zayed Road (E11) Arterial</div>
+            </div>
+            <div class="relative h-56 rounded-xl overflow-hidden bg-slate-950 group">
+              <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=900&q=80" alt="Commercial passenger aircraft taking off" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90" />
+              <div class="absolute bottom-2 left-2 bg-slate-950/80 backdrop-blur px-2.5 py-1 rounded text-[10px] font-mono text-slate-300">Global Aviation Gateway (DXB)</div>
             </div>
           </div>
         </div>
 
-        <!-- Era 5: Vertiports -->
-        <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 grid grid-cols-1 lg:grid-cols-12 gap-0 group">
-          <div class="lg:col-span-5 relative h-56 lg:h-auto overflow-hidden bg-slate-950">
-            <img 
-              src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=1000&q=80" 
-              alt="Futuristic sky transit and aviation corridor" 
-              loading="lazy"
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
-            />
-            <div class="absolute bottom-2 left-2 bg-slate-950/80 backdrop-blur px-2 py-0.5 rounded text-[10px] font-mono text-slate-400">
-              CC0 / Conceptual Asset
-            </div>
-          </div>
-          <div class="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-4">
+        <!-- Era 5: Driverless Urban Rail & Integrated Transit -->
+        <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 p-6 sm:p-8 space-y-6">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-800 pb-3 gap-2">
             <div>
-              <div class="flex items-center justify-between text-xs font-mono text-purple-400 mb-2">
-                <span>ERA 05</span>
-                <span>2026 & Beyond</span>
-              </div>
-              <h3 class="text-xl font-bold text-white">Three-Dimensional Skies: Vertiports & Bullet Rail</h3>
-              <p class="text-xs text-slate-300 leading-relaxed mt-2">
-                Dubai enters three-dimensional aerial transit through electric vertical takeoff (eVTOL) aircraft operating between designated vertiports at DXB, Palm Jumeirah, Dubai Marina, and Downtown, alongside Etihad Rail's 200 km/h national passenger railway and the upcoming 30 km Metro Blue Line.
-              </p>
+              <span class="text-xs font-mono text-red-400 font-bold block uppercase">Era 05 • Mass Urban Rail</span>
+              <h3 class="text-xl sm:text-2xl font-bold text-white">The Driverless Metro & Unified Nol Smart Transit</h3>
             </div>
-            <div class="pt-4 border-t border-slate-800 text-[11px] font-mono text-slate-400 flex flex-wrap gap-4">
-              <span>Aviation: <strong class="text-white">Joby S4 + Skyports Hubs</strong></span>
-              <span>National Rail: <strong class="text-white">Etihad Rail Passenger</strong></span>
+            <span class="text-xs font-mono text-slate-400 bg-slate-900 border border-slate-800 px-3 py-1 rounded-lg self-start sm:self-auto">2009 – 2020s</span>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            On September 9, 2009 (09/09/09), the Dubai Metro Red Line opened as the world's longest automated driverless rail system. Joined by the Green Line in 2011, the Dubai Tram in 2014, and Route 2020 to Expo City, Dubai shifted millions of daily commuters from congested roads into air-conditioned, zero-emission mass transit.
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="relative h-56 rounded-xl overflow-hidden bg-slate-950 group">
+              <img src="https://images.unsplash.com/photo-1580674285054-bed31e145f59?auto=format&fit=crop&w=900&q=80" alt="Dubai Metro viaduct and elevated tracks" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90" />
+              <div class="absolute bottom-2 left-2 bg-slate-950/80 backdrop-blur px-2.5 py-1 rounded text-[10px] font-mono text-slate-300">Dubai Metro Elevated Viaduct</div>
+            </div>
+            <div class="relative h-56 rounded-xl overflow-hidden bg-slate-950 group">
+              <img src="https://images.unsplash.com/photo-1555685812-4b943f1cb0eb?auto=format&fit=crop&w=900&q=80" alt="Urban tram and rail integration" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90" />
+              <div class="absolute bottom-2 left-2 bg-slate-950/80 backdrop-blur px-2.5 py-1 rounded text-[10px] font-mono text-slate-300">Dubai Tram & Integrated Metro Hub</div>
             </div>
           </div>
         </div>
+
+        <!-- Era 6: Nationwide Heavy Passenger Rail -->
+        <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 p-6 sm:p-8 space-y-6">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-800 pb-3 gap-2">
+            <div>
+              <span class="text-xs font-mono text-purple-400 font-bold block uppercase">Era 06 • National Rail Network</span>
+              <h3 class="text-xl sm:text-2xl font-bold text-white">Etihad Rail: 200 km/h Intercity Bullet Network</h3>
+            </div>
+            <span class="text-xs font-mono text-slate-400 bg-slate-900 border border-slate-800 px-3 py-1 rounded-lg self-start sm:self-auto">Present – Rolling Out</span>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            The UAE National Railway Network connects 11 passenger stations spanning all seven emirates. Aerodynamic 200 km/h passenger trains connect Dubai's Al Yalayis station with Abu Dhabi in just 57 minutes and Fujairah's mountain coast in 105 minutes, fundamentally redefining interstate travel.
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="relative h-56 rounded-xl overflow-hidden bg-slate-950 group">
+              <img src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&w=900&q=80" alt="High speed passenger train on railway line" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90" />
+              <div class="absolute bottom-2 left-2 bg-slate-950/80 backdrop-blur px-2.5 py-1 rounded text-[10px] font-mono text-slate-300">200 km/h Intercity Passenger Rail</div>
+            </div>
+            <div class="relative h-56 rounded-xl overflow-hidden bg-slate-950 group">
+              <img src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?auto=format&fit=crop&w=900&q=80" alt="Modern railway station concourse" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90" />
+              <div class="absolute bottom-2 left-2 bg-slate-950/80 backdrop-blur px-2.5 py-1 rounded text-[10px] font-mono text-slate-300">Integrated Interstate Rail Terminals</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Era 7: Autonomous Ground Mobility & Smart Fleets -->
+        <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 p-6 sm:p-8 space-y-6">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-800 pb-3 gap-2">
+            <div>
+              <span class="text-xs font-mono text-emerald-400 font-bold block uppercase">Era 07 • Smart Ground Fleets</span>
+              <h3 class="text-xl sm:text-2xl font-bold text-white">Autonomous Shuttles & AI-Managed Traffic</h3>
+            </div>
+            <span class="text-xs font-mono text-slate-400 bg-slate-900 border border-slate-800 px-3 py-1 rounded-lg self-start sm:self-auto">Ongoing Rollout</span>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            Under the Dubai Autonomous Transportation Strategy, 25% of all transportation trips in Dubai will be driverless by 2030. Self-driving Origin taxis, automated neighborhood feeder pods, and AI-optimized traffic signaling systems are transforming Dubai into a testbed for future-ready smart ground mobility.
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="relative h-56 rounded-xl overflow-hidden bg-slate-950 group">
+              <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=900&q=80" alt="Autonomous vehicle sensor and smart mobility" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90" />
+              <div class="absolute bottom-2 left-2 bg-slate-950/80 backdrop-blur px-2.5 py-1 rounded text-[10px] font-mono text-slate-300">Driverless Robotaxi Sensor Testing</div>
+            </div>
+            <div class="relative h-56 rounded-xl overflow-hidden bg-slate-950 group">
+              <img src="https://images.unsplash.com/photo-1508962914676-134849a727f0?auto=format&fit=crop&w=900&q=80" alt="Smart city infrastructure and intelligent transport" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90" />
+              <div class="absolute bottom-2 left-2 bg-slate-950/80 backdrop-blur px-2.5 py-1 rounded text-[10px] font-mono text-slate-300">Smart City Intelligent Transit Grid</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Era 8: Low-Altitude Air Mobility & Vertiports -->
+        <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 p-6 sm:p-8 space-y-6">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-800 pb-3 gap-2">
+            <div>
+              <span class="text-xs font-mono text-brand-cyan font-bold block uppercase">Era 08 • Three-Dimensional Skies</span>
+              <h3 class="text-xl sm:text-2xl font-bold text-white">Commercial eVTOL Air Taxis & Vertiport Hubs</h3>
+            </div>
+            <span class="text-xs font-mono text-brand-cyan bg-sky-500/10 border border-sky-500/30 px-3 py-1 rounded-lg self-start sm:self-auto">2026 & Beyond</span>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            The next chapter takes flight: Dubai is establishing the world's first certified commercial electric air taxi network. In partnership with Skyports Infrastructure, Joby Aviation, and the Dubai RTA, low-altitude aerial corridors connect vertiports at DXB Terminal 3, Palm Jumeirah, Dubai Marina, and Downtown Burj Khalifa, cutting 45-minute highway commutes down to a 10-minute flight.
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="relative h-56 rounded-xl overflow-hidden bg-slate-950 group">
+              <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=900&q=80" alt="Futuristic sky transit and aviation corridor" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90" />
+              <div class="absolute bottom-2 left-2 bg-slate-950/80 backdrop-blur px-2.5 py-1 rounded text-[10px] font-mono text-slate-300">Urban Low-Altitude Air Corridor</div>
+            </div>
+            <div class="relative h-56 rounded-xl overflow-hidden bg-slate-950 group">
+              <img src="https://images.unsplash.com/photo-1506015391300-4802dc74de2e?auto=format&fit=crop&w=900&q=80" alt="Aerial perspective of modern futuristic architecture" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90" />
+              <div class="absolute bottom-2 left-2 bg-slate-950/80 backdrop-blur px-2.5 py-1 rounded text-[10px] font-mono text-slate-300">Vertiport Urban Hub Gateway</div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -1525,7 +1591,7 @@
         if (viewId === 'aerial') title = "VERTIPORTS";
         if (viewId === 'rta') title = "RTA METRO & BUS";
         if (viewId === 'etihad') title = "ETIHAD RAIL";
-        if (viewId === 'history') title = "TRANSIT HERITAGE";
+        if (viewId === 'history') title = "DUBAI TRANSIT HERITAGE";
         if (viewId === 'alerts') title = "ROUTE NOTIFICATIONS";
         crumbs.innerHTML = '<a href="javascript:void(0)" onclick="navigate(\'home\')" class="hover:text-brand-cyan">PORTAL</a> <span class="text-slate-600">/</span> <span class="text-white">' + title + '</span>';
       }
