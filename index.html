@@ -7,7 +7,6 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-QY9SGHETB4');
   </script>
 
@@ -79,11 +78,12 @@
 </head>
 <body class="bg-brand-dark text-slate-100 min-h-screen flex flex-col font-sans selection:bg-brand-cyan selection:text-brand-dark antialiased">
 
-  <!-- Top Legal Transparency Banner -->
+  <!-- Legal Notice Strip -->
   <aside aria-label="Legal Notice" class="bg-slate-900 border-b border-slate-800 text-[11px] text-slate-400 py-1.5 px-4 text-center">
     <span>Notice: <strong>dubaiskyports.com</strong> is an independent digital information guide. Not affiliated with RTA, Skyports Infrastructure, or Etihad Rail. Fares and timings are estimations based on public tariff models.</span>
   </aside>
 
+  <!-- Main Navigation Header -->
   <header class="sticky top-0 z-50 glass-card border-b border-brand-border">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16 sm:h-20 gap-4">
@@ -98,7 +98,7 @@
           </div>
         </a>
 
-        <!-- DESKTOP NAVIGATION -->
+        <!-- Desktop Navigation Bar -->
         <nav class="hidden lg:flex items-center gap-1">
           <button type="button" onclick="navigate('home')" data-nav="home" class="nav-btn px-3 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:text-white hover:bg-slate-800/60 transition-all">Home</button>
           <button type="button" onclick="navigate('planner')" data-nav="planner" class="nav-btn px-3 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:text-white hover:bg-slate-800/60 transition-all flex items-center gap-1.5"><i class="ph ph-navigation-arrow"></i> Trip & Fare Engine</button>
@@ -120,7 +120,7 @@
 
       </div>
 
-      <!-- MOBILE NAVIGATION -->
+      <!-- Mobile Dropdown Navigation -->
       <div id="mobile-menu" class="hidden lg:hidden py-4 border-t border-slate-800/80 flex flex-col gap-2">
         <button type="button" onclick="navigate('home'); toggleMobileMenu()" class="text-left px-3 py-2 text-xs font-medium text-slate-300 hover:bg-slate-800/50 rounded-lg">Home Overview</button>
         <button type="button" onclick="navigate('planner'); toggleMobileMenu()" class="text-left px-3 py-2 text-xs font-medium text-slate-300 hover:bg-slate-800/50 rounded-lg">Trip & Fare Engine</button>
@@ -138,7 +138,7 @@
 
   <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
 
-    <!-- VIEW: HOME (Overview) -->
+    <!-- VIEW 1: HOME -->
     <section id="view-home" class="page-view space-y-12">
       <div class="text-center max-w-3xl mx-auto space-y-6 pt-4">
         <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-xs text-slate-400">
@@ -194,7 +194,7 @@
       </div>
     </section>
 
-    <!-- VIEW: PLANNER -->
+    <!-- VIEW 2: PLANNER -->
     <section id="view-planner" class="page-view hidden space-y-10">
       <div class="border-b border-slate-800 pb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
@@ -387,7 +387,7 @@
       <div id="route-step-breakdown" class="space-y-4"></div>
     </section>
 
-    <!-- VIEW: AERIAL -->
+    <!-- VIEW 3: AERIAL -->
     <section id="view-aerial" class="page-view hidden space-y-10">
       <div class="border-b border-slate-800 pb-6 flex flex-col lg:flex-row lg:items-end justify-between gap-4">
         <div>
@@ -537,7 +537,7 @@
       </div>
     </section>
 
-    <!-- VIEW: RTA BUS & METRO -->
+    <!-- VIEW 4: RTA BUS & METRO -->
     <section id="view-rta" class="page-view hidden space-y-12">
       <div class="border-b border-slate-800 pb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
@@ -770,7 +770,7 @@
       </div>
     </section>
 
-    <!-- VIEW: ETIHAD RAIL PASSENGER NETWORK -->
+    <!-- VIEW 5: ETIHAD RAIL PASSENGER NETWORK -->
     <section id="view-etihad" class="page-view hidden space-y-12">
       <div class="border-b border-slate-800 pb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
@@ -921,9 +921,7 @@
       </div>
     </section>
 
-    <!-- ========================================================= -->
-    <!-- VIEW: DUBAI TRANSIT HERITAGE (Direct Unrestricted Photos) -->
-    <!-- ========================================================= -->
+    <!-- VIEW 6: DUBAI TRANSIT HERITAGE (Functional Sliders & Verified Images) -->
     <section id="view-history" class="page-view hidden space-y-12">
       <div class="border-b border-slate-800 pb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
@@ -978,8 +976,8 @@
             <div class="flex items-center gap-3">
               <span class="text-xs font-mono text-slate-400 bg-slate-900 border border-slate-800 px-3 py-1 rounded-lg">Pre-1950s</span>
               <div class="flex items-center gap-1.5">
-                <button type="button" onclick="scrollSlider('slider-era1', -320)" aria-label="Previous Slide" class="w-7 h-7 rounded-lg bg-slate-800 hover:bg-slate-700 text-white flex items-center justify-center text-xs"><i class="ph ph-caret-left-bold"></i></button>
-                <button type="button" onclick="scrollSlider('slider-era1', 320)" aria-label="Next Slide" class="w-7 h-7 rounded-lg bg-slate-800 hover:bg-slate-700 text-white flex items-center justify-center text-xs"><i class="ph ph-caret-right-bold"></i></button>
+                <button type="button" onclick="scrollSlider('slider-era1', -320)" aria-label="Previous Slide" class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-slate-700 text-white flex items-center justify-center text-sm"><i class="ph ph-caret-left-bold"></i></button>
+                <button type="button" onclick="scrollSlider('slider-era1', 320)" aria-label="Next Slide" class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-slate-700 text-white flex items-center justify-center text-sm"><i class="ph ph-caret-right-bold"></i></button>
               </div>
             </div>
           </div>
@@ -1001,7 +999,7 @@
             </div>
             <div class="slider-slide shrink-0 w-72 sm:w-80 h-52 rounded-xl overflow-hidden relative group bg-slate-950">
               <img referrerpolicy="no-referrer" src="https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=700&q=80" alt="Traditional windtower architecture in Al Fahidi" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-              <div class="absolute bottom-2 left-2 bg-slate-950/80 px-2.5 py-1 rounded text-[10px] font-mono text-slate-200">4. Al Fahidi Historic Settlement Destination</div>
+              <div class="absolute bottom-2 left-2 bg-slate-950/80 px-2.5 py-1 rounded text-[10px] font-mono text-slate-200">4. Al Fahidi Historic Destination</div>
             </div>
           </div>
         </div>
@@ -1016,8 +1014,8 @@
             <div class="flex items-center gap-3">
               <span class="text-xs font-mono text-slate-400 bg-slate-900 border border-slate-800 px-3 py-1 rounded-lg">1950s – 1960s</span>
               <div class="flex items-center gap-1.5">
-                <button type="button" onclick="scrollSlider('slider-era2', -320)" aria-label="Previous Slide" class="w-7 h-7 rounded-lg bg-slate-800 hover:bg-slate-700 text-white flex items-center justify-center text-xs"><i class="ph ph-caret-left-bold"></i></button>
-                <button type="button" onclick="scrollSlider('slider-era2', 320)" aria-label="Next Slide" class="w-7 h-7 rounded-lg bg-slate-800 hover:bg-slate-700 text-white flex items-center justify-center text-xs"><i class="ph ph-caret-right-bold"></i></button>
+                <button type="button" onclick="scrollSlider('slider-era2', -320)" aria-label="Previous Slide" class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-slate-700 text-white flex items-center justify-center text-sm"><i class="ph ph-caret-left-bold"></i></button>
+                <button type="button" onclick="scrollSlider('slider-era2', 320)" aria-label="Next Slide" class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-slate-700 text-white flex items-center justify-center text-sm"><i class="ph ph-caret-right-bold"></i></button>
               </div>
             </div>
           </div>
@@ -1054,8 +1052,8 @@
             <div class="flex items-center gap-3">
               <span class="text-xs font-mono text-slate-400 bg-slate-900 border border-slate-800 px-3 py-1 rounded-lg">1969 – 1980s</span>
               <div class="flex items-center gap-1.5">
-                <button type="button" onclick="scrollSlider('slider-era3', -320)" aria-label="Previous Slide" class="w-7 h-7 rounded-lg bg-slate-800 hover:bg-slate-700 text-white flex items-center justify-center text-xs"><i class="ph ph-caret-left-bold"></i></button>
-                <button type="button" onclick="scrollSlider('slider-era3', 320)" aria-label="Next Slide" class="w-7 h-7 rounded-lg bg-slate-800 hover:bg-slate-700 text-white flex items-center justify-center text-xs"><i class="ph ph-caret-right-bold"></i></button>
+                <button type="button" onclick="scrollSlider('slider-era3', -320)" aria-label="Previous Slide" class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-slate-700 text-white flex items-center justify-center text-sm"><i class="ph ph-caret-left-bold"></i></button>
+                <button type="button" onclick="scrollSlider('slider-era3', 320)" aria-label="Next Slide" class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-slate-700 text-white flex items-center justify-center text-sm"><i class="ph ph-caret-right-bold"></i></button>
               </div>
             </div>
           </div>
@@ -1092,8 +1090,8 @@
             <div class="flex items-center gap-3">
               <span class="text-xs font-mono text-slate-400 bg-slate-900 border border-slate-800 px-3 py-1 rounded-lg">1980s – 2000s</span>
               <div class="flex items-center gap-1.5">
-                <button type="button" onclick="scrollSlider('slider-era4', -320)" aria-label="Previous Slide" class="w-7 h-7 rounded-lg bg-slate-800 hover:bg-slate-700 text-white flex items-center justify-center text-xs"><i class="ph ph-caret-left-bold"></i></button>
-                <button type="button" onclick="scrollSlider('slider-era4', 320)" aria-label="Next Slide" class="w-7 h-7 rounded-lg bg-slate-800 hover:bg-slate-700 text-white flex items-center justify-center text-xs"><i class="ph ph-caret-right-bold"></i></button>
+                <button type="button" onclick="scrollSlider('slider-era4', -320)" aria-label="Previous Slide" class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-slate-700 text-white flex items-center justify-center text-sm"><i class="ph ph-caret-left-bold"></i></button>
+                <button type="button" onclick="scrollSlider('slider-era4', 320)" aria-label="Next Slide" class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-slate-700 text-white flex items-center justify-center text-sm"><i class="ph ph-caret-right-bold"></i></button>
               </div>
             </div>
           </div>
@@ -1130,8 +1128,8 @@
             <div class="flex items-center gap-3">
               <span class="text-xs font-mono text-slate-400 bg-slate-900 border border-slate-800 px-3 py-1 rounded-lg">2009 – 2020s</span>
               <div class="flex items-center gap-1.5">
-                <button type="button" onclick="scrollSlider('slider-era5', -320)" aria-label="Previous Slide" class="w-7 h-7 rounded-lg bg-slate-800 hover:bg-slate-700 text-white flex items-center justify-center text-xs"><i class="ph ph-caret-left-bold"></i></button>
-                <button type="button" onclick="scrollSlider('slider-era5', 320)" aria-label="Next Slide" class="w-7 h-7 rounded-lg bg-slate-800 hover:bg-slate-700 text-white flex items-center justify-center text-xs"><i class="ph ph-caret-right-bold"></i></button>
+                <button type="button" onclick="scrollSlider('slider-era5', -320)" aria-label="Previous Slide" class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-slate-700 text-white flex items-center justify-center text-sm"><i class="ph ph-caret-left-bold"></i></button>
+                <button type="button" onclick="scrollSlider('slider-era5', 320)" aria-label="Next Slide" class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-slate-700 text-white flex items-center justify-center text-sm"><i class="ph ph-caret-right-bold"></i></button>
               </div>
             </div>
           </div>
@@ -1144,4 +1142,638 @@
               <div class="absolute bottom-2 left-2 bg-slate-950/80 px-2.5 py-1 rounded text-[10px] font-mono text-slate-200">1. Dubai Metro Elevated Rail Line</div>
             </div>
             <div class="slider-slide shrink-0 w-72 sm:w-80 h-52 rounded-xl overflow-hidden relative group bg-slate-950">
-              <img referrerpolicy="no-referrer" src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=700&q=80" alt="Dubai Tram integration in Marina" loading="lazy" class="w-full h
+              <img referrerpolicy="no-referrer" src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=700&q=80" alt="Dubai Tram integration in Marina" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <div class="absolute bottom-2 left-2 bg-slate-950/80 px-2.5 py-1 rounded text-[10px] font-mono text-slate-200">2. Dubai Tram at Marina Hub</div>
+            </div>
+            <div class="slider-slide shrink-0 w-72 sm:w-80 h-52 rounded-xl overflow-hidden relative group bg-slate-950">
+              <img referrerpolicy="no-referrer" src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?auto=format&fit=crop&w=700&q=80" alt="Futuristic metro station concourse" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <div class="absolute bottom-2 left-2 bg-slate-950/80 px-2.5 py-1 rounded text-[10px] font-mono text-slate-200">3. Iconic Clam-Shell Metro Stations</div>
+            </div>
+            <div class="slider-slide shrink-0 w-72 sm:w-80 h-52 rounded-xl overflow-hidden relative group bg-slate-950">
+              <img referrerpolicy="no-referrer" src="https://images.unsplash.com/photo-1580674285054-bed31e145f59?auto=format&fit=crop&w=700&q=80" alt="Automated train passing Sheikh Zayed Road" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <div class="absolute bottom-2 left-2 bg-slate-950/80 px-2.5 py-1 rounded text-[10px] font-mono text-slate-200">4. Red Line Route 2020 Expansion</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Era 6: Nationwide Heavy Passenger Rail -->
+        <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 p-6 sm:p-8 space-y-5">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-800 pb-3 gap-2">
+            <div>
+              <span class="text-xs font-mono text-purple-400 font-bold block uppercase">Era 06 • National Rail Network</span>
+              <h3 class="text-xl sm:text-2xl font-bold text-white">Etihad Rail: 200 km/h National Passenger Network</h3>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-xs font-mono text-slate-400 bg-slate-900 border border-slate-800 px-3 py-1 rounded-lg">Present – Rolling Out</span>
+              <div class="flex items-center gap-1.5">
+                <button type="button" onclick="scrollSlider('slider-era6', -320)" aria-label="Previous Slide" class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-slate-700 text-white flex items-center justify-center text-sm"><i class="ph ph-caret-left-bold"></i></button>
+                <button type="button" onclick="scrollSlider('slider-era6', 320)" aria-label="Next Slide" class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-slate-700 text-white flex items-center justify-center text-sm"><i class="ph ph-caret-right-bold"></i></button>
+              </div>
+            </div>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            Spanning over 1,200 km across the Emirates, Etihad Rail connects 11 core passenger stations from the Saudi border across Abu Dhabi, Dubai, Sharjah, and Fujairah. Modern 200 km/h aerodynamic trains link Dubai's Al Yalayis station with Abu Dhabi in under 57 minutes, bypassing highway congestion.
+          </p>
+          <div id="slider-era6" class="slider-track flex gap-4 overflow-x-auto pb-3 pt-1">
+            <div class="slider-slide shrink-0 w-72 sm:w-80 h-52 rounded-xl overflow-hidden relative group bg-slate-950">
+              <img referrerpolicy="no-referrer" src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&w=700&q=80" alt="Aerodynamic high-speed passenger train" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <div class="absolute bottom-2 left-2 bg-slate-950/80 px-2.5 py-1 rounded text-[10px] font-mono text-slate-200">1. 200 km/h Passenger Trainset</div>
+            </div>
+            <div class="slider-slide shrink-0 w-72 sm:w-80 h-52 rounded-xl overflow-hidden relative group bg-slate-950">
+              <img referrerpolicy="no-referrer" src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=700&q=80" alt="Rail tracks cutting through desert landscape" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <div class="absolute bottom-2 left-2 bg-slate-950/80 px-2.5 py-1 rounded text-[10px] font-mono text-slate-200">2. UAE National Rail Desert Corridor</div>
+            </div>
+            <div class="slider-slide shrink-0 w-72 sm:w-80 h-52 rounded-xl overflow-hidden relative group bg-slate-950">
+              <img referrerpolicy="no-referrer" src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?auto=format&fit=crop&w=700&q=80" alt="Intercity passenger terminal building" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <div class="absolute bottom-2 left-2 bg-slate-950/80 px-2.5 py-1 rounded text-[10px] font-mono text-slate-200">3. Al Yalayis (JGE) Passenger Terminal</div>
+            </div>
+            <div class="slider-slide shrink-0 w-72 sm:w-80 h-52 rounded-xl overflow-hidden relative group bg-slate-950">
+              <img referrerpolicy="no-referrer" src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=700&q=80" alt="Mountain pass rail route to Fujairah" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <div class="absolute bottom-2 left-2 bg-slate-950/80 px-2.5 py-1 rounded text-[10px] font-mono text-slate-200">4. Hajar Mountains Rail Tunnel Link</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Era 7: Autonomous Ground Mobility & Smart Fleets -->
+        <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 p-6 sm:p-8 space-y-5">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-800 pb-3 gap-2">
+            <div>
+              <span class="text-xs font-mono text-emerald-400 font-bold block uppercase">Era 07 • Smart Ground Fleets</span>
+              <h3 class="text-xl sm:text-2xl font-bold text-white">Autonomous Shuttles & AI-Optimized Mobility</h3>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-xs font-mono text-slate-400 bg-slate-900 border border-slate-800 px-3 py-1 rounded-lg">Ongoing Rollout</span>
+              <div class="flex items-center gap-1.5">
+                <button type="button" onclick="scrollSlider('slider-era7', -320)" aria-label="Previous Slide" class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-slate-700 text-white flex items-center justify-center text-sm"><i class="ph ph-caret-left-bold"></i></button>
+                <button type="button" onclick="scrollSlider('slider-era7', 320)" aria-label="Next Slide" class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-slate-700 text-white flex items-center justify-center text-sm"><i class="ph ph-caret-right-bold"></i></button>
+              </div>
+            </div>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            Under the Dubai Autonomous Transportation Strategy, the city is targeting 25% of all commuter trips to be autonomous by 2030. Testing driverless Origin robotaxis in Jumeirah and deploying automated smart shuttles at Expo City and Dubai Silicon Oasis places Dubai at the global forefront of AI-driven ground transit.
+          </p>
+          <div id="slider-era7" class="slider-track flex gap-4 overflow-x-auto pb-3 pt-1">
+            <div class="slider-slide shrink-0 w-72 sm:w-80 h-52 rounded-xl overflow-hidden relative group bg-slate-950">
+              <img referrerpolicy="no-referrer" src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=700&q=80" alt="Autonomous vehicle sensor and robotaxi testing" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <div class="absolute bottom-2 left-2 bg-slate-950/80 px-2.5 py-1 rounded text-[10px] font-mono text-slate-200">1. Autonomous Robotaxi Sensors</div>
+            </div>
+            <div class="slider-slide shrink-0 w-72 sm:w-80 h-52 rounded-xl overflow-hidden relative group bg-slate-950">
+              <img referrerpolicy="no-referrer" src="https://images.unsplash.com/photo-1508962914676-134849a727f0?auto=format&fit=crop&w=700&q=80" alt="Smart city digital mobility control grid" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <div class="absolute bottom-2 left-2 bg-slate-950/80 px-2.5 py-1 rounded text-[10px] font-mono text-slate-200">2. RTA Intelligent Traffic Systems Control</div>
+            </div>
+            <div class="slider-slide shrink-0 w-72 sm:w-80 h-52 rounded-xl overflow-hidden relative group bg-slate-950">
+              <img referrerpolicy="no-referrer" src="https://images.unsplash.com/photo-1558441719-8b489c63f7ce?auto=format&fit=crop&w=700&q=80" alt="Electric vehicle charging station infrastructure" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <div class="absolute bottom-2 left-2 bg-slate-950/80 px-2.5 py-1 rounded text-[10px] font-mono text-slate-200">3. Dubai EV Green Charger Grid</div>
+            </div>
+            <div class="slider-slide shrink-0 w-72 sm:w-80 h-52 rounded-xl overflow-hidden relative group bg-slate-950">
+              <img referrerpolicy="no-referrer" src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=700&q=80" alt="Futuristic urban transport concept" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <div class="absolute bottom-2 left-2 bg-slate-950/80 px-2.5 py-1 rounded text-[10px] font-mono text-slate-200">4. Automated Feeder Pods (2030 Vision)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Era 8: Low-Altitude Air Mobility & Vertiports -->
+        <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 p-6 sm:p-8 space-y-5">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-800 pb-3 gap-2">
+            <div>
+              <span class="text-xs font-mono text-brand-cyan font-bold block uppercase">Era 08 • Three-Dimensional Skies</span>
+              <h3 class="text-xl sm:text-2xl font-bold text-white">Commercial eVTOL Air Taxis & Vertiport Gateways</h3>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-xs font-mono text-brand-cyan bg-sky-500/10 border border-sky-500/30 px-3 py-1 rounded-lg">2026 & Beyond</span>
+              <div class="flex items-center gap-1.5">
+                <button type="button" onclick="scrollSlider('slider-era8', -320)" aria-label="Previous Slide" class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-slate-700 text-white flex items-center justify-center text-sm"><i class="ph ph-caret-left-bold"></i></button>
+                <button type="button" onclick="scrollSlider('slider-era8', 320)" aria-label="Next Slide" class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-slate-700 text-white flex items-center justify-center text-sm"><i class="ph ph-caret-right-bold"></i></button>
+              </div>
+            </div>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            Urban transit moves into 3D airspace. In direct partnership with Skyports Infrastructure, Joby Aviation, and the Dubai RTA, low-altitude electric air taxi routes will connect four key vertiport hubs: DXB Terminal 3, Palm Jumeirah, Dubai Marina, and Downtown Burj Khalifa. Cruising at 320 km/h with zero emissions, vertiports represent the pinnacle of Dubai's transit evolution.
+          </p>
+          <div id="slider-era8" class="slider-track flex gap-4 overflow-x-auto pb-3 pt-1">
+            <div class="slider-slide shrink-0 w-72 sm:w-80 h-52 rounded-xl overflow-hidden relative group bg-slate-950">
+              <img referrerpolicy="no-referrer" src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=700&q=80" alt="Futuristic aerial transit corridor in Dubai" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <div class="absolute bottom-2 left-2 bg-slate-950/80 px-2.5 py-1 rounded text-[10px] font-mono text-slate-200">1. Designated Low-Altitude Corridor</div>
+            </div>
+            <div class="slider-slide shrink-0 w-72 sm:w-80 h-52 rounded-xl overflow-hidden relative group bg-slate-950">
+              <img referrerpolicy="no-referrer" src="https://images.unsplash.com/photo-1506015391300-4802dc74de2e?auto=format&fit=crop&w=700&q=80" alt="Dubai Marina skyline vertiport zone" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <div class="absolute bottom-2 left-2 bg-slate-950/80 px-2.5 py-1 rounded text-[10px] font-mono text-slate-200">2. Dubai Marina Vertiport Site</div>
+            </div>
+            <div class="slider-slide shrink-0 w-72 sm:w-80 h-52 rounded-xl overflow-hidden relative group bg-slate-950">
+              <img referrerpolicy="no-referrer" src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=700&q=80" alt="Downtown Burj Khalifa central vertiport pad" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <div class="absolute bottom-2 left-2 bg-slate-950/80 px-2.5 py-1 rounded text-[10px] font-mono text-slate-200">3. Downtown Vertiport Pad Area</div>
+            </div>
+            <div class="slider-slide shrink-0 w-72 sm:w-80 h-52 rounded-xl overflow-hidden relative group bg-slate-950">
+              <img referrerpolicy="no-referrer" src="https://images.unsplash.com/photo-1580674285054-bed31e145f59?auto=format&fit=crop&w=700&q=80" alt="Futuristic integrated multimodal transport" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <div class="absolute bottom-2 left-2 bg-slate-950/80 px-2.5 py-1 rounded text-[10px] font-mono text-slate-200">4. Multimodal Aerial Transfer Hub</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- VIEW 7: ALERTS -->
+    <section id="view-alerts" class="page-view hidden space-y-10">
+      <div class="max-w-xl mx-auto glass-card p-8 rounded-2xl border border-slate-800 space-y-5">
+        <h2 class="text-2xl font-bold text-white text-center">Subscribe to Route Dispatch</h2>
+        <p class="text-xs text-slate-400 text-center">Receive notifications when official transport authorities publish verified booking dates and commercial schedules.</p>
+        <form id="active-notify-form" action="https://formspree.io/f/xqpeqnno" method="POST" class="space-y-4">
+          <input type="email" name="email" required placeholder="Enter your email" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-brand-cyan">
+          <button type="submit" id="notify-submit-btn" class="w-full py-3 rounded-xl bg-brand-cyan text-brand-dark font-bold text-xs uppercase hover:bg-sky-300 transition-all">Notify Me</button>
+        </form>
+        <div id="notify-status" class="hidden text-center py-4 text-xs text-brand-cyan font-medium">✓ Confirmed! You are registered for independent dispatch updates.</div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Legal Safeguard & Disclaimer Strip -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 mb-6">
+    <div class="p-4 rounded-xl bg-slate-950/90 border border-slate-800/80 text-[11px] text-slate-400 leading-relaxed space-y-1.5">
+      <p class="font-bold text-slate-300 uppercase tracking-wider font-mono">Independent Transparency & Trademark Disclaimer:</p>
+      <p>
+        <strong>dubaiskyports.com</strong> is a privately managed digital information portal and commuter research directory. This website is <strong>not affiliated with, authorized by, sponsored by, or officially associated with</strong> the Dubai Roads and Transport Authority (RTA), Skyports Infrastructure Limited, Joby Aviation Inc, or Etihad Rail PJSC, nor any of their subsidiaries or government entities.
+      </p>
+      <p>
+        All registered trademarks, service marks, company names, trade names, and brand logos mentioned herein remain the sole intellectual property of their respective owners. Descriptions of routes, fares, and transport infrastructure are provided strictly for general informational purposes based on publicly accessible data and estimations. Users should verify real-time departure timings and Nol balance requirements directly via official RTA channels.
+      </p>
+    </div>
+  </section>
+
+  <footer class="glass-card border-t border-brand-border mt-auto pt-8 pb-8 text-xs text-slate-400">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left flex flex-col sm:flex-row justify-between items-center gap-4">
+      <div>
+        <p class="text-slate-300 font-medium">&copy; 2026 Dubaiskyports.com. All rights reserved.</p>
+        <p class="text-[11px] text-slate-500 mt-1">Independent Multimodal Transit Information Portal.</p>
+      </div>
+      <div class="flex items-center gap-4 font-mono text-[11px]">
+        <a href="mailto:info@dubaiskyports.com" class="text-brand-cyan hover:underline">info@dubaiskyports.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // -------------------------------------------------------------
+    // TRANSIT DATABASE (Accurate Official RTA Zones)
+    // -------------------------------------------------------------
+    const locations = {
+      // Hubs
+      dxb: { name: "DXB Airport (T1/T3)", lat: 25.2532, lng: 55.3657, zone: 5, hasVertiport: true, vertiportName: "DXB Terminal 3 Vertiport", metroStation: "Airport Terminal 3 (Red Line)", busRoute: "Bus 32C / 11A / Airport Express" },
+      dwc: { name: "DWC Al Maktoum Airport", lat: 24.8967, lng: 55.1614, zone: 1, hasVertiport: false, metroStation: "Expo 2020 Station (Requires Feeder Bus)", busRoute: "Bus F55 (Direct from Expo 2020 Metro)" },
+      
+      // Deira & Historic (Zone 5)
+      naif: { name: "Naif (Deira Souk)", lat: 25.2736, lng: 55.3051, zone: 5, hasVertiport: false, metroStation: "Baniyas Square Station (Green Line)", busRoute: "Bus C01, 27, 53" },
+      abu_hail: { name: "Abu Hail / Hor Al Anz", lat: 25.2798, lng: 55.3342, zone: 5, hasVertiport: false, metroStation: "Abu Hail Metro Station (Green Line)", busRoute: "Bus C03, C10, C28" },
+      al_ras: { name: "Al Ras (Gold Souk / Heritage)", lat: 25.2687, lng: 55.2974, zone: 5, hasVertiport: false, metroStation: "Al Ras Metro Station (Green Line)", busRoute: "Bus C07, C09, Marine Abra" },
+      al_sabkha: { name: "Al Sabkha (Bus & Marine)", lat: 25.2672, lng: 55.3021, zone: 5, hasVertiport: false, metroStation: "Baniyas Square (Green Line)", busRoute: "Al Sabkha Major Bus Terminal" },
+      deira: { name: "Deira / Al Rigga", lat: 25.2631, lng: 55.3235, zone: 5, hasVertiport: false, metroStation: "Al Rigga / Union Interchange (Red & Green)", busRoute: "Bus C01, C09, 27" },
+      al_muteena: { name: "Al Muteena (Deira)", lat: 25.2741, lng: 55.3188, zone: 5, hasVertiport: false, metroStation: "Salah Al Din Station (Green Line)", busRoute: "Bus 13, 43, C14" },
+      al_baraha: { name: "Al Baraha / Corniche", lat: 25.2831, lng: 55.3135, zone: 5, hasVertiport: false, metroStation: "Gold Souq Station (Green Line)", busRoute: "Bus 17, C15" },
+      al_garhoud: { name: "Al Garhoud / GGICO", lat: 25.2443, lng: 55.3429, zone: 5, hasVertiport: false, metroStation: "GGICO Metro Station (Red Line)", busRoute: "Bus 32C, 33" },
+
+      // Bur Dubai & Creek Corridor (Zone 6)
+      bur_dubai: { name: "Bur Dubai / Al Ghubaiba", lat: 25.2612, lng: 55.2891, zone: 6, hasVertiport: false, metroStation: "Al Ghubaiba Station (Green Line)", busRoute: "Bus C07, 8, 29, 33" },
+      al_karama: { name: "Al Karama", lat: 25.2458, lng: 55.3032, zone: 6, hasVertiport: false, metroStation: "ADCB Metro Station (Red Line)", busRoute: "Bus 28, 33, 44, C03, C05" },
+      al_mankhool: { name: "Al Mankhool", lat: 25.2505, lng: 55.2931, zone: 6, hasVertiport: false, metroStation: "BurJuman Interchange (Red & Green Lines)", busRoute: "Bus 8, 9, 29, C10" },
+      oud_metha: { name: "Oud Metha", lat: 25.2341, lng: 55.3142, zone: 6, hasVertiport: false, metroStation: "Oud Metha Station (Green Line)", busRoute: "Bus 10, 27, 28, F18" },
+      al_jaddaf: { name: "Al Jaddaf / Culture Village", lat: 25.2185, lng: 55.3378, zone: 6, hasVertiport: false, metroStation: "Al Jaddaf Station (Green Line)", busRoute: "Bus 44, C04, Marine Ferry" },
+      creek_harbour: { name: "Dubai Creek Harbour", lat: 25.2048, lng: 55.3524, zone: 6, hasVertiport: false, metroStation: "Creek Metro Station (Green Line)", busRoute: "Bus 53, Marine Abra Route" },
+
+      // Northern Communities (Zone 5)
+      muhaisnah: { name: "Muhaisnah (1, 2, 3 & 4)", lat: 25.2755, lng: 55.4055, zone: 5, hasVertiport: false, metroStation: "Centrepoint Station (Requires Feeder Bus)", busRoute: "Feeder Bus 31, 32, F05, F03" },
+      al_qusais: { name: "Al Qusais Industrial & Residential", lat: 25.2862, lng: 55.3811, zone: 5, hasVertiport: false, metroStation: "Al Qusais Metro Station (Green Line)", busRoute: "Bus 13, 33, 43, X28" },
+      al_twar: { name: "Al Twar", lat: 25.2682, lng: 55.3722, zone: 5, hasVertiport: false, metroStation: "DAFZA Station (Green Line)", busRoute: "Bus 31, 33, C19" },
+      al_nahda: { name: "Al Nahda (Dubai side)", lat: 25.2952, lng: 55.3672, zone: 5, hasVertiport: false, metroStation: "Al Nahda Metro Station (Green Line)", busRoute: "Bus 22, 24, F21, F22" },
+
+      // Inland Communities (Zone 4)
+      mirdif: { name: "Mirdif / City Centre", lat: 25.2198, lng: 55.4214, zone: 4, hasVertiport: false, metroStation: "Centrepoint Station (Requires Bus)", busRoute: "Bus 367, F10" },
+      al_warqa: { name: "Al Warqa'a", lat: 25.1884, lng: 55.4201, zone: 4, hasVertiport: false, metroStation: "Rashidiya / Centrepoint (Feeder Transfer)", busRoute: "Bus F61" },
+      al_khawaneej: { name: "Al Khawaneej", lat: 25.2631, lng: 55.4883, zone: 4, hasVertiport: false, metroStation: "Centrepoint Metro (Requires Feeder Bus)", busRoute: "Bus F05, 11A" },
+      silicon: { name: "Dubai Silicon Oasis (DSO)", lat: 25.1246, lng: 55.3786, zone: 4, hasVertiport: false, metroStation: "No direct metro (Bus 320 to Centrepoint)", busRoute: "Bus 320, 365, X25" },
+      academic_city: { name: "Dubai Academic City", lat: 25.1118, lng: 55.4055, zone: 4, hasVertiport: false, metroStation: "No direct metro (Planned Blue Line)", busRoute: "Bus 365, 366, X25" },
+      international_city: { name: "International City", lat: 25.1611, lng: 55.4124, zone: 4, hasVertiport: false, metroStation: "Centrepoint (Requires Feeder Bus)", busRoute: "Bus 365, 366, 367, X23" },
+      dubai_hills: { name: "Dubai Hills Estate", lat: 25.1189, lng: 55.2531, zone: 4, hasVertiport: false, metroStation: "Mall of the Emirates / Equiti (Bus link)", busRoute: "Bus F36, F37" },
+      arabian_ranches: { name: "Arabian Ranches", lat: 25.0561, lng: 55.2635, zone: 4, hasVertiport: false, metroStation: "Mall of the Emirates (Feeder transfer)", busRoute: "Bus F30, J02" },
+      motor_city: { name: "Motor City / Sports City", lat: 25.0458, lng: 55.2389, zone: 4, hasVertiport: false, metroStation: "Mall of the Emirates Station (Bus transfer)", busRoute: "Bus F37, F38" },
+
+      // Central & Business (Zone 3)
+      downtown: { name: "Downtown / Burj Khalifa", lat: 25.1972, lng: 55.2744, zone: 3, hasVertiport: true, vertiportName: "Downtown Burj Vertiport Pad", metroStation: "Burj Khalifa / Dubai Mall (Red Line)", busRoute: "Bus 27, 28, 29 (Dubai Mall Concourse)" },
+      difc: { name: "DIFC Financial Centre", lat: 25.2104, lng: 55.2818, zone: 3, hasVertiport: false, metroStation: "Financial Centre Station (Red Line)", busRoute: "Bus 21, F11" },
+      business_bay: { name: "Business Bay", lat: 25.1852, lng: 55.2677, zone: 3, hasVertiport: false, metroStation: "Business Bay Station (Red Line)", busRoute: "Bus F14, F19A, F41" },
+      satwa: { name: "Al Satwa", lat: 25.2232, lng: 55.2731, zone: 3, hasVertiport: false, metroStation: "Max / World Trade Centre (Red Line)", busRoute: "Satwa Major Bus Station (Routes 32C, C09, X28)" },
+      al_wasl: { name: "Al Wasl / City Walk", lat: 25.2064, lng: 55.2612, zone: 3, hasVertiport: false, metroStation: "Burj Khalifa / Dubai Mall (Red Line)", busRoute: "Bus 7, 28, 81" },
+      jumeirah: { name: "Jumeirah (1, 2 & 3)", lat: 25.2021, lng: 55.2415, zone: 3, hasVertiport: false, metroStation: "Onpassive (Al Safa) (Red Line - transfer)", busRoute: "Bus 8, 81, 88, C10" },
+      al_quoz: { name: "Al Quoz (Industrial & Creative)", lat: 25.1432, lng: 55.2421, zone: 3, hasVertiport: false, metroStation: "Equiti Metro Station (Red Line)", busRoute: "Bus 21, F25, F26" },
+
+      // Coastal & Marina (Zone 2)
+      marina: { name: "Dubai Marina / JBR", lat: 25.0805, lng: 55.1403, zone: 2, hasVertiport: true, vertiportName: "Dubai Marina AUD Skyport", metroStation: "Sobha Realty / DMCC (Red Line & Tram)", busRoute: "Bus 8, 84, F55A" },
+      palm: { name: "Palm Jumeirah (Atlantis)", lat: 25.1304, lng: 55.1171, zone: 2, hasVertiport: true, vertiportName: "Palm Jumeirah Vertiport (Atlantis)", metroStation: "Palm Gateway (Monorail Interchange)", busRoute: "Bus 8 to Palm Gateway + Monorail" },
+      jlt: { name: "Jumeirah Lakes Towers (JLT)", lat: 25.0740, lng: 55.1450, zone: 2, hasVertiport: false, metroStation: "DMCC Metro Station (Red Line)", busRoute: "Bus JLT1, JLT2" },
+      barsha: { name: "Al Barsha (Mall of the Emirates)", lat: 25.1181, lng: 55.2006, zone: 2, hasVertiport: false, metroStation: "Mall of the Emirates (Red Line)", busRoute: "Bus 84, 93, F30, F33" },
+      internet_city: { name: "Dubai Internet City / Media City", lat: 25.0971, lng: 55.1648, zone: 2, hasVertiport: false, metroStation: "Dubai Internet City Metro (Red Line)", busRoute: "Bus 88, F31, F34" },
+
+      // Southern & Expo (Zone 1)
+      jafza: { name: "JAFZA / Jebel Ali Free Zone", lat: 24.9921, lng: 55.0811, zone: 1, hasVertiport: false, metroStation: "UAE Exchange Metro Station (Red Line)", busRoute: "Bus F54, 91" },
+      expo_city: { name: "Expo City Dubai", lat: 24.9602, lng: 55.1504, zone: 1, hasVertiport: false, metroStation: "Expo 2020 Metro Station (Red Line)", busRoute: "Bus F55, F57" },
+      dubai_south: { name: "Dubai South / DWC Corridor", lat: 24.8963, lng: 55.1611, zone: 1, hasVertiport: false, metroStation: "Expo 2020 Metro Station (Feeder transfer)", busRoute: "Bus F55" },
+      dip: { name: "Dubai Investment Park (DIP)", lat: 24.9882, lng: 55.1789, zone: 1, hasVertiport: false, metroStation: "DIP Metro Station (Red Line Expo Branch)", busRoute: "Bus F46, F47, F48" },
+      al_furjan: { name: "Al Furjan / Discovery Gardens", lat: 25.0312, lng: 55.1421, zone: 1, hasVertiport: false, metroStation: "Al Furjan Metro Station (Red Line)", busRoute: "Bus F43, F45" },
+      jvc: { name: "Jumeirah Village Circle (JVC)", lat: 25.0560, lng: 55.2090, zone: 1, hasVertiport: false, metroStation: "Mall of the Emirates (Feeder Bus J01)", busRoute: "Feeder Bus J01" },
+
+      // Intercity
+      sharjah: { name: "Sharjah Border (Sahara / Al Jubail)", lat: 25.2970, lng: 55.3670, zone: 5, isIntercity: true, busLine: "E307 / E307A" },
+      auh: { name: "Abu Dhabi Central Bus Station", lat: 24.4672, lng: 54.3750, isIntercity: true, hasRail: true, busLine: "E100 / E101" },
+      al_ain: { name: "Al Ain Central Station", lat: 24.2190, lng: 55.7600, isIntercity: true, busLine: "E201" },
+      fujairah: { name: "Fujairah Central Station", lat: 25.1288, lng: 56.3265, isIntercity: true, hasRail: true, busLine: "E700" }
+    };
+
+    function getDistanceKm(loc1, loc2) {
+      if (!loc1 || !loc2) return 0;
+      const R = 6371;
+      const dLat = (loc2.lat - loc1.lat) * Math.PI / 180;
+      const dLng = (loc2.lng - loc1.lng) * Math.PI / 180;
+      const a = 
+        Math.sin(dLat/2) * Math.sin(dLat/2) +
+        Math.cos(loc1.lat * Math.PI / 180) * Math.cos(loc2.lat * Math.PI / 180) * 
+        Math.sin(dLng/2) * Math.sin(dLng/2);
+      const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+      return R * c;
+    }
+
+    // -------------------------------------------------------------
+    // RTA ZONE TIERS EVALUATOR
+    // -------------------------------------------------------------
+    function calculateRtaNolTier(z1, z2) {
+      if (!z1 || !z2) return 1;
+      if (z1 === z2) return 1;
+
+      const adjacentPairs = [
+        [1, 2], [1, 4],
+        [2, 3], [2, 4],
+        [3, 4], [3, 6],
+        [4, 5], [4, 6],
+        [5, 6] // Dubai Creek Crossing (Deira Zone 5 ⇄ Bur Dubai Zone 6)
+      ];
+
+      const isAdjacent = adjacentPairs.some(([a, b]) => (a === z1 && b === z2) || (a === z2 && b === z1));
+      if (isAdjacent) return 2;
+
+      return 3;
+    }
+
+    // -------------------------------------------------------------
+    // SLIDER HORIZONTAL SCROLL HELPER
+    // -------------------------------------------------------------
+    function scrollSlider(id, distance) {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollBy({ left: distance, behavior: 'smooth' });
+      }
+    }
+
+    // -------------------------------------------------------------
+    // MULTIMODAL COMPUTATION
+    // -------------------------------------------------------------
+    function runCalculation() {
+      const origEl = document.getElementById('calc-origin');
+      const destEl = document.getElementById('calc-dest');
+      const timeEl = document.getElementById('calc-timeframe');
+      const resultsContainer = document.getElementById('calc-results');
+      const breakdownContainer = document.getElementById('route-step-breakdown');
+      const summaryHeader = document.getElementById('route-distance-summary');
+
+      if (!origEl || !destEl || !resultsContainer || !breakdownContainer || !summaryHeader) return;
+
+      const origKey = origEl.value;
+      const destKey = destEl.value;
+      const timeframe = timeEl ? timeEl.value : 'peak';
+
+      if (origKey === destKey) {
+        resultsContainer.innerHTML = '<div class="col-span-full p-6 text-center text-xs text-amber-400 glass-card rounded-2xl">Please select two distinct locations to calculate multimodal travel timing and fares.</div>';
+        breakdownContainer.innerHTML = '';
+        summaryHeader.innerHTML = '';
+        return;
+      }
+
+      const orig = locations[origKey];
+      const dest = locations[destKey];
+      if (!orig || !dest) return;
+
+      const straightLineKm = getDistanceKm(orig, dest);
+      const highwayKm = Math.max(3, Math.round(straightLineKm * 1.32));
+
+      summaryHeader.innerHTML = `Route: <strong>${orig.name}</strong> ➔ <strong>${dest.name}</strong> | Est. Road Distance: <strong>${highwayKm} km</strong>`;
+
+      // 1. ROAD TAXI / CAR
+      let taxiBase = origKey === 'dxb' ? 25.00 : 5.00;
+      if (timeframe === 'night' && origKey !== 'dxb') taxiBase = 5.50;
+      let trafficMultiplier = timeframe === 'peak' ? 1.45 : (timeframe === 'night' ? 0.90 : 1.15);
+      
+      let drivingMinutes = Math.round((highwayKm / 68) * 60 * trafficMultiplier);
+      if (drivingMinutes < 10) drivingMinutes = 10;
+      
+      let tollGates = (highwayKm > 15) ? Math.min(3, Math.floor(highwayKm / 14)) : 0;
+      let taxiFare = Math.max(12, Math.round(taxiBase + (highwayKm * 2.18) + (tollGates * 4.00)));
+      if (dest.isIntercity && destKey === 'auh') taxiFare = 280;
+      if (dest.isIntercity && destKey === 'al_ain') taxiFare = 310;
+      if (dest.isIntercity && destKey === 'fujairah') taxiFare = 290;
+
+      // 2. RTA METRO & BUS FARES
+      let metroTimeMins = 0;
+      let metroFare = "";
+      let metroNote = "";
+      let isMetroAvailable = true;
+
+      const rtaTier = calculateRtaNolTier(orig.zone, dest.zone);
+      let metroNolFare = 3.00;
+      let tierLabel = "Tier 1: 1 Zone (or ≤ 3 km)";
+
+      if (rtaTier === 2) {
+        metroNolFare = 5.00;
+        tierLabel = "Tier 2: 2 Adjacent Zones (Includes Creek Crossing)";
+      } else if (rtaTier === 3) {
+        metroNolFare = 7.50;
+        tierLabel = "Tier 3: 3 or More Zones";
+      }
+
+      if (orig.isIntercity || dest.isIntercity) {
+        isMetroAvailable = false;
+        metroTimeMins = "--";
+        metroFare = "No Rail Link";
+        metroNote = "Outside urban Dubai Metro zone";
+      } else if ((orig.metroStation && orig.metroStation.includes("Requires")) || (dest.metroStation && dest.metroStation.includes("Requires"))) {
+        metroTimeMins = Math.round((highwayKm * 1.5) + 25);
+        metroFare = `AED ${(metroNolFare + 3).toFixed(2)} (Nol)`;
+        metroNote = "Requires feeder bus transfer to station";
+      } else {
+        metroTimeMins = Math.round((highwayKm * 1.35) + 12);
+        metroFare = `AED ${metroNolFare.toFixed(2)} (Silver Nol)`;
+        metroNote = "Fixed schedule • Zero road congestion";
+      }
+
+      // 3. RTA BUS ONLY
+      let busTimeMins = 0;
+      let busFare = "";
+      let busRouteSummary = "";
+
+      if (orig.isIntercity || dest.isIntercity) {
+        if (destKey === 'auh' || origKey === 'auh') {
+          busTimeMins = origKey === 'marina' ? 95 : 120;
+          busFare = "AED 25.00";
+          busRouteSummary = origKey === 'marina' ? "Intercity Bus E101 (from Ibn Battuta)" : "Intercity Bus E100 (from Al Ghubaiba)";
+        } else if (destKey === 'al_ain' || origKey === 'al_ain') {
+          busTimeMins = 120;
+          busFare = "AED 25.00";
+          busRouteSummary = "RTA Route E201 (Al Ghubaiba ⇄ Al Ain)";
+        } else if (destKey === 'fujairah' || origKey === 'fujairah') {
+          busTimeMins = 135;
+          busFare = "AED 30.00";
+          busRouteSummary = "RTA Route E700 (Union ⇄ Fujairah)";
+        } else {
+          busTimeMins = timeframe === 'peak' ? 70 : 45;
+          busFare = "AED 10.00";
+          busRouteSummary = "RTA Route E307 / E307A (to Sharjah)";
+        }
+      } else {
+        busTimeMins = Math.round(drivingMinutes * 1.45 + 10);
+        busFare = `AED ${metroNolFare.toFixed(2)} (Silver Nol)`;
+        busRouteSummary = `${orig.busRoute || 'Local Feeder'} ➔ Regional network`;
+      }
+
+      // 4. ETIHAD HIGH-SPEED RAIL
+      let hasEtihad = (destKey === 'auh' || destKey === 'fujairah' || origKey === 'auh' || origKey === 'fujairah');
+      let railTime = hasEtihad ? (destKey === 'auh' || origKey === 'auh' ? "57 Mins" : "105 Mins") : "--";
+      let railFare = hasEtihad ? "AED 45 - 65 (Est.)" : "Intercity Only";
+
+      // 5. eVTOL STATUS
+      let evtolHubInfo = (orig.hasVertiport && dest.hasVertiport)
+        ? `Designated Vertiports: ${orig.vertiportName} ⇄ ${dest.vertiportName}`
+        : `Corridor in active development for this sector`;
+
+      // RENDER ALL 5 MODES
+      resultsContainer.innerHTML = `
+        <div class="glass-card p-5 rounded-2xl border-t-2 border-t-brand-cyan flex flex-col justify-between relative overflow-hidden group">
+          <div>
+            <div class="flex items-center justify-between text-[10px] font-mono text-brand-cyan uppercase">
+              <span>eVTOL Air Taxi</span>
+              <span class="px-2 py-0.5 rounded-full bg-sky-500/10 border border-sky-400/40 text-[9px] text-brand-cyan animate-pulse">Pre-Launch</span>
+            </div>
+            <div class="mt-3">
+              <div class="text-xs font-mono uppercase text-slate-400 tracking-wider">Flight Service</div>
+              <div class="text-base font-bold text-white mt-0.5 flex items-center gap-1.5">
+                <i class="ph ph-airplane-tilt text-brand-cyan"></i> In Development
+              </div>
+            </div>
+            <div class="mt-2 text-[11px] text-slate-300 leading-snug">
+              Commercial public passenger flights have not launched yet.
+            </div>
+          </div>
+          <div class="pt-3 border-t border-slate-800">
+            <button type="button" onclick="navigate('alerts')" class="w-full py-1.5 px-2 rounded-lg bg-sky-500/10 hover:bg-sky-500/20 text-brand-cyan text-[11px] font-bold border border-sky-400/30 flex items-center justify-center gap-1">
+              <i class="ph ph-bell"></i> Get Launch Alert
+            </button>
+          </div>
+        </div>
+
+        <div class="glass-card p-5 rounded-2xl border-t-2 border-t-red-500 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-[10px] font-mono text-red-400 uppercase">
+              <span>RTA Metro</span>
+              <span class="px-1.5 py-0.5 rounded bg-red-500/10 border border-red-500/30">Rail Track</span>
+            </div>
+            <div class="text-2xl font-bold text-white font-mono mt-2">${isMetroAvailable ? metroTimeMins + ' Mins' : '--'}</div>
+            <div class="text-xs text-slate-300 mt-1">Nol Tariff: <strong class="text-white">${metroFare}</strong></div>
+          </div>
+          <div class="pt-3 border-t border-slate-800 text-[11px] text-slate-400 font-medium">
+            ${metroNote}
+          </div>
+        </div>
+
+        <div class="glass-card p-5 rounded-2xl border-t-2 border-t-indigo-400 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-[10px] font-mono text-indigo-400 uppercase">
+              <span>RTA Bus</span>
+              <span class="px-1.5 py-0.5 rounded bg-indigo-500/10 border border-indigo-500/30">Public Road</span>
+            </div>
+            <div class="text-2xl font-bold text-white font-mono mt-2">${busTimeMins} Mins</div>
+            <div class="text-xs text-slate-300 mt-1">Bus Tariff: <strong class="text-white">${busFare}</strong></div>
+          </div>
+          <div class="pt-3 border-t border-slate-800 text-[11px] text-indigo-300 truncate font-medium">
+            ${orig.isIntercity || dest.isIntercity ? 'Intercity Express' : 'Local Feeder / Trunk'}
+          </div>
+        </div>
+
+        <div class="glass-card p-5 rounded-2xl border-t-2 border-t-amber-400 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-[10px] font-mono text-amber-400 uppercase">
+              <span>RTA Taxi / Car</span>
+              <span class="px-1.5 py-0.5 rounded bg-amber-500/10 border border-amber-500/30">Metered</span>
+            </div>
+            <div class="text-2xl font-bold text-white font-mono mt-2">${drivingMinutes} Mins</div>
+            <div class="text-xs text-slate-300 mt-1">Est. Meter: <strong class="text-white">AED ${taxiFare}</strong></div>
+          </div>
+          <div class="pt-3 border-t border-slate-800 text-[11px] text-amber-300/80 font-medium">
+            ${timeframe === 'peak' ? '⚠️ Peak Hour Delay' : 'Standard Traffic Flow'}
+          </div>
+        </div>
+
+        <div class="glass-card p-5 rounded-2xl border-t-2 border-t-purple-400 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-[10px] font-mono text-purple-400 uppercase">
+              <span>Etihad Rail</span>
+              <span class="px-1.5 py-0.5 rounded bg-purple-500/10 border border-purple-500/30">200 km/h</span>
+            </div>
+            <div class="text-2xl font-bold text-white font-mono mt-2">${railTime}</div>
+            <div class="text-xs text-slate-300 mt-1">Ticket: <strong class="text-white">${railFare}</strong></div>
+          </div>
+          <div class="pt-3 border-t border-slate-800 text-[11px] text-purple-300 font-medium">
+            ${hasEtihad ? 'Inter-Emirate High Speed' : 'National Network Only'}
+          </div>
+        </div>
+      `;
+
+      // DETAILED ITINERARY BREAKDOWN
+      breakdownContainer.innerHTML = `
+        <div class="glass-card rounded-2xl p-6 sm:p-7 space-y-6">
+          <h3 class="text-base font-bold text-white flex items-center gap-2">
+            <i class="ph ph-map-trifold text-brand-cyan"></i> Segmented Itinerary & Transfer Guide
+          </h3>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs text-slate-300">
+            <div class="space-y-3 bg-slate-900/70 p-4 rounded-xl border border-slate-800">
+              <div class="font-bold text-red-400 flex items-center gap-1.5">
+                <i class="ph ph-train text-base"></i> RTA Metro Details:
+              </div>
+              <ul class="space-y-1.5 list-disc list-inside text-slate-300">
+                <li>Origin Hub: <strong>${orig.metroStation || 'Nearby Station'}</strong></li>
+                <li>Destination Hub: <strong>${dest.metroStation || 'Destination Station'}</strong></li>
+                <li>Zone Calculation: <strong>${tierLabel}</strong></li>
+                <li>Applicable Fare: <strong>AED ${metroNolFare.toFixed(2)}</strong> on standard Silver Nol.</li>
+              </ul>
+            </div>
+
+            <div class="space-y-3 bg-slate-900/70 p-4 rounded-xl border border-slate-800">
+              <div class="font-bold text-indigo-400 flex items-center gap-1.5">
+                <i class="ph ph-bus text-base"></i> RTA Bus Details:
+              </div>
+              <ul class="space-y-1.5 list-disc list-inside text-slate-300">
+                <li>Route corridor: <strong>${busRouteSummary}</strong></li>
+                <li>Departure Frequency: Every 12–20 minutes</li>
+                <li>Subject to road traffic and signal conditions</li>
+              </ul>
+            </div>
+
+            <div class="space-y-3 bg-slate-900/70 p-4 rounded-xl border border-slate-800">
+              <div class="font-bold text-brand-cyan flex items-center gap-1.5">
+                <i class="ph ph-airplane-tilt text-base"></i> Vertiport Readiness Status:
+              </div>
+              <p class="text-slate-300">
+                ${evtolHubInfo}
+              </p>
+              <p class="text-slate-400 text-[11px]">
+                Pre-commercial infrastructure phase. Official passenger bookings will open following civil aviation regulatory clearances.
+              </p>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function swapLocations() {
+      const orig = document.getElementById('calc-origin');
+      const dest = document.getElementById('calc-dest');
+      if (!orig || !dest) return;
+      const temp = orig.value;
+      orig.value = dest.value;
+      dest.value = temp;
+      runCalculation();
+    }
+
+    // -------------------------------------------------------------
+    // NAVIGATION ROUTER
+    // -------------------------------------------------------------
+    function navigate(viewId) {
+      const views = document.querySelectorAll('.page-view');
+      views.forEach(el => el.classList.add('hidden'));
+
+      const targetView = document.getElementById('view-' + viewId);
+      if (targetView) {
+        targetView.classList.remove('hidden');
+      }
+
+      const navBtns = document.querySelectorAll('.nav-btn');
+      navBtns.forEach(btn => {
+        if (btn.getAttribute('data-nav') === viewId) {
+          btn.classList.add('text-brand-cyan', 'bg-slate-800/80');
+          btn.classList.remove('text-slate-300');
+        } else {
+          btn.classList.remove('text-brand-cyan', 'bg-slate-800/80');
+          btn.classList.add('text-slate-300');
+        }
+      });
+
+      const crumbs = document.getElementById('breadcrumbs');
+      if (crumbs) {
+        let title = "OVERVIEW";
+        if (viewId === 'planner') title = "TRIP & FARE ENGINE";
+        if (viewId === 'aerial') title = "VERTIPORTS";
+        if (viewId === 'rta') title = "RTA METRO & BUS";
+        if (viewId === 'etihad') title = "ETIHAD RAIL";
+        if (viewId === 'history') title = "DUBAI TRANSIT HERITAGE";
+        if (viewId === 'alerts') title = "ROUTE NOTIFICATIONS";
+        crumbs.innerHTML = '<a href="javascript:void(0)" onclick="navigate(\'home\')" class="hover:text-brand-cyan">PORTAL</a> <span class="text-slate-600">/</span> <span class="text-white">' + title + '</span>';
+      }
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      if (menu) {
+        menu.classList.toggle('hidden');
+      }
+    }
+
+    // Formspree Handling
+    const notifyForm = document.getElementById('active-notify-form');
+    if (notifyForm) {
+      notifyForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const submitBtn = document.getElementById('notify-submit-btn');
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Transmitting...';
+        }
+        const formData = new FormData(notifyForm);
+        try {
+          const response = await fetch(notifyForm.action, { 
+            method: 'POST', 
+            body: formData, 
+            headers: { 'Accept': 'application/json' } 
+          });
+          if (response.ok) {
+            notifyForm.style.display = 'none';
+            const statusEl = document.getElementById('notify-status');
+            if (statusEl) statusEl.classList.remove('hidden');
+          } else { 
+            throw new Error('Network error'); 
+          }
+        } catch (err) {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Notify Me';
+          }
+          alert('Submission error. Please try again.');
+        }
+      });
+    }
+
+    // Initialize application on DOM ready
+    window.addEventListener('DOMContentLoaded', () => {
+      navigate('home');
+      runCalculation();
+    });
+  </script>
+</body>
+</html>
