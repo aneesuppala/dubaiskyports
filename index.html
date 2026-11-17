@@ -65,7 +65,7 @@
             "name": "How much does a Dubai Metro or RTA Bus trip cost with a Silver Nol card?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Under the RTA 7-zone Nol tariff model, a Silver Nol card costs AED 3.00 within 1 zone (or under 3 km), AED 5.00 across 2 adjacent zones, and AED 7.50 for 3 or more zones."
+              "text": "Under the RTA 7-zone Nol tariff model, a Silver Nol card costs AED 3.00 within 1 zone (or under 3 km), AED 5.00 across 2 adjacent zones, and AED 7.50 for 3 or more zones—including multimodal Metro and bus transfers within 30 minutes."
             }
           },
           {
@@ -256,7 +256,7 @@
           <div class="text-xs font-mono text-brand-cyan uppercase tracking-widest mb-1">Public Transit Decision Engine</div>
           <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Multimodal Route & Fare Estimator</h2>
           <p class="text-slate-400 text-sm mt-2 max-w-3xl">
-            Independent estimations based on standard RTA public Nol 7-zone rules, metered taxi tariffs, and announced intercity rail links.
+            Independent estimations based on standard RTA public Nol 7-zone rules (including 30-minute multimodal transfers), metered taxi tariffs, and announced intercity rail links.
           </p>
         </div>
         <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-slate-400">
@@ -276,11 +276,12 @@
                 <option value="dwc">DWC Al Maktoum Airport</option>
               </optgroup>
               <optgroup label="Deira & Historic Creek (Zone 5)">
+                <option value="union">Union Interchange (Red & Green Lines)</option>
+                <option value="al_rigga">Al Rigga (Deira)</option>
                 <option value="naif">Naif (Deira Souk)</option>
                 <option value="abu_hail">Abu Hail / Hor Al Anz</option>
                 <option value="al_ras">Al Ras (Gold Souk / Heritage)</option>
                 <option value="al_sabkha">Al Sabkha (Bus & Marine)</option>
-                <option value="deira">Deira / Al Rigga</option>
                 <option value="al_muteena">Al Muteena (Deira)</option>
                 <option value="al_baraha">Al Baraha / Corniche</option>
                 <option value="al_garhoud">Al Garhoud / GGICO</option>
@@ -288,7 +289,7 @@
               <optgroup label="Bur Dubai & Creek Corridor (Zone 6)">
                 <option value="bur_dubai">Bur Dubai / Al Ghubaiba</option>
                 <option value="al_karama">Al Karama</option>
-                <option value="al_mankhool">Al Mankhool</option>
+                <option value="al_mankhool">Al Mankhool (BurJuman)</option>
                 <option value="oud_metha">Oud Metha</option>
                 <option value="al_jaddaf">Al Jaddaf / Culture Village</option>
                 <option value="creek_harbour">Dubai Creek Harbour</option>
@@ -351,11 +352,12 @@
                 <option value="dwc">DWC Al Maktoum Airport</option>
               </optgroup>
               <optgroup label="Deira & Historic Creek (Zone 5)">
+                <option value="union">Union Interchange (Red & Green Lines)</option>
+                <option value="al_rigga">Al Rigga (Deira)</option>
                 <option value="naif">Naif (Deira Souk)</option>
                 <option value="abu_hail">Abu Hail / Hor Al Anz</option>
                 <option value="al_ras">Al Ras (Gold Souk / Heritage)</option>
                 <option value="al_sabkha">Al Sabkha (Bus & Marine)</option>
-                <option value="deira">Deira / Al Rigga</option>
                 <option value="al_muteena">Al Muteena (Deira)</option>
                 <option value="al_baraha">Al Baraha / Corniche</option>
                 <option value="al_garhoud">Al Garhoud / GGICO</option>
@@ -363,7 +365,7 @@
               <optgroup label="Bur Dubai & Creek Corridor (Zone 6)">
                 <option value="bur_dubai">Bur Dubai / Al Ghubaiba</option>
                 <option value="al_karama">Al Karama</option>
-                <option value="al_mankhool">Al Mankhool</option>
+                <option value="al_mankhool">Al Mankhool (BurJuman)</option>
                 <option value="oud_metha">Oud Metha</option>
                 <option value="al_jaddaf">Al Jaddaf / Culture Village</option>
                 <option value="creek_harbour">Dubai Creek Harbour</option>
@@ -635,7 +637,7 @@
             <h3 class="text-lg font-bold text-white flex items-center gap-2">
               <i class="ph ph-credit-card text-indigo-400"></i> Standard Nol Card Fare Matrix
             </h3>
-            <p class="text-xs text-slate-400 mt-1">Calculated by zone boundaries crossed per continuous single trip.</p>
+            <p class="text-xs text-slate-400 mt-1">Calculated by total zone boundaries crossed across all combined legs of a single trip.</p>
           </div>
           <span class="text-xs font-mono text-brand-cyan bg-sky-500/10 border border-sky-500/20 px-3 py-1 rounded-lg">30-Min Transfer Window Active</span>
         </div>
@@ -678,7 +680,7 @@
         </div>
         
         <div class="text-[11px] text-slate-400 bg-slate-900/60 p-3 rounded-xl border border-slate-800 space-y-1">
-          <p><strong>Transfer Rule:</strong> Switching between Metro, Tram, and Feeder Buses within 30 minutes counts as a single continuous journey (up to 3 transfers total).</p>
+          <p><strong>Transfer Rule:</strong> Switching between Metro, Tram, and Feeder Buses within 30 minutes counts as a single continuous journey (up to 3 transfers within 180 minutes) charged only by total zones crossed.</p>
           <p><strong>Minimum Balance:</strong> A minimum balance of AED 7.50 is required on standard Silver Nol cards prior to tapping through entrance gates.</p>
         </div>
       </div>
@@ -1071,11 +1073,12 @@
       dwc: { name: "DWC Al Maktoum Airport", lat: 24.8967, lng: 55.1614, zone: 1, hasVertiport: false, metroStation: "Expo 2020 Station (Requires Feeder Bus)", busRoute: "Bus F55 (Direct from Expo 2020 Metro)" },
       
       // Deira & Historic (Zone 5)
+      union: { name: "Union Interchange (Red & Green Lines)", lat: 25.2667, lng: 55.3131, zone: 5, hasVertiport: false, metroStation: "Union Metro Station (Red & Green Interchange)", busRoute: "Union Square Bus Terminal (E700, C01, 27)" },
+      al_rigga: { name: "Al Rigga (Deira)", lat: 25.2631, lng: 55.3235, zone: 5, hasVertiport: false, metroStation: "Al Rigga Metro Station (Red Line)", busRoute: "Bus C01, C09, 27" },
       naif: { name: "Naif (Deira Souk)", lat: 25.2736, lng: 55.3051, zone: 5, hasVertiport: false, metroStation: "Baniyas Square Station (Green Line)", busRoute: "Bus C01, 27, 53" },
       abu_hail: { name: "Abu Hail / Hor Al Anz", lat: 25.2798, lng: 55.3342, zone: 5, hasVertiport: false, metroStation: "Abu Hail Metro Station (Green Line)", busRoute: "Bus C03, C10, C28" },
       al_ras: { name: "Al Ras (Gold Souk / Heritage)", lat: 25.2687, lng: 55.2974, zone: 5, hasVertiport: false, metroStation: "Al Ras Metro Station (Green Line)", busRoute: "Bus C07, C09, Marine Abra" },
       al_sabkha: { name: "Al Sabkha (Bus & Marine)", lat: 25.2672, lng: 55.3021, zone: 5, hasVertiport: false, metroStation: "Baniyas Square (Green Line)", busRoute: "Al Sabkha Major Bus Terminal" },
-      deira: { name: "Deira / Al Rigga", lat: 25.2631, lng: 55.3235, zone: 5, hasVertiport: false, metroStation: "Al Rigga / Union Interchange (Red & Green)", busRoute: "Bus C01, C09, 27" },
       al_muteena: { name: "Al Muteena (Deira)", lat: 25.2741, lng: 55.3188, zone: 5, hasVertiport: false, metroStation: "Salah Al Din Station (Green Line)", busRoute: "Bus 13, 43, C14" },
       al_baraha: { name: "Al Baraha / Corniche", lat: 25.2831, lng: 55.3135, zone: 5, hasVertiport: false, metroStation: "Gold Souq Station (Green Line)", busRoute: "Bus 17, C15" },
       al_garhoud: { name: "Al Garhoud / GGICO", lat: 25.2443, lng: 55.3429, zone: 5, hasVertiport: false, metroStation: "GGICO Metro Station (Red Line)", busRoute: "Bus 32C, 33" },
@@ -1083,7 +1086,7 @@
       // Bur Dubai & Creek Corridor (Zone 6)
       bur_dubai: { name: "Bur Dubai / Al Ghubaiba", lat: 25.2612, lng: 55.2891, zone: 6, hasVertiport: false, metroStation: "Al Ghubaiba Station (Green Line)", busRoute: "Bus C07, 8, 29, 33" },
       al_karama: { name: "Al Karama", lat: 25.2458, lng: 55.3032, zone: 6, hasVertiport: false, metroStation: "ADCB Metro Station (Red Line)", busRoute: "Bus 28, 33, 44, C03, C05" },
-      al_mankhool: { name: "Al Mankhool", lat: 25.2505, lng: 55.2931, zone: 6, hasVertiport: false, metroStation: "BurJuman Interchange (Red & Green Lines)", busRoute: "Bus 8, 9, 29, C10" },
+      al_mankhool: { name: "Al Mankhool (BurJuman)", lat: 25.2505, lng: 55.2931, zone: 6, hasVertiport: false, metroStation: "BurJuman Interchange (Red & Green Lines)", busRoute: "Bus 8, 9, 29, C10" },
       oud_metha: { name: "Oud Metha", lat: 25.2341, lng: 55.3142, zone: 6, hasVertiport: false, metroStation: "Oud Metha Station (Green Line)", busRoute: "Bus 10, 27, 28, F18" },
       al_jaddaf: { name: "Al Jaddaf / Culture Village", lat: 25.2185, lng: 55.3378, zone: 6, hasVertiport: false, metroStation: "Al Jaddaf Station (Green Line)", busRoute: "Bus 44, C04, Marine Ferry" },
       creek_harbour: { name: "Dubai Creek Harbour", lat: 25.2048, lng: 55.3524, zone: 6, hasVertiport: false, metroStation: "Creek Metro Station (Green Line)", busRoute: "Bus 53, Marine Abra Route" },
@@ -1209,7 +1212,7 @@
       if (dest.isIntercity && destKey === 'al_ain') taxiFare = 310;
       if (dest.isIntercity && destKey === 'fujairah') taxiFare = 290;
 
-      // 2. RTA METRO & BUS FARES (True RTA 7-Zone Nol Model)
+      // 2. RTA METRO + FEEDER BUS (Unified 30-Min Transfer Rule — No Double Charge)
       let metroTimeMins = 0;
       let metroFare = "";
       let metroNote = "";
@@ -1217,7 +1220,7 @@
 
       const rtaTier = calculateRtaNolTier(orig.zone, dest.zone);
       let metroNolFare = 3.00;
-      let tierLabel = "Tier 1: 1 Zone (or ≤ 3 km)";
+      let tierLabel = "Tier 1: Same Zone (or ≤ 3 km)";
 
       if (rtaTier === 2) {
         metroNolFare = 5.00;
@@ -1227,15 +1230,18 @@
         tierLabel = "Tier 3: 3 or More Zones";
       }
 
+      const needsFeederBus = (orig.metroStation && (orig.metroStation.includes("Requires") || orig.metroStation.includes("transfer") || orig.metroStation.includes("link"))) ||
+                             (dest.metroStation && (dest.metroStation.includes("Requires") || dest.metroStation.includes("transfer") || dest.metroStation.includes("link")));
+
       if (orig.isIntercity || dest.isIntercity) {
         isMetroAvailable = false;
         metroTimeMins = "--";
         metroFare = "No Rail Link";
         metroNote = "Outside urban Dubai Metro zone";
-      } else if (orig.metroStation && orig.metroStation.includes("Requires") || (dest.metroStation && dest.metroStation.includes("Requires"))) {
+      } else if (needsFeederBus) {
         metroTimeMins = Math.round((highwayKm * 1.5) + 25);
-        metroFare = `AED ${(metroNolFare + 3).toFixed(2)} (Nol)`;
-        metroNote = "Requires feeder bus transfer to station";
+        metroFare = `AED ${metroNolFare.toFixed(2)} (Silver Nol)`;
+        metroNote = "Metro + Feeder Bus (Single fare via 30-min transfer)";
       } else {
         metroTimeMins = Math.round((highwayKm * 1.35) + 12);
         metroFare = `AED ${metroNolFare.toFixed(2)} (Silver Nol)`;
@@ -1379,13 +1385,13 @@
             
             <div class="space-y-3 bg-slate-900/70 p-4 rounded-xl border border-slate-800">
               <div class="font-bold text-red-400 flex items-center gap-1.5">
-                <i class="ph ph-train text-base"></i> RTA Metro Details:
+                <i class="ph ph-train text-base"></i> RTA Metro & Transfer Details:
               </div>
               <ul class="space-y-1.5 list-disc list-inside text-slate-300">
                 <li>Origin Hub: <strong>${orig.metroStation || 'Nearby Station'}</strong></li>
                 <li>Destination Hub: <strong>${dest.metroStation || 'Destination Station'}</strong></li>
                 <li>Zone Calculation: <strong>${tierLabel}</strong></li>
-                <li>Applicable Fare: <strong>AED ${metroNolFare.toFixed(2)}</strong> on standard Silver Nol.</li>
+                <li>Total Fare: <strong>AED ${metroNolFare.toFixed(2)}</strong> on Silver Nol (30-min Metro/Bus transfer rule applies).</li>
               </ul>
             </div>
 
