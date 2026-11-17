@@ -14,14 +14,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Primary SEO Tags -->
+  <!-- Primary SEO & Indexing Tags -->
   <title>Dubai Skyports — Air Taxi Vertiports, Nol Fare Calculator &amp; UAE Transit Guide</title>
   <meta name="description" content="Independent UAE transit and mobility guide. Estimate Dubai RTA Metro, bus, and Nol card fares, explore Dubai air taxi vertiports (DXB, Downtown, Palm Jumeirah, Marina), and plan intercity routes." />
-  <meta name="keywords" content="Dubai Skyports, Dubai air taxi, Dubai vertiports, Nol card fare calculator, RTA Dubai bus routes, UAE transit guide, Etihad Rail, Dubai Metro fare" />
+  <meta name="keywords" content="Dubai Skyports, Dubai air taxi, Dubai vertiports, Nol card fare calculator, RTA Dubai bus routes, UAE transit guide, Etihad Rail, Dubai Metro fare, Dubai transit planner" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+  <meta name="author" content="Dubai Skyports Independent Transit Guide" />
+  <meta name="geo.region" content="AE-DU" />
+  <meta name="geo.placename" content="Dubai, United Arab Emirates" />
   <link rel="canonical" href="https://www.dubaiskyports.com/" />
 
-  <!-- Open Graph / Social Sharing (WhatsApp, LinkedIn, Facebook, X) -->
+  <!-- Open Graph / Social Sharing (WhatsApp, LinkedIn, Facebook) -->
   <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_AE" />
   <meta property="og:site_name" content="Dubai Skyports" />
   <meta property="og:url" content="https://www.dubaiskyports.com/" />
   <meta property="og:title" content="Dubai Skyports — Air Taxi Vertiports &amp; UAE Transit Fare Guide" />
@@ -31,6 +36,51 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Dubai Skyports — Air Taxi Vertiports &amp; UAE Transit Fare Guide" />
   <meta name="twitter:description" content="Calculate Dubai Nol card fares, check RTA intercity bus corridors, and explore Dubai's upcoming air taxi vertiport stations." />
+
+  <!-- Structured Data (JSON-LD for Google Rich Results) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "name": "Dubai Skyports",
+        "alternateName": "Dubai Skyports Independent UAE Transit Guide",
+        "url": "https://www.dubaiskyports.com/",
+        "description": "Independent UAE multimodal transit directory covering Dubai air taxi vertiports, RTA Metro and bus Nol card fares, and Etihad Rail passenger routes."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Where are the 4 planned Dubai air taxi vertiport locations?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The four designated commercial vertiport sites in Dubai are Dubai International Airport (DXB Terminal 3), Palm Jumeirah (Atlantis), Dubai Marina (AUD corridor), and Downtown Dubai (Burj Khalifa)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much does a Dubai Metro or RTA Bus trip cost with a Silver Nol card?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Under the RTA 7-zone Nol tariff model, a Silver Nol card costs AED 3.00 within 1 zone (or under 3 km), AED 5.00 across 2 adjacent zones, and AED 7.50 for 3 or more zones."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long will the Etihad Rail passenger train take from Dubai to Abu Dhabi?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Etihad Rail passenger trains are designed to travel at up to 200 km/h, with a target express journey time of approximately 57 minutes between Dubai and Abu Dhabi."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
